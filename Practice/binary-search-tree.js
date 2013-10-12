@@ -1,3 +1,5 @@
+var DoublyLinkedList = require("./doubly-linked-list");
+
 /*
  * Binary Search Tree implementation in JavaScript
  * Copyright (c) 2009 Nicholas C. Zakas
@@ -389,26 +391,15 @@ BinarySearchTree.prototype = {
 	},
 
 	treeToDoublyList : function(root) {
-		var head = null, prev = null, tail = null;
+		var list = new DoublyLinkedList();
 		this.inOrderTraverse(function(node) {
-			if (head === null) {
-				head = node;
-			}
-			if (prev !== null) {				
-				prev.next = node;
-			}
-			node.prev = prev;
-			prev = node;
-			tail = node;
+			
 			if (node.hasOwnProperty("value")) {
-				node.data = node.value;
+				list.add(node.value);
 			}
 		});
-		if (tail && tail !== head) {
-			tail.next = head;
-			head.prev = tail;
-		}
-		return head;
+		
+		return list;
 	},
 	preOrderTraverse : function(process) {
 
