@@ -56,3 +56,5 @@ function bubbleSort(items){
     
     return items;
 }
+
+module.exports = bubbleSort;

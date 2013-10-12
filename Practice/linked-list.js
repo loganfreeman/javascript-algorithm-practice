@@ -1,3 +1,5 @@
+var BinarySearchTree = require('./binary-search-tree');
+var bubbleSort = require("./bubble-sort.js");
 /*
  * Linked List implementation in JavaScript
  * Copyright (c) 2009 Nicholas C. Zakas
@@ -83,6 +85,7 @@ LinkedList.prototype = {
         
         //don't forget to update the count
         this._length++;
+        return this;
     
     },
     
@@ -189,3 +192,15 @@ LinkedList.prototype = {
         return this.toArray().toString();
     }
 };
+
+LinkedList.toLinkedList = function(a){
+	var list = new LinkedList();
+    for(i =0 ; i < a.length; i++){
+    	list.add(a[i]);    	
+    }
+    return list;
+}
+
+
+
+module.exports = LinkedList;
