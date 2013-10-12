@@ -509,4 +509,29 @@ BinarySearchTree.sortedArrayToBST = function(arr, start, end) {
 	return node;
 };
 
+
+BinarySearchTree.findLargestBST = function(bt){
+	var maxNodes = 0;
+	var INT_MIN = -9999;
+	var INT_MAX = 9999;
+	if(!bt) return null;
+	var tree = new BinarySearchTree();
+	function findBSTRecursive(node, min, max){
+		if(!node) return 0;
+		if(min < node.data && node.data < max){
+			var leftNodes = findBSTRecursive(node.left, min, node.data);			
+			var rightNodes = findBSTRecursive(node.right, node.data, max);
+			if(leftNodes + rightNodes + 1 > maxNodes){
+				maxNodes = leftNodes + rightNodes + 1;
+			}
+			return leftNodes + rightNodes + 1;
+			
+		}
+		else{
+			findBSTRecursive(node, INT_MIN, INT_MAX );
+			return 0;
+		}
+	}
+	return tree;
+};
 module.exports = BinarySearchTree;
