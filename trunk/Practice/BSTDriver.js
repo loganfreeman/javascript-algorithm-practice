@@ -9,17 +9,6 @@ console.log("lowest common ancestor:"+lca.value);
 var list = tree.treeToDoublyList(tree.root());
 
 
-function listToArray(list){
-    var result = [],
-        current = list;
-    
-    while(current && !current.traversed){
-        result.push(current.data);
-        current.traversed = true;
-        current = current.next;
-    }
-    
-    return result;
-}
 
-console.log("doubly linked list: "+listToArray(list).join(" "));
+
+console.log("doubly linked list: "+list.toString());
