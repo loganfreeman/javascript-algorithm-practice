@@ -1,8 +1,8 @@
 var DoublyLinkedList = require("./doubly-linked-list");
 
 /*
- * Binary Search Tree implementation in JavaScript
- * Copyright (c) 2009 Nicholas C. Zakas
+ * Binary Search Tree implementation in JavaScript Copyright (c) 2009 Nicholas
+ * C. Zakas
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,8 +19,8 @@ var DoublyLinkedList = require("./doubly-linked-list");
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 
 /**
@@ -31,7 +31,7 @@ var DoublyLinkedList = require("./doubly-linked-list");
  * @class BinarySearchTree
  * @constructor
  */
-function BinarySearchTree() {
+function BinarySearchTree(data) {
 
 	/**
 	 * Pointer to root node in the tree.
@@ -40,7 +40,11 @@ function BinarySearchTree() {
 	 * @type Object
 	 * @private
 	 */
+
 	this._root = null;
+	if (arguments.length == 1)
+		this.add(data);
+
 }
 
 BinarySearchTree.prototype = {
@@ -393,12 +397,12 @@ BinarySearchTree.prototype = {
 	treeToDoublyList : function(root) {
 		var list = new DoublyLinkedList();
 		this.inOrderTraverse(function(node) {
-			
+
 			if (node.hasOwnProperty("value")) {
 				list.add(node.value);
 			}
 		});
-		
+
 		return list;
 	},
 	preOrderTraverse : function(process) {
@@ -483,5 +487,26 @@ console.log(tree.toString());
 var lca = tree.LCA(tree._root, 7, 13);
 console.log(lca.value);
 tree.prettyPrint();
+
+BinarySearchTree.sortedListToBST = function(head) {
+	var tree = new BinarySearchTree();
+	var current = head;
+	while (current) {
+		tree.add(current.data);
+		current = current.next;
+	}
+	return tree;
+};
+
+BinarySearchTree.sortedArrayToBST = function(arr, start, end) {
+	if (start > end)
+		return new BinarySearchTree();
+	// same as (start+end)/2, avoids overflow.
+	var mid = Math.floor(start + (end - start) / 2);
+	var node = new BinarySearchTree(arr[mid]);
+	node.root().left = BinarySearchTree.sortedArrayToBST(arr, start, mid - 1).root();
+	node.root().right = BinarySearchTree.sortedArrayToBST(arr, mid + 1, end).root();
+	return node;
+};
 
 module.exports = BinarySearchTree;
