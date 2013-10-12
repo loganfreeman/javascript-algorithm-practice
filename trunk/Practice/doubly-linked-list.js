@@ -56,7 +56,9 @@ function DoublyLinkedList() {
 DoublyLinkedList.prototype = {
 
     //restore constructor
-    constructor: DoublyLinkedList,    
+    constructor: DoublyLinkedList,   
+    
+    
     
     /**
      * Appends some data to the end of the list. This method traverses
@@ -213,5 +215,5 @@ DoublyLinkedList.prototype = {
     }    
 };
 
-
+module.exports = DoublyLinkedList;
 
