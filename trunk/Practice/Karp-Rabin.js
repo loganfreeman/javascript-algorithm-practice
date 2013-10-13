@@ -55,12 +55,14 @@ var RabinKarp = function(text, pattern) {
 	// pattern, B - the base of the numeral system,
 	// and M - a big enough prime number
 
+	var n = text.length, m = pattern.length;
+
 	if (n < m)
 		return; // no match is possible
 
 	// calculate the hash value of the pattern
 	var hp = 0;
-	for (i = 0; i < m; i++)
+	for ( var i = 0; i < m; i++)
 		hp = int_mod(hp * B + pattern[i], M);
 
 	// calculate the hash value of the first segment
@@ -72,13 +74,23 @@ var RabinKarp = function(text, pattern) {
 	if (ht == hp) {
 		// check character by character if the first
 		// segment of the text matches the pattern
+		var match = true;
+		for (i = 0; i < m; i++) {
+			if (text[i] != pattern[i]) {
+				match = false;
+				break;
+			}
+		}
+		if (match) {
+			console.log("found pattern at index: " + 0);
+		}
 	}
-	;
 
 	// start the "rolling hash" - for every next character in
 	// the text calculate the hash value of the new segment
 	// of length m; E = (Bm-1) modulo M
 	for (i = m; i < n; i++) {
+		var E = Math.pow(B, m -1) % M;
 		ht = int_mod(ht - int_mod(text[i - m] * E, M), M);
 		ht = int_mod(ht * B, M);
 		ht = int_mod(ht + text[i], M);
@@ -87,8 +99,22 @@ var RabinKarp = function(text, pattern) {
 			// check character by character if the
 			// current segment of the text matches
 			// the pattern
+			var match = true;
+			for (var j = 0; j < m; j++) {
+				if (text[j + i - m + 1] != pattern[j]) {
+					match = false;
+					break;
+				}
+			}
+			if (match) {
+				console.log("found pattern at index: " + (i - m + 1));
+			}
 		}
 		;
 	}
 
 }
+
+var txt = "BAABAACAADAABAAABAABAABAADFFSBAABAADSSSSSSSSSSSSSSDDSFFBAABASDDBAABAASFDSFBAABAASSDDBAABA";
+var pat = "BAABA";
+RabinKarp(txt, pat);
