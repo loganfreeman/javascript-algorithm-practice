@@ -126,5 +126,5 @@ var primeUntil = {
 
 
 //console.log(isPrime2(31));
-console.log(generatebigPrime(2 <<27, 2<<28));
+//console.log(generatebigPrime(2 <<27, 2<<28));
 module.exports = primeUntil;

@@ -42,7 +42,7 @@
 
 var primerUntil = require("./listPrimes.js");
 
-var RabinKarp = function(text, pattern) {
+function RabinKarp(text, pattern) {
 
 	// correctly calculates a mod b even if a < 0
 	function int_mod(a, b) {
