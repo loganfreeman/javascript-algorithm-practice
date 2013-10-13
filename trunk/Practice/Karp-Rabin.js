@@ -63,13 +63,13 @@ function RabinKarp(text, pattern) {
 	// calculate the hash value of the pattern
 	var hp = 0;
 	for ( var i = 0; i < m; i++)
-		hp = int_mod(hp * B + pattern[i], M);
+		hp = int_mod(hp * B + pattern[i].charCodeAt(0), M);
 
 	// calculate the hash value of the first segment
 	// of the text of length m
 	ht = 0;
 	for (i = 0; i < m; i++)
-		ht = int_mod(ht * B + text[i], M);
+		ht = int_mod(ht * B + text[i].charCodeAt(0), M);
 
 	if (ht == hp) {
 		// check character by character if the first
@@ -91,9 +91,9 @@ function RabinKarp(text, pattern) {
 	// of length m; E = (Bm-1) modulo M
 	for (i = m; i < n; i++) {
 		var E = Math.pow(B, m -1) % M;
-		ht = int_mod(ht - int_mod(text[i - m] * E, M), M);
+		ht = int_mod(ht - int_mod(text[i - m].charCodeAt(0) * E, M), M);
 		ht = int_mod(ht * B, M);
-		ht = int_mod(ht + text[i], M);
+		ht = int_mod(ht + text[i].charCodeAt(0), M);
 
 		if (ht == hp) {
 			// check character by character if the
