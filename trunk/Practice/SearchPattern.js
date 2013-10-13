@@ -64,7 +64,7 @@ var search = function(pat, txt) {
 	}
 };
 
-var txt = "AABAACAADAABAAABAA";
-var pat = "AABA";
+var txt = "BAABAACAADAABAAABAABAABAADFFSBAABAADSSSSSSSSSSSSSSDDSFFBAABASDDBAABAASFDSFBAABAASSDDBAABA";
+var pat = "BAABA";
 search(pat, txt);
 module.exports = search;
