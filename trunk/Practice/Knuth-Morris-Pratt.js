@@ -1,5 +1,6 @@
 /**
- * When shifting, it is reasonable to expect that a prefix v of the pattern matches some suffix of the portion u of the text. The longest such prefix v is called the border of u (it occurs at both ends of u). This introduces the notation: let mpNext[i] be the length of the longest border of x[0 .. i-1] for 0 < i leq m. 
+ * 
+ * When shifting, it is reasonable to expect that a prefix v of the pattern matches some suffix of the portion u of the text. Moreover, if we want to avoid another immediate mismatch, the character following the prefix v in the pattern must be different from a. The longest such prefix v is called the tagged border of u (it occurs at both ends of u followed by different characters in x).
  * @param x
  * @param m
  * @param mpNext
@@ -12,10 +13,15 @@ function preProcess(x, m, mpNext) {
 	while (i < m) {
 		while (j > -1 && x[i] != x[j])
 			j = mpNext[j];
-		mpNext[++i] = ++j;
+		i++;
+		j++;
+		if (x[i] == x[j])
+			mpNext[i] = mpNext[j];
+		else
+			mpNext[i] = j;
 	}
 }
-function MP(pattern, text) {
+function KMP(pattern, text) {
 
 	var mpNext = [];
 	var i, j, m;
@@ -40,5 +46,5 @@ function MP(pattern, text) {
 var txt = "BAABAACAADAABAAABAABAABAADFFSBAABAADSSSSSSSSSSSSSSDDSFFBAABASDDBAABAASFDSFBAABAASSDDBAABA";
 var pat = "BAABA";
 
-MP(pat, txt);
-module.exports = MP;
+KMP(pat, txt);
+module.exports = KMP;
