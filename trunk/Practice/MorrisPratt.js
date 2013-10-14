@@ -17,19 +17,19 @@ function MP(pattern, text) {
 	i = 0, j = 0;
 	m = pattern.length;
 	while (j < text.length) {
-	      while (i > -1 && pattern[i] != text[j])
-	         i = mpNext[i];
-	      i++;
-	      j++;
-	      if (i >= m) {
-	         console.log(j - i);
-	         i = mpNext[i];
-	      }
-	   }
+		while (i > -1 && pattern[i] != text[j])
+			i = mpNext[i];
+		i++;
+		j++;
+		if (i >= m) {
+			console.log(j - i);
+			i = mpNext[i];
+		}
+	}
 
 }
 
-//MP("ABABCD", "ABCABCDABABCDABCDABDE");
+// MP("ABABCD", "ABCABCDABABCDABCDABDE");
 
 var txt = "BAABAACAADAABAAABAABAABAADFFSBAABAADSSSSSSSSSSSSSSDDSFFBAABASDDBAABAASFDSFBAABAASSDDBAABA";
 var pat = "BAABA";
