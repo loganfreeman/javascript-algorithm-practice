@@ -121,7 +121,8 @@ var primeUntil = {
 	listPrimes : listPrimes,
 	isPrime : isPrime,
 	listPrimesFast: listPrimesFast,
-	generatebigPrime: generatebigPrime
+	generatebigPrime: generatebigPrime,
+	getRandomInt: getRandomInt
 }
 
 
