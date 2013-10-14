@@ -5,6 +5,12 @@ var bubbleSort = require("./bubble-sort.js");
 var primerUntil = require("./listPrimes.js");
 var tree = new BinarySearchTree();
 tree.add(3).add(5).add(7).add(6).add(4).add(13).add(23).add(34);
+var serializedTree = tree.writeBinaryTree();
+console.log(serializedTree);
+var deserializedTree = BinarySearchTree.readBinaryTree(serializedTree);
+console.log(deserializedTree.toString());
+
+console.log(deserializedTree.writeBinaryTree());
 //console.log(tree.toString());
 var lca = tree.LCA(tree._root, 7, 13);
 console.log("lowest common ancestor:"+lca.value);

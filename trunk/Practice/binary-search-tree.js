@@ -56,6 +56,10 @@ BinarySearchTree.prototype = {
 		return this._root;
 	},
 
+	setRoot : function(node) {
+		this._root = node;
+	},
+
 	// -------------------------------------------------------------------------
 	// Private members
 	// -------------------------------------------------------------------------
@@ -405,6 +409,41 @@ BinarySearchTree.prototype = {
 
 		return list;
 	},
+
+	writeBinaryTree : function() {
+		var that = this;
+
+		function _preOrderTraverse(process) {
+
+			// helper function
+			function preOrder(node) {
+				// call the process method on this node
+				process.call(this, node);
+
+				if (node) {
+					// traverse the left subtree
+					preOrder(node.left);
+
+					// traverse the right subtree
+					preOrder(node.right);
+				}
+
+			}
+
+			// start with the root
+			preOrder(that._root);
+		}
+
+		var ret = "";
+		_preOrderTraverse(function(node) {
+			if (node)
+				ret += node.value + " ";
+			else
+				ret += "# ";
+		});
+		return ret;
+	},
+
 	preOrderTraverse : function(process) {
 
 		// helper function
@@ -434,7 +473,7 @@ BinarySearchTree.prototype = {
 		function preOrder(node) {
 			if (node) {
 				var temp = [];
-				for (i = 0; i < depth; i++) {
+				for (var i = 0; i < depth; i++) {
 					temp[temp.length] = "*";
 				}
 				temp[temp.length] = node.value;
@@ -473,8 +512,7 @@ BinarySearchTree.prototype = {
 	countMatchesPQ : function(root, p, q) {
 		if (!root)
 			return 0;
-		var matches = this.countMatchesPQ(root.left, p, q)
-				+ this.countMatchesPQ(root.right, p, q);
+		var matches = this.countMatchesPQ(root.left, p, q) + this.countMatchesPQ(root.right, p, q);
 		if (root.value == q || root.value == p)
 			return 1 + matches;
 		else
@@ -504,31 +542,56 @@ BinarySearchTree.sortedArrayToBST = function(arr, start, end) {
 	// same as (start+end)/2, avoids overflow.
 	var mid = Math.floor(start + (end - start) / 2);
 	var node = new BinarySearchTree(arr[mid]);
-	node.root().left = BinarySearchTree.sortedArrayToBST(arr, start, mid - 1).root();
-	node.root().right = BinarySearchTree.sortedArrayToBST(arr, mid + 1, end).root();
+	node.root().left = BinarySearchTree.sortedArrayToBST(arr, start, mid - 1)
+			.root();
+	node.root().right = BinarySearchTree.sortedArrayToBST(arr, mid + 1, end)
+			.root();
 	return node;
 };
 
+BinarySearchTree.readBinaryTree = function(str) {
+	var arr = str.split(" ");
+	function _readTree(tokenArr) {
+		var token = tokenArr.shift();
+		if (!isNaN(token)) {
+			var p = {
+				value : token,
+				left : null,
+				right : null
+			};
+			p.left = _readTree(tokenArr);
+			p.right = _readTree(tokenArr);
+			return p;
+		} else
+			return null;
+	}
+	var node = _readTree(arr);
+	var ret = new BinarySearchTree();
+	ret.setRoot(node);
+	return ret;
 
-BinarySearchTree.findLargestBST = function(bt){
+};
+
+BinarySearchTree.findLargestBST = function(bt) {
 	var maxNodes = 0;
 	var INT_MIN = -9999;
 	var INT_MAX = 9999;
-	if(!bt) return null;
+	if (!bt)
+		return null;
 	var tree = new BinarySearchTree();
-	function findBSTRecursive(node, min, max){
-		if(!node) return 0;
-		if(min < node.data && node.data < max){
-			var leftNodes = findBSTRecursive(node.left, min, node.data);			
+	function findBSTRecursive(node, min, max) {
+		if (!node)
+			return 0;
+		if (min < node.data && node.data < max) {
+			var leftNodes = findBSTRecursive(node.left, min, node.data);
 			var rightNodes = findBSTRecursive(node.right, node.data, max);
-			if(leftNodes + rightNodes + 1 > maxNodes){
+			if (leftNodes + rightNodes + 1 > maxNodes) {
 				maxNodes = leftNodes + rightNodes + 1;
 			}
 			return leftNodes + rightNodes + 1;
-			
-		}
-		else{
-			findBSTRecursive(node, INT_MIN, INT_MAX );
+
+		} else {
+			findBSTRecursive(node, INT_MIN, INT_MAX);
 			return 0;
 		}
 	}
