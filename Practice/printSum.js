@@ -37,9 +37,33 @@ function _solve(target, sum, candidates, sz, index, n) {
 	}
 }
 
-function solve(target, candidates, sz) {
-	var index = [];
-	_solve(target, 0, candidates, sz, index, 0);
+function _solve2(target, sum, candidates, sz, index, n) {
+
+	
+
+	var _sum = sum + candidates[index[n]];
+	
+	if (_sum > target)
+		return;
+	if (_sum === target)
+		printSum(candidates, index);
+
+	for ( var i = index[n] + 1; i < sz; i++) {
+		
+		index[n + 1] = i;
+
+		_solve2(target, _sum, candidates, sz, index.slice(), n + 1);
+	}
 }
 
-solve(8, [ 1, 10, 2, 7, 6, 5 ], 6);
+
+function solve(target, candidates, sz) {
+	var index;
+	for(var i = 0; i< candidates.length; i++){
+		 index = [];
+		 index[0] = i;
+		_solve2(target, 0, candidates, sz, index, 0);
+	}
+}
+
+solve(8, [ 10, 1, 2, 7, 6, 1, 5 ], 7);
