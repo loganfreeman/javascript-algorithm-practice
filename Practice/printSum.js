@@ -66,4 +66,4 @@ function solve(target, candidates, sz) {
 	}
 }
 
-solve(8, [ 10, 1, 2, 7, 6, 1, 5 ], 7);
+solve(10, [ 10, 1, 2, 7, 6, 3, 5 ], 7);
