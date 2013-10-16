@@ -11,3 +11,20 @@ function randomString(bits){
 }
 console.log(0x3F);
 console.log(randomString(30))
+
+var test = function(){
+	
+	/*
+	 hello world
+	 */
+};
+
+var s = new String(test);
+console.log(s.substring(s.indexOf("/*") + 3, s.lastIndexOf("*/")));
+
+
+Function.prototype.getstr = function() {  
+    var lines = new String(this);  
+    lines = lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));  
+    return lines;  
+};
