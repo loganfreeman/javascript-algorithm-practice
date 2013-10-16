@@ -27,4 +27,6 @@ function isSubsetSum(set, n, sum)
 }
 
 var result = isSubsetSum([3, 34, 4, 12, 5, 2], 6, 9);
+
+
 console.log(result);
