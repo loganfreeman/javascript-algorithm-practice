@@ -1,31 +1,19 @@
 // http://algorithmguru.com/content/?viewpage=./contentfiles/showccode.php&id=119&type=r
 
-var printf = require("./sprintf.js").printf;
+var sprintf = require("./sprintf.js").printf;
+
+var createMatrix = require("./CreateArray.js").createMatrix;
 var Max;
 
-var M = [];
+var M = createMatrix(10,10, {});
+
+
 
 function Floyd() {
 	var i, j, k, temp;
 	for (k = 0; k <= Max; k++) {
 		for (i = 0; i <= Max; i++) {
-			for (j = 0; j <= Max; j++) {
-				if (!M[i])
-					M[i] = [];
-				if (!M[i][k])
-					M[i][k] = {};
-				if (!M[k])
-					M[k] = [];
-				if (!M[k][j])
-					M[k][j] = {};
-				if (!M[i])
-					M[i] = [];
-				if (!M[i][j])
-					M[i][j] = {};
-				if (!M[j])
-					M[j] = [];
-				if (!M[j][i])
-					M[j][i] = {};
+			for (j = 0; j <= Max; j++) {				
 				temp = M[i][k].path * M[k][j].path;
 				if (temp) {
 					if (M[i][k].path < 0 || M[k][j].path < 0)
@@ -45,12 +33,14 @@ function Floyd() {
 function Cal() {
 	var i, j;
 	Floyd();
+	var s = "";
 	for (i = 0; i <= Max; i++) {
-		printf("%d", M[i][0].path);
+		sprintf("%d", M[i][0].path);
 		for (j = 1; j <= Max; j++)
-			printf(" %d", M[i][j].path);
-		printf("\n");
+			s += sprintf(" %d", M[i][j].path);
+		s += sprintf("\n");
 	}
+	console.log(s);
 }
 
 function main(s) {
@@ -61,10 +51,6 @@ function main(s) {
 	Max = -1;
 	for (i = 1; i < n; i = i + 2) {
 		u = arr[i], v = arr[i + 1];
-		if (!M[u])
-			M[u] = [];
-		if (!M[u][v])
-			M[u][v] = {};
 		M[u][v].path = 1;
 		if (u > Max)
 			Max = u;
@@ -73,15 +59,10 @@ function main(s) {
 	}
 	for (i = 0; i <= Max; i++)
 		for (j = 0; j <= Max; j++) {
-			if (!M[i])
-				M[i] = [];
-			if (!M[i][j])
-				M[i][j] = {};
 			if (!M[i][j].path)
 				M[i][j].path = 0;
 		}
 
-	printf("matrix for city %d\n", m++);
 	Cal();
 	for (i = 0; i <= Max; i++)
 		for (j = 0; j <= Max; j++)
