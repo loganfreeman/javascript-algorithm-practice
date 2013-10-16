@@ -35,10 +35,10 @@ function Cal() {
 	Floyd();
 	var s = "";
 	for (i = 0; i <= Max; i++) {
-		sprintf("%d", M[i][0].path);
+		s += M[i][0].path;
 		for (j = 1; j <= Max; j++)
-			s += sprintf(" %d", M[i][j].path);
-		s += sprintf("\n");
+			s += " "+M[i][j].path;
+		s += "\n";
 	}
 	console.log(s);
 }
