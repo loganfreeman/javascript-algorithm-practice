@@ -28,3 +28,6 @@ Function.prototype.getstr = function() {
     lines = lines.substring(lines.indexOf("/*") + 3, lines.lastIndexOf("*/"));  
     return lines;  
 };
+
+String.prototype.$ = function(r, v){ return this.replace(new RegExp('<!-- ' + r + ' -->', 'g'), v);};
+String.prototype.trim = function() { return this.replace(/^\s+/g,"").replace(/\s+$/g,""); };
