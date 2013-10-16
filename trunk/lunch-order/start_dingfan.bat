@@ -1,0 +1,2 @@
+node gmserver.js
+@pause
