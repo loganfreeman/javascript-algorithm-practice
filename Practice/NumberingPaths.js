@@ -49,7 +49,7 @@ function main(s) {
 	var arr = s.split(" ");
 	n = arr[0];
 	Max = -1;
-	for (i = 1; i < n; i = i + 2) {
+	for (i = 1; i < arr.length; i = i + 2) {
 		u = arr[i], v = arr[i + 1];
 		M[u][v].path = 1;
 		if (u > Max)
