@@ -1,4 +1,6 @@
 // http://algorithmguru.com/content/?viewpage=./contentfiles/showccode.php&id=119&type=r
+
+var printf = require("./sprintf.js").printf;
 var Max;
 
 var M;
@@ -32,7 +34,7 @@ function Cal() {
 	for(i = 0; i<= Max; i++) {
 		printf("%d",M[i][0]);
 		for(j = 1; j<= Max; j++)
-			printf(" %d",M[i][j]);
+			sprintf(" %d",M[i][j]);
 		printf("\n");
 	}
 }

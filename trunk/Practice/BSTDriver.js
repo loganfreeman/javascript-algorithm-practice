@@ -3,6 +3,8 @@ var DoublyLinkedList = require("./doubly-linked-list");
 var LinkedList = require("./linked-list");
 var bubbleSort = require("./bubble-sort.js");
 var primerUntil = require("./listPrimes.js");
+
+var printf = require("./sprintf.js").printf;
 var tree = new BinarySearchTree();
 tree.add(3).add(5).add(7).add(6).add(4).add(13).add(23).add(34);
 var serializedTree = tree.writeBinaryTree();
@@ -34,3 +36,10 @@ console.log(singleNodeTree.toString());
 //console.log(primerUntil.listPrimesFast(10000).join(" "));
 
 console.log(primerUntil.generatebigPrime(2 <<27, 2<<28));
+
+printf("%7.3f<br />", 123.456);
+
+
+
+
+

@@ -4,7 +4,10 @@
 		}
 		return sprintf.format.call(null, sprintf.cache[arguments[0]], arguments);
 	};
-
+	var printf = function(){
+		var args = [].slice.apply(arguments);
+		console.log(sprintf.apply(null, args));
+	};
 	sprintf.format = function(parse_tree, argv) {
 		var cursor = 1, tree_length = parse_tree.length, node_type = '', arg, output = [], i, k, match, pad, pad_character, pad_length;
 		for (i = 0; i < tree_length; i++) {
@@ -129,7 +132,7 @@
 	var ctx = function(){};
 	ctx.sprintf = sprintf;
 	ctx.vsprintf = vsprintf;
+	ctx.printf = printf;
 	
-	console.log(sprintf("%7.3f<br />", 123.456));
-	
+	//console.log(sprintf("%7.3f<br />", 123.456));
 	module.exports = ctx;
