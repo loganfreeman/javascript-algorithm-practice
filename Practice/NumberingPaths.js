@@ -5,7 +5,7 @@ var sprintf = require("./sprintf.js").printf;
 var createMatrix = require("./CreateArray.js").createMatrix;
 var Max;
 
-var M = createMatrix(5,5, {path : 0});
+var M = createMatrix(10,10, {path : 0});
 
 
 
@@ -40,6 +40,8 @@ function Cal() {
 			s += " "+M[i][j].path;
 		s += "\n";
 	}
+	
+	s += "\n\n";
 	console.log(s);
 }
 
@@ -68,4 +70,10 @@ function main(s) {
 }
 
 var s = "7 0 1 0 2 0 4 2 4 2 3 3 1 4 3";
+main(s);
+
+s = "5 0 2 0 1 1 5 2 5 2 1";
+main(s);
+
+s = "9 0 1 0 2 0 3 0 4 1 4 2 1 2 0 3 0 3 1";
 main(s);
