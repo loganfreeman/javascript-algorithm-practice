@@ -99,7 +99,12 @@ function kdTree(points, metric, dimensions) {
 			dest.right = self.toJSON(src.right);
 		return dest;
 	};
-
+	/**
+	 * 
+	 * One adds a new point to a k-d tree in the same way as one adds an element to any other search tree. First, traverse the tree, starting from the root and moving to either the left or the right child depending on whether the point to be inserted is on the "left" or "right" side of the splitting plane.
+	 * Once you get to the node under which the child should be located, add the new point as either the left or right child of the leaf node, again depending on which side of the node's splitting plane contains the new node.
+	 * Adding points in this manner can cause the tree to become unbalanced, leading to decreased tree performance. The rate of tree performance degradation is dependent upon the spatial distribution of tree points being added, and the number of points added in relation to the tree size.
+	 */
 	this.insert = function(point) {
 		function innerSearch(node, parent) {
 
