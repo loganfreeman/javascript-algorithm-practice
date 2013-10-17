@@ -30,8 +30,15 @@ function kdTree(points, metric, dimensions) {
 	 *  
 	 *   Points are inserted by selecting the median of the points being put into the subtree, with respect to their coordinates in the axis being used to create the splitting plane. 
 	 *   (Note the assumption that we feed the entire set of n points into the algorithm up-front.)
+	 *   
+	 *   This method leads to a balanced k-d tree, in which each leaf node is about the same distance from the root. 
+	 *   However, balanced trees are not necessarily optimal for all applications.
+	 *   
+	 *   This algorithm creates the invariant that for any node, all the nodes in the left subtree are on one side of a splitting plane, and all the nodes in the right subtree are on the other side.
+	 *   Points that lie on the splitting plane may appear on either side.
 	 */
 	function buildTree(points, depth, parent) {
+		//  // Select axis based on depth so that axis cycles through all valid values
 		var dim = depth % dimensions.length, median, node;
 
 		if (points.length === 0) {
@@ -40,7 +47,7 @@ function kdTree(points, metric, dimensions) {
 		if (points.length === 1) {
 			return new Node(points[0], dim, parent);
 		}
-
+		// Sort point list and choose median as pivot element
 		points.sort(function(a, b) {
 			return a[dimensions[dim]] - b[dimensions[dim]];
 		});
