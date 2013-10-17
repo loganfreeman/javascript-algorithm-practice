@@ -165,7 +165,7 @@ function kdTree(points, metric, dimensions) {
 
 		function removeNode(node) {
 			var nextNode, nextObj, pDimension;
-
+			// find the point with the maximum x value from the subtree
 			function findMax(node, dim) {
 				var dimension, own, left, right, max;
 
@@ -195,7 +195,7 @@ function kdTree(points, metric, dimensions) {
 				}
 				return max;
 			}
-
+			// find the point with the minimum x value from the subtree
 			function findMin(node, dim) {
 				var dimension, own, left, right, min;
 
