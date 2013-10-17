@@ -1,4 +1,3 @@
-
 function Node(obj, dimension, parent) {
 	this.obj = obj;
 	this.left = null;
