@@ -263,7 +263,9 @@ function kdTree(points, metric, dimensions) {
 
 		removeNode(node);
 	};
-
+	/**
+	 * Starting with the root node, the algorithm moves down the tree recursively, in the same way that it would if the search point were being inserted (i.e. it goes left or right depending on whether the point is less than or greater than the current node in the split dimension).
+	 */
 	this.nearest = function(point, maxNodes, maxDistance) {
 		var i, result, bestNodes;
 
@@ -291,7 +293,8 @@ function kdTree(points, metric, dimensions) {
 			}
 
 			linearDistance = metric(linearPoint, node.obj);
-
+			
+			// Once the algorithm reaches a leaf node, it saves that node point as the "current best"
 			if (node.right === null && node.left === null) {
 				if (bestNodes.size() < maxNodes
 						|| ownDistance < bestNodes.peek()[1]) {
@@ -314,11 +317,13 @@ function kdTree(points, metric, dimensions) {
 
 			nearestSearch(bestChild);
 
+			// If the current node is closer than the current best, then it becomes the current best.
 			if (bestNodes.size() < maxNodes
 					|| ownDistance < bestNodes.peek()[1]) {
 				saveNode(node, ownDistance);
 			}
 
+			// The algorithm checks whether there could be any points on the other side of the splitting plane that are closer to the search point than the current best.
 			if (bestNodes.size() < maxNodes
 					|| Math.abs(linearDistance) < bestNodes.peek()[1]) {
 				if (bestChild === node.left) {
