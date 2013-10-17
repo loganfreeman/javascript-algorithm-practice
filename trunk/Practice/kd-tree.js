@@ -1,15 +1,4 @@
-/**
- * k-d Tree JavaScript - V 1.0
- *
- * https://github.com/ubilabs/kd-tree-javascript
- *
- * @author Mircea Pricop <pricop@ubilabs.net>, 2012
- * @author Martin Kleppe <kleppe@ubilabs.net>, 2012
- * @author Ubilabs http://ubilabs.net, 2012
- * @license MIT License <http://www.opensource.org/licenses/mit-license.php>
- */
 
-(function(){
   
   function Node(obj, dimension, parent) {
     this.obj = obj;
@@ -480,9 +469,22 @@
   };
 
   this.kdTree = kdTree;
+  
+  var points = [
+                {x: 1, y: 2},
+                {x: 3, y: 4},
+                {x: 5, y: 6},
+                {x: 7, y: 8}
+              ];
 
-  if (typeof exports !== 'undefined') {
-    exports.kdTree = kdTree;
-    exports.BinaryHeap = BinaryHeap;
-  }
-})();
+              var distance = function(a, b){
+                return Math.pow(a.x - b.x, 2) +  Math.pow(a.y - b.y, 2);
+              }
+
+              var tree = new kdTree(points, distance, ["x", "y"]);
+
+              var nearest = tree.nearest({ x: 5, y: 5 }, 2);
+
+              console.log(nearest);
+
+
