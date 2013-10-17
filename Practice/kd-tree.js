@@ -5,11 +5,29 @@ function Node(obj, dimension, parent) {
 	this.parent = parent;
 	this.dimension = dimension;
 }
-
+/**
+ * 
+ * 
+ * A k-d tree, or k-dimensional tree, is a data structure used in computer science for organizing some number of points in a space with k dimensions. 
+ * It is a binary search tree with other constraints imposed on it. K-d trees are very useful for range and nearest neighbor searches. 
+ * 
+ * Each level of a k-d tree splits all children along a specific dimension, using a hyperplane that is perpendicular to the corresponding axis.
+ * 
+ * @param points
+ * @param metric
+ * @param dimensions
+ * @returns
+ */
 function kdTree(points, metric, dimensions) {
 
 	var self = this;
-
+	/**
+	 * 
+	 * At the root of the tree all children will be split based on the first dimension.
+	 *  (i.e. if the first dimension coordinate is less than the root it will be in the left-sub tree and if it is greater than the root it will obviously be in the right sub-tree).
+	 *  Each level down in the tree divides on the next dimension, returning to the first dimension once all others have been exhausted. 
+	 *  The most efficient way to build a k-d tree is to use a partition method like the one Quick Sort uses to place the median point at the root and everything with a smaller one dimensional value to the left and larger to the right. 
+	 */
 	function buildTree(points, depth, parent) {
 		var dim = depth % dimensions.length, median, node;
 
