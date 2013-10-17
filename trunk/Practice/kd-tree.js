@@ -26,7 +26,10 @@ function kdTree(points, metric, dimensions) {
 	 * At the root of the tree all children will be split based on the first dimension.
 	 *  (i.e. if the first dimension coordinate is less than the root it will be in the left-sub tree and if it is greater than the root it will obviously be in the right sub-tree).
 	 *  Each level down in the tree divides on the next dimension, returning to the first dimension once all others have been exhausted. 
-	 *  The most efficient way to build a k-d tree is to use a partition method like the one Quick Sort uses to place the median point at the root and everything with a smaller one dimensional value to the left and larger to the right. 
+	 *  The most efficient way to build a k-d tree is to use a partition method like the one Quick Sort uses to place the median point at the root and everything with a smaller one dimensional value to the left and larger to the right.
+	 *  
+	 *   Points are inserted by selecting the median of the points being put into the subtree, with respect to their coordinates in the axis being used to create the splitting plane. 
+	 *   (Note the assumption that we feed the entire set of n points into the algorithm up-front.)
 	 */
 	function buildTree(points, depth, parent) {
 		var dim = depth % dimensions.length, median, node;
