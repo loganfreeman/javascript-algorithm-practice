@@ -36,6 +36,7 @@ function kdTree(points, metric, dimensions) {
 	 *   
 	 *   This algorithm creates the invariant that for any node, all the nodes in the left subtree are on one side of a splitting plane, and all the nodes in the right subtree are on the other side.
 	 *   Points that lie on the splitting plane may appear on either side.
+	 *   The splitting plane of a node goes through the point associated with that node. (referred to in the code as node.obj).
 	 */
 	function buildTree(points, depth, parent) {
 		//  // Select axis based on depth so that axis cycles through all valid values
