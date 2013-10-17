@@ -137,7 +137,11 @@ function kdTree(points, metric, dimensions) {
 			insertPosition.right = newNode;
 		}
 	};
-
+	/**
+	 * To remove a point from an existing k-d tree, without breaking the invariant, the easiest way is to form the set of all nodes and leaves from the children of the target node, and recreate that part of the tree.
+	 * 
+	 * Another approach is to find a replacement for the point removed.
+	 */
 	this.remove = function(point) {
 		var node;
 
@@ -221,7 +225,7 @@ function kdTree(points, metric, dimensions) {
 				}
 				return min;
 			}
-
+			// For the base case where R is a leaf node, no replacement is required.
 			if (node.left === null && node.right === null) {
 				if (node.parent === null) {
 					self.root = null;
@@ -237,11 +241,12 @@ function kdTree(points, metric, dimensions) {
 				}
 				return;
 			}
-
+			// For the general case, find a replacement point, say p, from the subtree rooted at R. Replace the point stored at R with p. Then, recursively remove p.
+			// For finding a replacement point, if R discriminates on x (say) and R has a right child, find the point with the minimum x value from the subtree rooted at the right child. Otherwise, find the point with the maximum x value from the subtree rooted at the left child.
 			if (node.left !== null) {
-				nextNode = findMax(node.left, node.dimension);
+				nextNode = findMax(node.left, node.dimension); // find the point with the maximum x value from the subtree rooted at the left child
 			} else {
-				nextNode = findMin(node.right, node.dimension);
+				nextNode = findMin(node.right, node.dimension); // find the point with the minimum x value from the subtree rooted at the right child
 			}
 
 			nextObj = nextNode.obj;
@@ -249,7 +254,7 @@ function kdTree(points, metric, dimensions) {
 			node.obj = nextObj;
 
 		}
-
+		// First, find the node R that contains the point to be removed.
 		node = nodeSearch(self.root);
 
 		if (node === null) {
