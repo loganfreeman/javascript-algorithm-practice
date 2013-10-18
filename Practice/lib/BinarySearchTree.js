@@ -52,12 +52,15 @@
 
         };
         /**
+         * In Binary Tree, Inorder successor of a node is the next node in Inorder traversal of the Binary Tree. 
          * Private method to find successor node
          * @param item
          * @param node
          * @return {*}
          */
         var successorNode = function (node) {
+        	//  If right subtree of node is not NULL, then succ lies in right subtree. Do following.
+        	// Go to right subtree and return the node with minimum key value in right subtree.
             if (node && !node.parent) {
                 return minNode(node.rightChild);
             }
@@ -72,6 +75,8 @@
                 if (node.rightChild) {
                     return minNode(node.rightChild);
                 } else {
+                	//  If right sbtree of node is NULL, then succ is one of the ancestors. Do following.
+                	// Travel up using the parent pointer until you see a node which is left child of it’s parent. The parent of such a node is the succ.
                     var p = node.parent;
                     var sp = p ? p.parent : null;
                     while (sp && sp.leftChild !== p) {
