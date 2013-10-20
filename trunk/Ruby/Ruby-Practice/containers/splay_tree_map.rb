@@ -1,4 +1,4 @@
-require 'containers/stack'
+require_relative '../containers/stack'
 =begin rdoc
     A SplayTreeMap is a map that is stored in ascending order of its keys, determined by applying
     the function <=> to compare keys. No duplicate values for keys are allowed, so new values of a key
