@@ -43,3 +43,5 @@ sys.setprofile(profiler)
 # disable profiler
 sys.setprofile(None)
 
+
+print sys.path
