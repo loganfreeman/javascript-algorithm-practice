@@ -31,3 +31,15 @@ else:
     pathmodule = posixpath
 
 print pathmodule
+
+def profiler(frame, event, arg):
+    print event, frame.f_code.co_name, frame.f_lineno, "->", arg
+
+# profiler is activated on the next call, return, or exception
+sys.setprofile(profiler)
+
+
+
+# disable profiler
+sys.setprofile(None)
+
