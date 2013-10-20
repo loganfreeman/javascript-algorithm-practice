@@ -15,6 +15,27 @@ print(s.pop())
 print(s.size())
 
 
+def parChecker(symbolString):
+    s = Stack()
+    balanced = True
+    index = 0
+    while index < len(symbolString) and balanced:
+        symbol = symbolString[index]
+        if symbol == "(":
+            s.push(symbol)
+        else:
+            if s.isEmpty():
+                balanced = False
+            else:
+                s.pop()
+
+        index = index + 1
+
+    if balanced and s.isEmpty():
+        return True
+    else:
+        return False
+
 import sys
 
 print sys.modules.keys()
@@ -36,12 +57,13 @@ def profiler(frame, event, arg):
     print event, frame.f_code.co_name, frame.f_lineno, "->", arg
 
 # profiler is activated on the next call, return, or exception
-sys.setprofile(profiler)
+# sys.setprofile(profiler)
 
-
+print(parChecker('((()))'))
+print(parChecker('(()'))
 
 # disable profiler
-sys.setprofile(None)
+# sys.setprofile(None)
 
 
-print sys.path
+# print sys.path
