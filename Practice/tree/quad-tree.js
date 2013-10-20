@@ -356,4 +356,6 @@ QuadTree.prototype._grow = function(leaf) {
     }
 }
 
+
+//console.log(new QuadTree());
 module.exports = QuadTree;
