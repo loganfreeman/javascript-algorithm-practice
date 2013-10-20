@@ -1,4 +1,4 @@
-require 'containers/deque'
+require_relative '../containers/deque'
 =begin rdoc
     A Stack is a container that keeps elements in a last-in first-out (LIFO) order. There are many
     uses for stacks, including prefix-infix-postfix conversion and backtracking problems.

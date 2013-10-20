@@ -8,14 +8,14 @@
 
   To avoid typing Containers::xxx to initialize containers, include the Containers module.
 
-    require 'algorithms'
+    require_relative 'algorithms'
     include Containers
 
     tree = RBTreeMap.new
 
   instead of:
 
-    require 'algorithms'
+    require_relative 'algorithms'
 
     tree = Containers::RBTreeMap.new
 
@@ -51,16 +51,16 @@
 module Algorithms; end
 module Containers; end
 
-require 'algorithms/search'
-require 'algorithms/sort'
-require 'algorithms/string'
-require 'containers/heap'
-require 'containers/stack'
-require 'containers/deque'
-require 'containers/queue'
-require 'containers/priority_queue'
-require 'containers/rb_tree_map'
-require 'containers/splay_tree_map'
-require 'containers/suffix_array'
-require 'containers/trie'
-require 'containers/kd_tree'
+require_relative 'algorithms/search'
+require_relative 'algorithms/sort'
+require_relative 'algorithms/string'
+require_relative 'containers/heap'
+require_relative 'containers/stack'
+require_relative 'containers/deque'
+require_relative 'containers/queue'
+require_relative 'containers/priority_queue'
+require_relative 'containers/rb_tree_map'
+require_relative 'containers/splay_tree_map'
+require_relative 'containers/suffix_array'
+require_relative 'containers/trie'
+require_relative 'containers/kd_tree'

@@ -1,4 +1,4 @@
-require 'containers/stack'
+require_relative '../containers/stack'
 =begin rdoc
     A RBTreeMap is a map that is stored in sorted order based on the order of its keys. This ordering is
     determined by applying the function <=> to compare the keys. No duplicate values for keys are allowed,
