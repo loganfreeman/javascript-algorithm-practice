@@ -1,5 +1,8 @@
 load "BinarySearchTree.rb"
 
+
+puts $LOAD_PATH
+
 bst = BinarySearchTree.new(10)
 bst.insert(11)
 bst.insert(9)
