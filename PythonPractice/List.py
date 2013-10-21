@@ -131,5 +131,13 @@ class OrderedList:
             current = current.getNext()
 
         return count
-            
+    
+    def toArray(self):
+        ret = [];
+        current = self.head
+        while current != None:
+            ret.append(current.data)
+            current = current.getNext()
+        
+        return ret;
     
