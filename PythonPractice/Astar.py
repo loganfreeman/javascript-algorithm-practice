@@ -66,7 +66,8 @@ def pathFind(the_map, n, m, dirs, dx, dy, xA, yA, xB, yB):
         n0 = node(n1.xPos, n1.yPos, n1.distance, n1.priority)
         x = n0.xPos
         y = n0.yPos
-        heappop(pq[pqi]) # remove the node from the open list
+        heappop(pq[pqi]) 
+        # remove the node from the open list
         open_nodes_map[y][x] = 0
         closed_nodes_map[y][x] = 1 # mark it on the closed nodes map
 
