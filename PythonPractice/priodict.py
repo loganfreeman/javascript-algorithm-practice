@@ -18,8 +18,8 @@ until the heap is rebuilt.'''
             raise IndexError, "smallest of empty priorityDictionary"
         heap = self.__heap
         while heap[0][1] not in self or self[heap[0][1]] != heap[0][0]:
-            lastItem = heap.pop()
-            insertionPoint = 0
+            lastItem = heap.pop() # remove the last item from the heap
+            insertionPoint = 0 # 
             while 1:
                 smallChild = 2*insertionPoint+1
                 if smallChild+1 < len(heap) and \
@@ -28,7 +28,7 @@ until the heap is rebuilt.'''
                 if smallChild >= len(heap) or lastItem <= heap[smallChild]:
                     heap[insertionPoint] = lastItem
                     break
-                heap[insertionPoint] = heap[smallChild]
+                heap[insertionPoint] = heap[smallChild] # perc-up the smaller children, the effect is remove the first element from the heap
                 insertionPoint = smallChild
         return heap[0][1]
     
