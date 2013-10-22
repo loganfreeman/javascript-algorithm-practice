@@ -5,12 +5,15 @@ def preProcess(x, m, mpNext):
     while (i < m):
         while (j > -1 and x[i] != x[j]):
             j = mpNext[j];
-        mpNext[++i] = ++j;
-    
+            
+        i += 1;
+        j += 1;
+        mpNext[i] = j;
+ 
 
 def MP(pattern, text):
 
-    mpNext = [None]*len(pattern);
+    mpNext = [None]*(len(pattern) + 1);
     preProcess(pattern, len(pattern), mpNext);
     i = 0; j = 0;
     m = len(pattern);
