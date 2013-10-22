@@ -37,3 +37,22 @@ def bt(m, n):
 
 
 print bt(5, 6);
+
+# The total unique paths at grid (r,c) is equal to the sum of total unique paths from grid to the right (r,c+1) and the grid below (r+1,c).
+def dp(m, n):
+    mat =[];
+    row = [0]*(M_MAX+2);
+    for i in range(M_MAX+2):
+        mat.append(list(row))
+    mat[m][n+1] = 1;
+    
+    for r in range(m, 0, -1):
+        for c in range(n, 0, -1):
+            mat[r][c] = mat[r+1][c] + mat[r][c+1];
+    
+    return mat[1][1];
+
+
+print dp(5, 6);
+
+print [str(x) for x in range(10,0,-1)]
