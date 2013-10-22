@@ -20,3 +20,5 @@ def base10toN(num, base):
         currentnum = currentnum // base
         converted_string = chr(48 + mod + 7*(mod > 10)) + converted_string
     return converted_string
+
+
