@@ -27,3 +27,10 @@ def selsort(l):
 print selsort([ 5, 1, 7, 0, -3, -10, 10, -6, 1, 0, 2, 4, -2, 6, 5, 8, 2])
 test_list = [ 5, 1, 7, 0, -3, -10, 10, -6, 1, 0, 2, 4, -2, 6, 5, 8, 2]
 print list(enumerate(test_list))
+
+selsort2 = (lambda l: [] if not l else
+            (lambda (idx, v): [v] + selsort2(l[:idx] + l[idx + 1:]))
+            (min(enumerate(l), key=lambda(i, x): x)))
+
+
+print selsort2(test_list)
