@@ -152,7 +152,7 @@ class Broke( Normal ):
 
     def cashPaycheck(self, amount): 
         piggyBankAmt = min ( amount, max(-self.piggyBank, 0.0))
-        rmngAmount = amount - piggyBankAmount
+        rmngAmount = amount - piggyBankAmt
         self.pocketBook += .40 * rmngAmount
         self.piggyBank += (.60 * rmngAmount + piggyBankAmt)
 
