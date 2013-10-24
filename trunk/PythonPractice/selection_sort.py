@@ -15,3 +15,13 @@ selection_sort = lambda sort_list: reduce(
 test_list = [ 5, 1, 7, 0, -3, -10, 10, -6, 1, 0, 2, 4, -2, 6, 5, 8, 2]
 print test_list
 print selection_sort(test_list)
+
+
+from operator import itemgetter
+def selsort(l):
+    if not l: return []
+    idx, v = min(enumerate(l), key=itemgetter(1))
+    return [v] + selsort(l[:idx] + l[idx + 1:])
+
+
+print selsort([ 5, 1, 7, 0, -3, -10, 10, -6, 1, 0, 2, 4, -2, 6, 5, 8, 2])
