@@ -1,11 +1,13 @@
 import types
 
 class Tracing:
+    # The __init__ method is invoked when a new Tracing instance is created, e.g. the definition of class MyTracedClass later in the example.
     def __init__(self, name, bases, namespace):
         """Create a new class."""
         self.__name__ = name
         self.__bases__ = bases
         self.__namespace__ = namespace
+    # The __call__ method is invoked to return an instance of the class Instance
     def __call__(self):
         """Create a new instance."""
         return Instance(self)
