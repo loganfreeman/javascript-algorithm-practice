@@ -1,3 +1,17 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-15 -*-
+"""
+When it sees a class definition, Python executes it to collect the attributes (including methods) into a dictionary.
+When the class definition is over, Python determines the metaclass of the class. Let’s call it Meta.
+Eventually, Python executes Meta(name, bases, dct), where:
+1. Meta is the metaclass, so this invocation is instantiating it.
+2. name is the name of the newly created class
+3. bases is a tuple of the class’s base classes
+4. dct maps attribute names to objects, listing all of the class’s attributes
+
+if either a class or one of its bases has a __metaclass__ attribute, it’s taken as the metaclass. Otherwise, type is the metaclass.
+
+"""
 import types
 
 class Tracing:
@@ -45,3 +59,4 @@ aninstance = MyTracedClass()
 aninstance.method1(10)
 
 print "the answer is %d" % aninstance.method2()
+
