@@ -26,6 +26,7 @@ class Tracing:
         self.__namespace__ = namespace
     # The __call__ method is invoked to return an instance of the class Instance
     # __call__ is called when the already-created class is "called" to instantiate a new object. 
+    # By overriding __call__() in the metaclass, the creation of instances are intercepted. Instance creation is bypassed if one already exists.
     def __call__(self):
         """Create a new instance."""
         return Instance(self)
