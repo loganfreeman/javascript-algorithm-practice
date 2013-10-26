@@ -38,24 +38,26 @@ def editDistance(s1, s2):
     if s1 == s2: return 0 # this is fast in Python
     if len(s1) > len(s2):
         s1, s2 = s2, s1
+    # create two work vectors of integer distances
     r1 = range(len(s2) + 1)
     r2 = [0] * len(r1)
     i = 0
     for c1 in s1:
         r2[0] = i + 1 # the distance of any first string to an empty second string
         j = 0
+        # calculate v1 (current row distances) from the previous row v0
         for c2 in s2:
             if c1 == c2:
-                r2[j+1] = r1[j] # d[i, j] := d[i-1, j-1]
+                r2[j+1] = r1[j] # r[i+1, j+1] := r[i, j]
             else:
-                a1 = r2[j] 
-                a2 = r1[j]
-                a3 = r1[j+1]
+                a1 = r2[j] # r2[i+1, j]
+                a2 = r1[j] # r1[i, j]
+                a3 = r1[j+1] # r1[i, j+1]
                 if a1 > a2:
-                    if a2 > a3:
-                        r2[j+1] = 1 + a3
-                    else:
-                        r2[j+1] = 1 + a2
+                    if a2 > a3: # a1 > a2 > a3
+                        r2[j+1] = 1 + a3 # r2[i+1, j+1] = r1[i, j+1] + 1
+                    else: # a1 > a3 > a2
+                        r2[j+1] = 1 + a2 # r2[i+1, j+1] = r1[i, j] + 1
                 else:
                     if a1 > a3:
                         r2[j+1] = 1 + a3
