@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 """
 In Python 2.x, the metaclass hook is a static field in the class called __metaclass__. 
 In the ordinary case, this is not assigned so Python just uses type to create the class. 
@@ -37,3 +40,4 @@ class Simple2(object):
 
 simple = Simple2()
 print simple.uses_metaclass()
+
