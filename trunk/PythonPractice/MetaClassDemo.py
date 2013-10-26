@@ -30,6 +30,8 @@ class Tracing:
         """Create a new instance."""
         return Instance(self)
 
+    
+    
 class Instance:
     def __init__(self, klass):
         self.__klass__ = klass
@@ -50,6 +52,8 @@ class BoundMethod:
         print "calling", self.function, "for", self.instance, "with", args
         return apply(self.function, (self.instance,) + args)
 
+
+# Tracing is the metaclass of Trace
 Trace = Tracing('Trace', (), {})
 
 class MyTracedClass(Trace):
