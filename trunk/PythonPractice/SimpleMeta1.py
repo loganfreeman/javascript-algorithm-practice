@@ -4,7 +4,10 @@ In the ordinary case, this is not assigned so Python just uses type to create th
 But if you define __metaclass__ to point to a callable, Python will call __metaclass__() after the initial creation of the class object, passing in the class object, the class name, the list of base classes and the namespace dictionary.
 
 """
-class SimpleMeta1(type):
+class SimpleMeta1(type):   
+    """
+    By convention, when defining metaclasses cls is used rather than self as the first argument to all methods except __new__() (which uses mcl, for reasons explained later). cls is the class object that is being modified.
+    """
     def __init__(cls, name, bases, nmspc):
         super(SimpleMeta1, cls).__init__(name, bases, nmspc)
         cls.uses_metaclass = lambda self : "Yes!"
