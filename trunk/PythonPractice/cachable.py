@@ -4,6 +4,7 @@ def cachable(func):
     -- No keyword args allowed.
     '''
     func.cache = {}
+    print func.__name__
     def out(*args):
         if args not in func.cache:
             func.cache[args] = func(*args)
@@ -22,8 +23,9 @@ def fibonacci(n):
 
 import time
 start = time.time()
-for i in range(10000):
+for i in range(100):
     print i, fibonacci(i)
 print 'Time:', time.time() - start
+
 
 
