@@ -22,3 +22,18 @@ simple = Simple1()
 print([m for m in dir(simple) if not m.startswith('__')])
 # A new method has been injected by the metaclass:
 print simple.uses_metaclass()
+
+
+class Simple2(object):
+    class __metaclass__(type):
+        def __init__(cls, name, bases, nmspc):
+            # This won't work:
+            # super(__metaclass__, cls).__init__(name, bases, nmspc)
+            # Less-flexible specific call:
+            # The compiler won’t accept the super() call because it says __metaclass__ hasn’t been defined, forcing us to use the specific call to type.__init__()
+            type.__init__(cls, name, bases, nmspc)
+            cls.uses_metaclass = lambda self : "Yes!"
+
+
+simple = Simple2()
+print simple.uses_metaclass()
