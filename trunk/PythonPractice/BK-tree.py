@@ -62,7 +62,7 @@ def editDistance(s1, s2):
                     else:
                         r2[j+1] = 1 + a1
             j += 1
-        aux = r1; r1 = r2; r2 = aux
+        aux = r1; r1 = r2; r2 = aux # swap r1 and r2
         i += 1
     return r1[-1]
 
