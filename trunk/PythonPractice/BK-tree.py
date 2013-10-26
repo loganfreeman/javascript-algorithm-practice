@@ -48,7 +48,7 @@ def editDistance(s1, s2):
             if c1 == c2:
                 r2[j+1] = r1[j] # d[i, j] := d[i-1, j-1]
             else:
-                a1 = r2[j]
+                a1 = r2[j] 
                 a2 = r1[j]
                 a3 = r1[j+1]
                 if a1 > a2:
