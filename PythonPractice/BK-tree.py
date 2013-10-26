@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 """
 bktree.py, by bearophile
 
@@ -23,8 +26,15 @@ def editDistance(s1, s2):
     ...          ["vintner", "writers"], ["vintners", "writers"]];
     >>> [editDistance(s1, s2) for s1,s2 in tests]
     [0, 1, 1, 0, 1, 2, 2, 0, 1, 1, 1, 6, 6, 0, 5, 4]
+    
+    The Wagner–Fischer algorithm computes Levenshtein distance based on the observation that if we reserve a matrix to hold the Levenshtein distances between all prefixes of the first string and all prefixes of the second, 
+    then we can compute the values in the matrix by flood filling the matrix, and thus find the distance between the two full strings as the last value computed.
     """
     # This function is designed for Psyco
+    
+    # for all i and j, d[i,j] will hold the Levenshtein distance between
+    # the first i characters of s and the first j characters of t;
+    # note that d has (m+1)x(n+1) values
     if s1 == s2: return 0 # this is fast in Python
     if len(s1) > len(s2):
         s1, s2 = s2, s1
@@ -32,7 +42,7 @@ def editDistance(s1, s2):
     r2 = [0] * len(r1)
     i = 0
     for c1 in s1:
-        r2[0] = i + 1
+        r2[0] = i + 1 # the distance of any first string to an empty second string
         j = 0
         for c2 in s2:
             if c1 == c2:
