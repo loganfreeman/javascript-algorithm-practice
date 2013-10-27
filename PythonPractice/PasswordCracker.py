@@ -32,7 +32,7 @@ leet = {
 }
     
 command = 'openssl rsa -in mysecuresite.com.key -out tmp.key -passin pass:%s'
-passwdBasic = 'thisisnottherealpassword'
+passwdBasic = 'password'
 
 def main():
     arrays = [leet[ltr] for ltr in passwdBasic]
