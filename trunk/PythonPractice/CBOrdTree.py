@@ -94,26 +94,32 @@ class CBOrdTree:
             self.printRevTree(root.left)
 
 if __name__ == "__main__":
+    import random
+    from sets import Set
     # create the binary tree
     BTree = CBOrdTree()
     # add the root node
     root = BTree.addNode(0)
+    added = Set()
     # ask the user to insert values
-    for i in range(0, 5):
-        data = int(raw_input("insert the node value nr %d: " % i))
-        # insert values
-        BTree.insert(root, data)
+    for i in range(0, 10):
+        # data = int(raw_input("insert the node value nr %d: " % i))
+        data = random.randint(1, 100)
+        if( data not in added):
+            # insert values
+            added.add(data)
+            BTree.insert(root, data)
     print
     
     BTree.printTree(root)
     print
     BTree.printRevTree(root)
     print
-    data = int(raw_input("insert a value to find: "))
-    if BTree.lookup(root, data):
-        print "found"
-    else:
-        print "not found"
+    for data in added:
+        if BTree.lookup(root, data):
+            print "found"
+        else:
+            print "not found"
         
     print BTree.minValue(root)
     print BTree.maxDepth(root)
