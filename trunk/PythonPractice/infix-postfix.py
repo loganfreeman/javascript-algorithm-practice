@@ -53,7 +53,7 @@ def ip(infixStr,postfixStr = [],retType = 0):
     infixStr = []
     infixStr = strToTokens(tempStr)
     for x in infixStr:
-    if(isOperand(x)):
+        if(isOperand(x)):
             postfixStr.append(x)
             postfixPtr = postfixPtr+1
         if(isOperator(x)):
@@ -69,7 +69,7 @@ def ip(infixStr,postfixStr = [],retType = 0):
                     postfixPtr = postfixPtr+1
             push_stack(stackArr,x)
         if(x == "("):
-                push_stack(stackArr,x)                
+            push_stack(stackArr,x)                
         if(x == ")"):
             while(topStack(stackArr) != "("):
                 postfixStr.append(pop_stack(stackArr))
@@ -97,14 +97,14 @@ def pi(postfixStr):
     postfixStr = []
     postfixStr = tempStr
     for x in postfixStr:
-    if(isOperand(x)):
+        if(isOperand(x)):
             push_stack(stackArr,x)
-    else:
+        else:
             temp = topStack(stackArr)
-        pop_stack(stackArr)
-        pushVal = '(' + topStack(stackArr) + x + temp + ')'
-        pop_stack(stackArr)
-        push_stack(stackArr,pushVal)
+            pop_stack(stackArr)
+            pushVal = '(' + topStack(stackArr) + x + temp + ')'
+            pop_stack(stackArr)
+            push_stack(stackArr,pushVal)
     return(topStack(stackArr))
 
 def strToTokens(str):
