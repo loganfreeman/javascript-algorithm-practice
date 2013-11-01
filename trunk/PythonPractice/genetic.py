@@ -148,7 +148,7 @@ class Environment(object):
         else:
             return random.choice(competitors[1:])
     
-    def best():
+    def best(self):
         doc = "individual with best fitness score in population."
         def fget(self):
             return self.population[0]
