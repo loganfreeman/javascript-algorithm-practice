@@ -57,3 +57,4 @@ def spellCheck(word_to_spell):
         return False;
     else:
         return True;
+    
