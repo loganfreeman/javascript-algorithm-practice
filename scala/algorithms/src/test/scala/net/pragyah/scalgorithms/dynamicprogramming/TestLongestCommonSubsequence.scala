@@ -44,7 +44,9 @@ class TestLongestCommonSubsequence extends TestCase{
     assert(subSeq.contains("TGAGTGACAGTAC")); subSeq -= "TGAGTGACAGTAC";
     assert(subSeq.contains("TGAGTGACAGTAG")); subSeq -= "TGAGTGACAGTAG";
     assert(subSeq.size == 0)                                     
-  } 
+  }
+
+
   
   
 }
