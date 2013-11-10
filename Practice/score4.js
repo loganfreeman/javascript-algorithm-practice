@@ -114,8 +114,8 @@ function minimax(maximizeOrMinimize, color, depth)
             }
             var result = minimax(!maximizeOrMinimize, color==1?-1:1, depth-1);
             var scoreInner = result[1];
-            //if (depth == 7)
-            //    alert("Score for " + column + ": " + scoreInner);
+            // if (depth == 7)
+            // alert("Score for " + column + ": " + scoreInner);
             state[rowFilled][column] = 0;
 	    // when loss is certain, avoid forfeiting the match,
 	    // by shifting scores by depth...
