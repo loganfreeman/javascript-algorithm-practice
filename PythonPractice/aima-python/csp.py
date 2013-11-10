@@ -144,7 +144,9 @@ class CSP(search.Problem):
 
 #______________________________________________________________________________
 # Constraint Propagation with AC-3
-
+# AC-3 proceeds by examining the arcs between pairs of variables (x, y). It removes those values from the domain of x which aren't consistent with the constraints between x and y
+# The algorithm keeps a collection of arcs that are yet to be checked; 
+# when the domain of a variable has any values removed, all the arcs of constraints pointing to that pruned variable (except the arc of the current constraint) are added to the collection.
 def AC3(csp, queue=None, removals=None):
     """[Fig. 6.3]"""
     if queue is None:
@@ -156,8 +158,8 @@ def AC3(csp, queue=None, removals=None):
             if not csp.curr_domains[Xi]:
                 return False
             for Xk in csp.neighbors[Xi]:
-                if Xk != Xi:
-                    queue.append((Xk, Xi))
+                if Xk != Xj:
+                    queue.append((Xk, Xi))                     
     return True
 
 def revise(csp, Xi, Xj, removals):
