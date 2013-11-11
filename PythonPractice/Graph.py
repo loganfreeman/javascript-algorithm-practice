@@ -24,7 +24,7 @@ class Edge:
         self.dest = dest
         self.weight = weight
     def __str__(self):
-        return "%s => %s (%s)" % str(self.src), str(self.dest). str(self.weight)
+        return "%s => %s (%s)" % (self.src, self.dest, self.weight,)
     
 
 class Graph:
@@ -44,6 +44,8 @@ class Graph:
             return self.vertList[n]
         else:
             return None
+    def nVertices(self):
+        return len(self.vertList)
 
     def __contains__(self,n):
         return n in self.vertList
@@ -64,9 +66,12 @@ class Graph:
     
 def isCycle(graph):
     assert isinstance(graph, Graph)
+    parent = [-1]*graph.nVertices()
+    for i, edge in enumerate(graph.edgeList):
+        print i, ":", edge
 
 graph = Graph()
-
+graph.addEdge(3, 6, 15)
 isCycle(graph)
         
     
