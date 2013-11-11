@@ -135,6 +135,9 @@ def KruskalMST(graph):
             result.append(edge)
             e += 1
             union2(subsets, x, y)
+    
+    for i, e in enumerate(result):
+        print e
             
         
 
