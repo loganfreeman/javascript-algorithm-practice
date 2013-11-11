@@ -29,8 +29,7 @@ def create_tree(frequencies):
 
 node = create_tree(freq)
 
-def encode(node, code):
-    pass
+
 
 
 from heapq import heappush, heappop, heapify
