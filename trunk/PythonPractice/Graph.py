@@ -97,7 +97,7 @@ print ret
 
 def find2(subsets, i):
     if subsets[i].parent != i:
-        subsets[i].parent = find(subsets, subsets[i].parent)
+        subsets[i].parent = find2(subsets, subsets[i].parent)
     return subsets[i].parent
 
 def union2(subsets, x, y):
@@ -119,10 +119,10 @@ class subset:
 def KruskalMST(graph):
     assert isinstance(graph, Graph)
     sorted(graph.edgeList, key=lambda e : e.weight)
-    subsets = []
+    subsets = {}
     result = []
     for i, v in enumerate(graph.vertList):
-        subsets.append(subset(v, 0))
+        subsets[v] = subset(v, 0)
     e = 0
     V = graph.nVertices()
     i = 0
