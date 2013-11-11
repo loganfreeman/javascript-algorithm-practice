@@ -89,10 +89,24 @@ def isCycle(graph):
 graph = Graph()
 graph.addEdge(3, 6, 15)
 graph.addEdge(6, 9, 1)
-graph.addEdge(3, 9, 1)
+graph.addEdge(7, 9, 1)
 
 ret = isCycle(graph)
 print ret
+
+class subset:
+    def __init__(self,parent, rank):
+        self.parent = parent
+        self.rank = rank
+
+def KruskalMST(graph):
+    assert isinstance(graph, Graph)
+    sorted(graph.edgeList, key=lambda e : e.weight)
+    subsets = []
+    for i, v in enumerate(graph.vertList):
+        subsets.append(subset(v, 0))
+
+KruskalMST(graph)
 
         
     
