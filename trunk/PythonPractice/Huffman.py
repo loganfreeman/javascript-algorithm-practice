@@ -43,6 +43,8 @@ def encode(symb2freq):
     while len(heap) > 1:
         lo = heappop(heap)
         hi = heappop(heap)
+        print lo
+        print hi
         for pair in lo[1:]:
             pair[1] = '0' + pair[1]
         for pair in hi[1:]:
