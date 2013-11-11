@@ -88,7 +88,12 @@ def isCycle(graph):
 
 graph = Graph()
 graph.addEdge(3, 6, 15)
-isCycle(graph)
+graph.addEdge(6, 9, 1)
+graph.addEdge(3, 9, 1)
+
+ret = isCycle(graph)
+print ret
+
         
     
     
