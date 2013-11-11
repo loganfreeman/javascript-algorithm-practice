@@ -18,11 +18,20 @@ class Vertex:
     def getWeight(self,nbr):
         return self.connectedTo[nbr]
     
+class Edge:
+    def __init__(self, src, dest, weight):
+        self.src = src
+        self.dest = dest
+        self.weight = weight
+    def __str__(self):
+        return "%s => %s (%s)" % str(self.src), str(self.dest). str(self.weight)
+    
 
 class Graph:
     def __init__(self):
         self.vertList = {}
         self.numVertices = 0
+        self.edgeList = []
 
     def addVertex(self,key):
         self.numVertices = self.numVertices + 1
@@ -45,10 +54,20 @@ class Graph:
         if t not in self.vertList:
             nv = self.addVertex(t)
         self.vertList[f].addNeighbor(self.vertList[t], cost)
+        self.edgeList.append(Edge(f, t, cost))
 
     def getVertices(self):
         return self.vertList.keys()
 
     def __iter__(self):
         return iter(self.vertList.values())
+    
+def isCycle(graph):
+    assert isinstance(graph, Graph)
+
+graph = Graph()
+
+isCycle(graph)
+        
+    
     
