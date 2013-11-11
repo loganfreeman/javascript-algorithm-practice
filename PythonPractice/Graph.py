@@ -99,7 +99,10 @@ def find2(subsets, i):
     if subsets[i].parent != i:
         subsets[i].parent = find2(subsets, subsets[i].parent)
     return subsets[i].parent
-
+"""
+union by rank
+always attach the smaller tree to the root of the larger tree
+"""
 def union2(subsets, x, y):
     xroot = find2(subsets, x)
     yroot = find2(subsets, y)
