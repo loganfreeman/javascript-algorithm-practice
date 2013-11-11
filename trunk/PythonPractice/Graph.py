@@ -1,3 +1,4 @@
+from collections import defaultdict
 class Vertex:
     def __init__(self,key):
         self.id = key
@@ -63,12 +64,27 @@ class Graph:
 
     def __iter__(self):
         return iter(self.vertList.values())
-    
+
+def find(parent, x):
+    if parent[x] == -1:
+        return x
+    return find(parent, parent[x])
+def union(parent, x, y):
+    xset = find(parent, x)
+    yset = find(parent, y)
+    parent[xset] = yset
+       
 def isCycle(graph):
     assert isinstance(graph, Graph)
-    parent = [-1]*graph.nVertices()
+    parent = defaultdict(lambda: -1)
     for i, edge in enumerate(graph.edgeList):
         print i, ":", edge
+        x = find(parent, edge.src)
+        y = find(parent, edge.dest)
+        if x == y:
+            return 1
+        union(parent, x, y)
+    return 0
 
 graph = Graph()
 graph.addEdge(3, 6, 15)
