@@ -94,6 +94,23 @@ graph.addEdge(7, 9, 1)
 ret = isCycle(graph)
 print ret
 
+
+def find2(subsets, i):
+    if subsets[i].parent != i:
+        subsets[i].parent = find(subsets, subsets[i].parent)
+    return subsets[i].parent
+
+def union2(subsets, x, y):
+    xroot = find2(subsets, x)
+    yroot = find2(subsets, y)
+    if subsets[xroot].rank < subsets[yroot].rank:
+        subsets[xroot].parent = yroot
+    elif subsets[xroot].rank > subsets[yroot].rank:
+        subsets[yroot].parent = xroot
+    else:
+        subsets[yroot].parent = xroot
+        subsets[xroot].rank += 1
+        
 class subset:
     def __init__(self,parent, rank):
         self.parent = parent
@@ -103,8 +120,23 @@ def KruskalMST(graph):
     assert isinstance(graph, Graph)
     sorted(graph.edgeList, key=lambda e : e.weight)
     subsets = []
+    result = []
     for i, v in enumerate(graph.vertList):
         subsets.append(subset(v, 0))
+    e = 0
+    V = graph.nVertices()
+    i = 0
+    while e < V -1:
+        edge = graph.edgeList[i]
+        i += 1
+        x = find2(subsets, edge.src)
+        y = find2(subsets, edge.dest)
+        if x != y:
+            result.append(edge)
+            e += 1
+            union2(subsets, x, y)
+            
+        
 
 KruskalMST(graph)
 
