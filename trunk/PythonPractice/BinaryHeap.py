@@ -3,7 +3,8 @@ class BinHeap:
         self.heapList = [0]
         self.currentSize = 0
 
-
+    def qsize(self):
+        return self.currentSize
     def percUp(self,i):
         while i // 2 > 0:
           if self.heapList[i] < self.heapList[i // 2]:
@@ -42,6 +43,9 @@ class BinHeap:
       self.heapList.pop()
       self.percDown(1)
       return retval
+    
+    def get(self):
+      return self.heapList[1]
 
     def buildHeap(self,alist):
       i = len(alist) // 2
