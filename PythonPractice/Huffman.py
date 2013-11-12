@@ -23,14 +23,22 @@ def create_tree(frequencies):
         p.insert(value)             #    and add it to the priority queue
     while p.qsize() > 1:         # 2. While there is more than one node
         l, r = p.delMin(), p.delMin()  # 2a. remove two highest nodes
-        node = HuffmanNode(l, r) # 2b. create internal node with children
+        node = HuffmanNode(l[1], r[1]) # 2b. create internal node with children
         p.insert((l[0]+r[0], node)) # 2c. add new node to queue      
     return p.delMin()               # 3. tree is complete - return root node
 
 node = create_tree(freq)
 
 
-
+def walk_tree(node, prefix):
+    if isinstance(node, HuffmanNode):
+        walk_tree(node.left, "1" + prefix)
+        walk_tree(node.right, "0" + prefix)
+    else:
+        print "%s %s"%(node, prefix)
+    
+    
+walk_tree(node[1], "")
 
 from heapq import heappush, heappop, heapify
 from collections import defaultdict
@@ -101,9 +109,10 @@ def huffman_codes(s):
     first_node = table.pop(0)
     second_node = table.pop(0)
     new_node = first_node.merge(second_node)
+    # print new_node
     table.append(new_node)
     table = sorted(table, key = lambda n : n.frequency)
-    # print(table)
+  # print(table)
   return dict(map(lambda p: (p[0], p[1]), table[0].pairs))
 
 #####################################################################
