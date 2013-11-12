@@ -32,8 +32,8 @@ node = create_tree(freq)
 
 def walk_tree(node, prefix):
     if isinstance(node, HuffmanNode):
-        walk_tree(node.left, "1" + prefix)
-        walk_tree(node.right, "0" + prefix)
+        walk_tree(node.left, prefix + "0" )
+        walk_tree(node.right, prefix + "1" )
     else:
         print "%s %s"%(node, prefix)
     
@@ -57,7 +57,7 @@ def encode(symb2freq):
         heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
     return sorted(heappop(heap)[1:], key=lambda p: (len(p[-1]), p))
  
-txt = "this is an example for huffman encoding"
+txt = "yashaswita"
 symb2freq = defaultdict(int)
 for ch in txt:
     symb2freq[ch] += 1
@@ -67,6 +67,13 @@ huff = encode(symb2freq)
 print "Symbol\tWeight\tHuffman Code"
 for p in huff:
     print "%s\t%s\t%s" % (p[0], symb2freq[p[0]], p[1])
+   
+   
+frequecies = list((y,x) for x,y in symb2freq.iteritems())
+print "-------"
+print(frequecies)
+walk_tree(create_tree(frequecies)[1], "")
+print "--------"
     
     
 from collections import Counter
