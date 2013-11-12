@@ -27,18 +27,18 @@ def create_tree(frequencies):
         p.insert((l[0]+r[0], node)) # 2c. add new node to queue      
     return p.delMin()               # 3. tree is complete - return root node
 
-node = create_tree(freq)
+
 
 
 def walk_tree(node, prefix):
     if isinstance(node, HuffmanNode):
-        walk_tree(node.left, prefix + "0" )
-        walk_tree(node.right, prefix + "1" )
+        walk_tree(node.left, "0" + prefix +  "")
+        walk_tree(node.right, "1"+ prefix + "" )
     else:
         print "%s %s"%(node, prefix)
     
     
-walk_tree(node[1], "")
+
 
 from heapq import heappush, heappop, heapify
 from collections import defaultdict
