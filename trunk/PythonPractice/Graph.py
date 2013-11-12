@@ -146,6 +146,6 @@ def KruskalMST(graph):
 
 KruskalMST(graph)
 
-        
-    
+
+      
     
