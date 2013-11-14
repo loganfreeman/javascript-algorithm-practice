@@ -1,5 +1,5 @@
 <?php
-
+echo get_include_path();
 include "File/Find.php";
 
 $dir = "C:\wamp\bin\php\php5.3.8";
