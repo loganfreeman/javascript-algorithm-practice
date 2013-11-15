@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.flicklib</groupId>
+		<artifactId>flicklib</artifactId>
+		<version>0.5-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>flicklib-api</artifactId>
+	<packaging>jar</packaging>
+	<name>flicklib-api</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.htmlparser.jericho</groupId>
+			<artifactId>jericho-html</artifactId>
+		</dependency>
+	</dependencies>
+</project>

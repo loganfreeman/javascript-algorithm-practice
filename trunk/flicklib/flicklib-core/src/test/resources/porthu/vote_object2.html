@@ -1,0 +1,30 @@
+<table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+     <td>
+<span class="btxt">A film értékelése: 6,9/10</span> <span class="rtxt">(76 szavazat)</span><br /><span class="txt">Értékelje a filmet!</span>
+<form action="/pls/w/vote.vote_popup?" method="get">
+                <select class="txt" id="i_vote_value_6_73833" size="1">
+                     <option selected="selected" value="-1">
+Válasszon!                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     </select>                     <input type="hidden" class="txt" name="i_object_id" value="73833" />
+                     <input type="hidden" class="txt" name="i_area_id" value="6" />
+                    <input type="button" value="Szavazás"  onClick="
+if (form.i_vote_value_6_73833.selectedIndex != 0) {
+    w_vote_value = document.getElementById('i_vote_value_6_73833').selectedIndex;
+    window.open('/pls/w/vote.vote_popup?i_area_id=6&i_reload_container=id%3D%22vote_box%22&i_is_separator=0&i_object_id=73833&i_vote_value='+w_vote_value+'','','resizable=0,scrollbars=0,width=300,height=280');
+} else {
+    alert('Először válasszon a menüből!');
+} " />
+        </form>
+     </td>
+ </tr>
+</table>
