@@ -1,0 +1,30 @@
+<script type="text/javascript" lang=javascript" src="/JS/CalendarFunctions.js"></script><table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+     <td>
+<span class="btxt">A film értékelése: 7.4/10</span> <span class="rtxt">(20 szavazat)</span><br /><span class="txt">Értékelje a filmet!</span>
+<SCRIPT language="JavaScript">
+    function ujablak() {
+    w_vote_value = document.getElementById("i_vote_value").selectedIndex;
+    window.open("/pls/w/vote.vote_popup?i_area_id=6&i_object_id=73833&i_vote_value="+w_vote_value+"","","resizable=0,scrollbars=0,width=300,height=280");
+    }
+    </SCRIPT>
+<form action="/pls/w/vote.vote_popup?" method="get">
+                <select class="txt" id="i_vote_value" size="1">
+                     <option selected="selected" value="-1">
+Válasszon!                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     </select>                     <input type="hidden" class="txt" name="i_object_id" value="73833" />
+                     <input type="hidden" class="txt" name="i_area_id" value="6" />
+                    <input type="button" value="Szavazás"  onClick="if (form.i_vote_value.selectedIndex != 0)  ujablak(); else alert('Először válasszon a menüből!')" />
+        </form>
+     </td>
+ </tr>
+</table>

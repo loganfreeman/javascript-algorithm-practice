@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.flicklib</groupId>
+		<artifactId>flicklib</artifactId>
+		<version>0.5-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>flicklib-netflix</artifactId>
+	<packaging>jar</packaging>
+	<name>flicklib-netflix</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.flicklib</groupId>
+			<artifactId>flicklib-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.htmlparser.jericho</groupId>
+			<artifactId>jericho-html</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.oauth</groupId>
+			<artifactId>core</artifactId>
+			<version>20080621</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+		
+	</dependencies>
+</project>

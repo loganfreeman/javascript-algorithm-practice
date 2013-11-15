@@ -1,0 +1,2806 @@
+
+
+
+
+<html>
+
+
+
+<!--
+  jQuery library
+-->
+<script type="text/javascript" src="Scripts/carous/lib/jquery-1.2.1.pack.js"></script>
+<!--
+  jCarousel library
+-->
+<script type="text/javascript" src="Scripts/carous/lib/jquery.jcarousel.pack.js"></script>
+<!--
+  jCarousel core stylesheet
+-->
+<link rel="stylesheet" type="text/css" href="Scripts/carous/lib/jquery.jcarousel.css" />
+<!--
+  jCarousel skin stylesheet
+-->
+<link rel="stylesheet" type="text/css" href="Scripts/carous/skins/ie7/skin.css" />
+
+<script type="text/javascript">
+function mycarousel_initCallback(carousel)
+{
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        auto: 3,
+		 visible: 5,
+		 scroll: 5,
+        wrap: 'last',
+        initCallback: mycarousel_initCallback
+    });
+});
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+
+
+
+
+
+
+<style type="text/css">
+
+
+  .jcarousel-skin-ie7.jcarousel-container-horizontal {
+	width: auto;
+	padding: 10px 40px;
+}
+
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+	width:  auto;
+	height: 140px;
+}
+
+
+
+</script>
+
+
+
+
+
+</style>
+
+
+
+<style type="text/css">
+<!--
+.style2 {
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.style4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+-->
+</style>
+<head>
+<title>Xpress.hu Online Shop</title>
+<meta name="verify-v1" content="L45LxARY50YggbBPe0ONKq6tNCCGF9R60Wpz9OCkNY4=" />
+<META NAME="keywords" content="DVD, dvd, DVD, VHS, STAR WARS, rendezõ, aruhaz, áruház, video, film, mozi, szereplõ, színész, mûfaj, cinema, téka, cím, TV">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="shortcut icon" href="http://www.xpress.hu/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="http://www.xpress.hu/favicon.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="Xpress.hu - Új termékek a kínálatban" href="http://www.xpress.hu/db/XPRESSUJTERMEKEK.rss"/>
+<link rel="alternate" type="application/rss+xml" title="Xpress.hu - Az elmúlt két hét megjelenései" href="http://www.xpress.hu/db/XPRESSUJMEGJELENESEK.rss"/>
+<link rel="alternate" type="application/rss+xml" title="Xpress.hu - A DVDEXTRA hírei" href="http://www.xpress.hu/db/dvdextra.rss"/>
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+
+
+<body bgcolor="#000000" link="336699" vlink="336699" alink="336699" leftMargin="0" topmargin="0" onLoad="MM_preloadImages('dvd/kepek/menu/9on.gif','dvd/kepek/menu/uj2.gif','dvd/kepek/menu/2on.gif','dvd/kepek/menu/3on.gif','dvd/kepek/menu/4on.gif','dvd/kepek/menu/5on.gif','dvd/kepek/menu/6on.gif','dvd/kepek/menu/7on.gif','dvd/kepek/menu/8on.gif');return document.MM_returnValue">
+
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+  <tr> 
+    <td align="left" valign="top" rowspan="2" bgcolor="336699"> 
+      <div align="center"><a href="default.asp?VID=066-193882322-6678351010467122"><img src="pic/logo.gif" width="130" height="45" border="0"></a></div>    </td>
+    <td align="right" valign="middle" bgcolor="336699" rowspan="2"> 
+            <a href="http://www.xpress.hu/dvd/keres.asp?GOMB=1&RENDEZ=1&KERES=clone%20wars&TCS=0"><img src="http://www.xpress.hu/reklamok/klonok.jpg" border="0"></a>&nbsp;
+</td>
+    <td width="300" rowspan="7" valign="top" >
+    
+    <a href="http://www.xpress.hu/dvd/film.asp?FILMAZ=10442&amp;VID=066-193882322-6678351010467122"><img src="REKLAMOK/OLDAL/rescueme.jpg" border="0"></a><br><br><br><br>
+    
+    
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30">&nbsp;</td>
+    <td>
+    
+    
+    
+<br>
+
+<table width="220" bgcolor="#000000" cellspacing="1" cellpadding="0" border="0">
+  <tr bgcolor="#FFFFFF" align="center"> 
+    <td colspan="3" width="190"> 
+      <p align="center"><a href="http://www.xpress.hu/HIREK/news.asp?VID=066-193882322-6678351010467122"><img src="pic/dvdextra.gif" width="220" height="70" border="0"></a></p>    </td>
+  </tr><tr><td>
+      <table width="220" bgcolor="#ffffff" cellspacing="0" cellpadding="4" border="0" align="center">
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19380971762659509969024161" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Vu-há!</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=73279871490341508406725300" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Nincs végzet (FRISSÍTVE)</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19376381331023509878680907" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>A jó, a rossz és a gyönyörûséges</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19372076388100509812991164" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>FHE: 2009. áprilisi megjelenések</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19371509572504509795165679" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Alkonyattól DVD-ig</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=1936538276346509662125960" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>InterCom: 2009-es kitekintõ</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19338002437747509308134315" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>A nemek harca játék nyertesei</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19336702687509509289570385" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Pinokkió Pakk párban</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=1933138642462350919974768" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>DVD-teszt: Doktor House - 3. évad (House, M.D. - Season 3, 2006)</b></font></a></td>
+        </tr>
+
+        <tr bgcolor="#E4E4E4"> 
+          <td width="23" align="right" valign="top"><img src="pic/dvdextrabul.gif" width="15" height="13"></td>
+          <td width="197"> <a href="http://www.xpress.hu/HIREK/news.asp?KOD=19324561224860509122405233" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>King Kong BD-n</b></font></a></td>
+        </tr>
+
+      </table>
+</td></tr>
+</table>
+
+    </td>
+  </tr>
+</table>    </td>
+  </tr>
+  <tr bgcolor="336699"> </tr>
+  <tr> 
+    <td align="left" valign="top" colspan="2" bgcolor="336699"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      </table>    </td>
+  </tr>
+<tr> 
+    <td align="left" valign="top" colspan="2" bgcolor="336699"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="336699"></tr>
+  <tr bgcolor="336699"> 
+    <td align="left" valign="top" colspan="2" bgcolor="336699"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td align="left"> 
+            
+      <div align="left"><img src="http://www.xpress.hu/pic/info5.gif" width="297" height="24" border="0" usemap="#kismenu2"><a href="http://www.xpress.hu/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menufolapon.gif" border="0" alt="FÕOLDAL"></a><a href="http://www.xpress.hu/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menudvdoff.gif" border="0" alt="DVD"></a><a href="http://www.xpress.hu/bluray/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menublurayoff.gif" border="0" alt="Blu-ray"></a><a href="http://www.xpress.hu/ps3/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menups3off.gif" border="0" alt="PlayStation 3"></a><a href="http://www.xpress.hu/Wii/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menuWiioff.gif" border="0" alt="Wii"></a><a href="http://www.xpress.hu/book/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menubookoff.gif" border="0" alt="Könyv"></a><a href="http://www.xpress.hu/merchandising/default.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/menupolooff.gif" border="0" alt="Póló, ajándék"></a></div>
+          </td>
+<td align="right"><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>&nbsp;&nbsp;</b></font></td>
+        </tr>
+</table>    </td>
+  </tr>
+      </table>    </td>
+  </tr>
+  <tr valign="top"> 
+    <td align="center" bgcolor="999966" colspan="2">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="middle" align="center"> 
+          <td colspan="2" height=25><img src="dvd/kepek/ures.gif" width="1" height="22" border="0" align="absmiddle">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="http://www.xpress.hu/dvd/keres.asp?keres=0&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink"> 
+            0-9</a><font color="cccc99"> 
+            |</font>
+<a href="http://www.xpress.hu/dvd/keres.asp?keres=a&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink"> 
+            a</a><font color="cccc99"> 
+            |</font><a href="http://www.xpress.hu/dvd/keres.asp?keres=b&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink"> 
+            b</a><font color="cccc99"> |</font><a href="http://www.xpress.hu/dvd/keres.asp?keres=c&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink"> 
+            c</a><font color="cccc99"> |</font><a href="http://www.xpress.hu/dvd/keres.asp?keres=d&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink"> 
+            d</a><font color="cccc99"> |</font><a href="http://www.xpress.hu/dvd/keres.asp?keres=e&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink"> 
+            e </a><font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=f&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">f</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=g&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">g</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=h&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">h</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=i&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">i</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=j&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">j</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=k&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">k</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=l&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">l</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=m&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">m</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=n&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">n</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=o&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">o</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=p&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">p</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=q&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">q</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=r&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">r</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=s&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">s</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=t&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">t</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=u&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">u</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=v&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">v</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=w&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">w</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=x&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">x</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=y&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">y</a> 
+            <font color="cccc99">|</font> <a href="http://www.xpress.hu/dvd/keres.asp?keres=z&amp;VID=066-193882322-6678351010467122&amp;GOMB=41" class="betulink">z</a> 
+            </font></td>
+        </tr>
+        <tr valign="middle" align="center" bgcolor="EEEEE4">     
+  <td height=20 align="left">&nbsp;<font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#336699"><b> 
+    Nem regisztrált felhasználó</b>&nbsp;&nbsp;- <font color="#FFFFFF"><b><font color="#666666">[<a href="http://www.xpress.hu/shop/login.asp" class="menulink"><font color="#666666">belépés</font></a>]</font></b></font></font></td>
+          <td height=20 align="right">  
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr> 
+        <td width="40"><a href="http://www.xpress.hu/shop/rendel.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/leckosar.gif" width="40" height="20" border="0"></a></td>
+        <td align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><b></td>
+        <td align="right" width="15"><a href="http://www.xpress.hu/shop/rendel.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/pic/leckosar2.gif" width="15" height="20" border="0"></a></td>
+      </tr>
+    </table>
+          </td>
+        </tr>
+        <tr><TD bgColor=#000000 colSpan=2 height=1><IMG height=1 src="http://www.xpress.hu/pic/clear.gif" width=1></TD></tr>
+
+      </table>    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="cccc99" valign="top"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="dvd/kepek/keresobox1.gif" width="130" height="13"></td>
+        </tr>
+        <tr bgcolor="#999966" valign="top">
+          <td> 
+            <div align="left"><img src="http://www.xpress.hu/pic/kereso.gif" width="130" height="35"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">  
+      <form method="post" action="../dvd/keres.asp" name>
+        <tr> 
+                    <td width="8">&nbsp;</td>
+                    <td> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                          <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="1" color="#CCCCCC"> 
+                            <font color="#000000"> 
+                            <input type="radio" name="GOMB" value="1" checked>
+                            cím</font></font></b></font></td>
+                          <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="1" color="#CCCCCC"><font color="#000000"> 
+                            <input type="radio" name="GOMB" value="2">
+                            alkotó</font></font></b></font></td>
+                        </tr>
+                      </table>
+                      <input type="text" name="KERES" size="13" maxlength="50">
+                      <input name="VID" type="hidden" value="066-193882322-6678351010467122">
+                      
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td width="8">&nbsp;</td>
+                    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+                      <input align="absMiddle" border="0" name="Go2" src="http://www.xpress.hu/pic/go.gif" type="image" value="Go">
+                      </font></td>
+                  </tr>
+                </form>
+                <form method="post" action="http://www.xpress.hu/dvd/keres.asp" name>
+                  <tr> 
+                    <td colspan="2"><img src="http://www.xpress.hu/pic/menuvonal.gif" width="130" height="24"></td>
+                  </tr>
+                  <tr> 
+                    <td colspan="2"><img src="http://www.xpress.hu/pic/kereso2.gif" width="130" height="18"></td>
+                  </tr>
+                  <tr> 
+                    <td width="8">&nbsp;</td>
+                    <td> 
+
+<select name="MFID" onChange="submit();">
+<option value="0">mûfaj</option>
+ 
+<option value="1">akció</option>
+ 
+<option value="39">anime</option>
+ 
+<option value="34">bábfilm</option>
+ 
+<option value="38">balett</option>
+ 
+<option value="22">bírósági</option>
+ 
+<option value="71">boksz</option>
+ 
+<option value="44">cirkuszfilm</option>
+ 
+<option value="53">cyber-punk</option>
+ 
+<option value="2">családi</option>
+ 
+<option value="65">dogma</option>
+ 
+<option value="29">dokumentum</option>
+ 
+<option value="17">dráma</option>
+ 
+<option value="46">DVD MÁNIA</option>
+ 
+<option value="43">DVD-AUDIO</option>
+ 
+<option value="12">egyéb</option>
+ 
+<option value="62">életmód</option>
+ 
+<option value="15">életrajzi</option>
+ 
+<option value="13">erotikus</option>
+ 
+<option value="31">fantasy</option>
+ 
+<option value="58">fikció</option>
+ 
+<option value="59">film</option>
+ 
+<option value="24">film-noir</option>
+ 
+<option value="30">fitness</option>
+ 
+<option value="87">Gasztronómia</option>
+ 
+<option value="25">gengszterfilm</option>
+ 
+<option value="19">háborús</option>
+ 
+<option value="3">horror</option>
+ 
+<option value="54">humor</option>
+ 
+<option value="52">ifjúsági</option>
+ 
+<option value="84">ismeretterjesztõ</option>
+ 
+<option value="97">játékfilm</option>
+ 
+<option value="81">kabaré</option>
+ 
+<option value="4">kaland</option>
+ 
+<option value="18">katasztrófa</option>
+ 
+<option value="27">kémfilm</option>
+ 
+<option value="48">Kerülj szinkr.</option>
+ 
+<option value="21">klasszikus</option>
+ 
+<option value="36">koncertfilm</option>
+ 
+<option value="76">kosárlabda</option>
+ 
+<option value="5">krimi</option>
+ 
+<option value="99">kult</option>
+ 
+<option value="41">kultfilm</option>
+ 
+<option value="28">maffiafilm</option>
+ 
+<option value="20">mese</option>
+ 
+<option value="80">Misztikus opera</option>
+ 
+<option value="35">musical</option>
+ 
+<option value="40">mûvészfilm</option>
+ 
+<option value="49">ODEON Mozaik</option>
+ 
+<option value="95">oktató</option>
+ 
+<option value="37">opera</option>
+ 
+<option value="26">Oscar-díjas</option>
+ 
+<option value="64">paródia</option>
+ 
+<option value="51">próza</option>
+ 
+<option value="6">rajzfilm</option>
+ 
+<option value="33">Road Movie</option>
+ 
+<option value="101">rock</option>
+ 
+<option value="7">romantikus</option>
+ 
+<option value="42">SACD</option>
+ 
+<option value="8">sci-fi</option>
+ 
+<option value="16">sport</option>
+ 
+<option value="88">szatíra</option>
+ 
+<option value="50">szépirodalom</option>
+ 
+<option value="100">színház</option>
+ 
+<option value="45">táncfilm</option>
+ 
+<option value="32">természetfilm</option>
+ 
+<option value="9">thriller</option>
+ 
+<option value="23">történelmi</option>
+ 
+<option value="47">TV-sorozat</option>
+ 
+<option value="93">útifilm</option>
+ 
+<option value="94">Vallási</option>
+ 
+<option value="10">vígjáték</option>
+ 
+<option value="11">western</option>
+ 
+<option value="14">zenés</option>
+
+</select>
+                      <input name="VID" type="hidden" value="066-193882322-6678351010467122">
+                        <input name="GOMB" type="hidden" value="70">
+                    </td>
+                  </tr>
+                  <tr> 
+                </form>
+                  <td colspan="2"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><img src="http://www.xpress.hu/pic/menuvonal.gif" width="130" height="24"></font></td>
+                </tr>
+                <tr> 
+                  <td colspan="2"><img src="http://www.xpress.hu/pic/ujdonsag.gif" width="130" height="20"></td>
+                </tr>
+                
+      <form method="post" action="http://www.xpress.hu/dvd/ertesito.asp" name>
+        <tr> 
+                    <td colspan="2"> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                          <td width="8">&nbsp;</td>
+                          <td><b><img src="http://www.xpress.hu/pic/ujdonsag2.gif" width="122" height="55"></b></td>
+                        </tr>
+                        <tr> 
+                          <td width="8">&nbsp;</td>
+                          <td> 
+                            <input type="text" name="ertesit" size="13" maxlength="50">
+                            <input name="VID" type="hidden" value="066-193882322-6678351010467122">
+                            
+                          </td>
+                        </tr>
+                        <tr> 
+                          <td width="8">&nbsp;</td>
+                          <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+                            <input align="absMiddle" border="0" name="Go22" src="http://www.xpress.hu/pic/go2.gif" type="image" value="Go">
+                            </font></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </form>
+              </table>
+            </div>
+          </td> 
+        </tr>
+        <tr> 
+          <td><img src="dvd/kepek/keresobox2.gif" width="130" height="13"></td>
+        </tr>
+      </table>
+      <table width="130" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+    <td><a href="http://www.xpress.hu/shop/faq.asp?VID=066-193882322-6678351010467122"><img src="../dvd/kepek/menu/gyik.gif" border="0"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/shop/listaorulet.asp?VID=066-193882322-6678351010467122"><img src="../dvd/kepek/menu/lista.gif" width="130" height="34" border="0"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/forum/forum.asp?VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image39','','http://www.xpress.hu/dvd/kepek/menu/9on.gif',1)"><img name="Image39" border="0" src="http://www.xpress.hu/dvd/kepek/menu/9.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=4&amp;VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image32','','http://www.xpress.hu/dvd/kepek/menu/uj2.gif',1)"><img name="Image32" border="0" src="http://www.xpress.hu/dvd/kepek/menu/uj.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=7&amp;VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image33','','http://www.xpress.hu/dvd/kepek/menu/2on.gif',1)"><img name="Image33" border="0" src="http://www.xpress.hu/dvd/kepek/menu/2.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=3&amp;VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image34','','http://www.xpress.hu/dvd/kepek/menu/3on.gif',1)"><img name="Image34" border="0" src="http://www.xpress.hu/dvd/kepek/menu/3.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=9&amp;VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image35','','http://www.xpress.hu/dvd/kepek/menu/4on.gif',1)"><img name="Image35" border="0" src="http://www.xpress.hu/dvd/kepek/menu/4.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/shop/keres.asp?GOMB=22&amp;VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image36','','http://www.xpress.hu/dvd/kepek/menu/5on.gif',1)"><img name="Image36" border="0" src="http://www.xpress.hu/dvd/kepek/menu/5.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/shop/keres.asp?GOMB=21&VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image37','','http://www.xpress.hu/dvd/kepek/menu/6on.gif',1)"><img name="Image37" border="0" src="http://www.xpress.hu/dvd/kepek/menu/6.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=20&VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image38','','http://www.xpress.hu/dvd/kepek/menu/7on.gif',1)"><img name="Image38" border="0" src="http://www.xpress.hu/dvd/kepek/menu/7.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=12&amp;VID=066-193882322-6678351010467122" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image20','','http://www.xpress.hu/dvd/kepek/menu/8on.gif',1)"><img name="Image20" border="0" src="http://www.xpress.hu/dvd/kepek/menu/8.gif" width="130" height="17"></a></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <tr> 
+          <td bgcolor="818962" width="3"><img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF" size="1">DVD-K 
+            ÁR SZERINT</font></b></font></td>
+        </tr>
+        <tr> 
+          <td width="3"><img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=1&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">1.000 
+            Ft alatt</font></b></font></a></td>
+        </tr>
+        <tr> 
+          <td width="3"> <img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=2&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">1.000-2.000 
+            Ft </font></b></font></a></td>
+        </tr>
+        <tr> 
+          <td width="3"> <img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=3&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">2.000-3.000 
+            Ft </font></b></font></a></td>
+        </tr>
+        <tr> 
+          <td width="3"> <img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=4&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">3.000-4.000 
+            Ft </font></b></font></a></td>
+        </tr>
+        <tr> 
+          <td width="3"> <img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=5&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">4.000-5.000 
+            Ft </font></b></font></a></td>
+        </tr>
+        <tr> 
+          <td width="3"> <img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=6&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">5.000-6.000 
+            Ft </font></b></font></a></td>
+        </tr>
+        <tr> 
+          <td width="3"> <img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td><a href="http://www.xpress.hu/dvd/keres.asp?GOMB=10&amp;KERES=7&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#666633">6.000 
+            Ft felett</font></b></font></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="818962">
+  <tr bgcolor="999966" align="left"> 
+          
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <tr bgcolor="818962"> 
+          <td bgcolor="818962" width="3"><img src="http://www.xpress.hu/pic/cdot.gif" width="3" height="1"></td>
+          <td bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF" size="1">AKTUÁLIS 
+            AKCIÓK </font></b></font></td>
+        </tr>
+      </table></td>
+        </tr>
+<tr bgcolor="cccc99" align="left"> 
+          <td><a href="http://www.xpress.hu/dvd/kirakat.asp?VID=066-193882322-6678351010467122"><img src="http://www.xpress.hu/dvd/kepek/akciok/aktualis2.gif" border="0" width="130"></a></td>
+        </tr>
+<tr bgcolor="cccc99" align="center"> 
+          
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#333300" size="1">FRISSÍTVE:<br>
+      <font size="2">2009.2.28.</font></font></b></font></td>
+        </tr>
+        <tr bgcolor="cccc99" align="left"> 
+          <td><img src="http://www.xpress.hu/dvd/kepek/akciok/akciovonal.gif" width="100%" height="9"></td>
+        </tr>
+</table>  
+      <p>&nbsp;</p>    </td>
+    <td bgcolor="ffffff" valign="top"> 
+      <table width="639" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <TD colSpan=3 height=4><IMG height=4 src="pic/cdot.gif" width=1></TD>
+        </tr>
+         
+        <tr> 
+          <TD colSpan=3 height=4> <a href="http://www.xpress.hu/dvd/film.asp?FILMAZ=9842&amp;VID=066-193882322-6678351010467122"><img src="reklamok/swcw.jpg" border="0"></a>  </TD>
+        </tr>
+         </tr>
+        <tr> 
+          <TD colSpan=3 height=4><IMG height=4 src="pic/cdot.gif" width=1></TD>
+        </tr>
+        <tr> 
+          <td valign="top" colspan="2"> 
+            <table cellspacing=0 cellpadding=0 
+      width=426 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=397 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">&nbsp;&nbsp;AKTUÁLIS 
+                  DVD-MEGJELENÉSEK </font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=417> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td align="left" colspan="2"> 
+                        <div align="left"><img src="shop/kepek/ujdonsag.gif" width="150" height="20">                        </div>                      </td>
+                      <td align="left" colspan="2"> 
+                        <div align="left"><img src="shop/kepek/elorend.gif" width="150" height="20">                        </div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td width="25%"><font color="006699"><b><a href="dvd/film.asp?FILMAZ=10592&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10592.jpg" width="80" height="101" border="0"></a></b></font></td>
+                      <td width="25%"><font color="006699"><b><font size="2"><a href="dvd/film.asp?FILMAZ=10616&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10616.jpg" width="80" height="101" border="0"></a></font></b></font></td>
+                      <td width="25%"><font color="006699"><b><font size="2"><a href="dvd/film.asp?FILMAZ=10448&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10448.jpg" width="80" height="101" border="0"></a></font></b></font></td>
+                      <td width="25%"><font color="006699"><b><font size="2"><a href="dvd/film.asp?FILMAZ=10447&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10447.jpg" width="80" height="101" border="0"></a></font></b></font></td>
+                    </tr>
+                    <tr align="center" valign="top"> 
+                      <td width="25%"><a href="dvd/film.asp?FILMAZ=10592&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Berlin: A fal leomlik</font></b></font></a></td>
+                      <td width="25%"><a href="dvd/film.asp?FILMAZ=10616&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">15 perc hírnév (új kiadás)</font></b></font></a></td>
+                      <td width="25%"><a href="dvd/film.asp?FILMAZ=10448&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Szesz, szex és steksz</font></b></font></a></td>
+                      <td width="25%"><a href="dvd/film.asp?FILMAZ=10447&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Ananász expressz</font></b></font></a></td>
+                    </tr>
+                    <tr align="center"> 
+                      <td colspan="2" align="left"  valign="top"> 
+                        <table width="100%" border="0" cellspacing="2" cellpadding="0">
+                          <tr align="left" valign="top"> 
+                            <td colspan="2"><font size="2"><b><font color="#FF6600" face="Verdana, Arial, Helvetica, sans-serif"><br>
+                              SIKERES ÚJDONSÁGOK:</font></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10548&amp;VID=066-193882322-6678351010467122" class="menulink">A nap, amikor a Föld megállt</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10549&amp;VID=066-193882322-6678351010467122" class="menulink">Cápa 4. - A cápa bosszúja</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10555&amp;VID=066-193882322-6678351010467122" class="menulink">Ellenséges terület 3. - A kolumbiai túsz</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10488&amp;VID=066-193882322-6678351010467122" class="menulink">Hóvirágünnep</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10489&amp;VID=066-193882322-6678351010467122" class="menulink">Hupikék Törpikék 9. - Törpapa esküvõje</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10505&amp;VID=066-193882322-6678351010467122" class="menulink">Delta</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10552&amp;VID=066-193882322-6678351010467122" class="menulink">Merlin és a sárkányok világa</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10591&amp;VID=066-193882322-6678351010467122" class="menulink">Mária szerelmei</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10592&amp;VID=066-193882322-6678351010467122" class="menulink">Berlin: A fal leomlik</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10594&amp;VID=066-193882322-6678351010467122" class="menulink">Távol az otthontól</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10616&amp;VID=066-193882322-6678351010467122" class="menulink">15 perc hírnév (új kiadás)</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10500&amp;VID=066-193882322-6678351010467122" class="menulink">Halálfutam</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10501&amp;VID=066-193882322-6678351010467122" class="menulink">Halálfutam - Limitált, fémdobozos változat (Steelbook)</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10441&amp;VID=066-193882322-6678351010467122" class="menulink">Kínzó közelség</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td> </td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>&nbsp;</b></font></td>
+                          </tr>
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/keres.asp?GOMB=4&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="336699">TOVÁBBI 
+                              ÚJDONSÁGOK</font> </a></b></font></td>
+                          </tr>
+                        </table>                      </td>
+                      <td colspan="2" align="left" valign="top"> 
+                        <table width="100%" border="0" cellspacing="2" cellpadding="0">
+                          <tr align="left" valign="top"> 
+                            <td colspan="2"><font size="2"><b><font color="#FF6600" face="Verdana, Arial, Helvetica, sans-serif"><br>
+                              VÁRHATÓ MEGJELENÉSEK:</font></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10658&amp;VID=066-193882322-6678351010467122" class="menulink">Sejtjeink</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=9788&amp;VID=066-193882322-6678351010467122" class="menulink">A szeretet ereje</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=5580&amp;VID=066-193882322-6678351010467122" class="menulink">A tökéletes pasi</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=6194&amp;VID=066-193882322-6678351010467122" class="menulink">Az ördög és a tízparancsolat</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=9846&amp;VID=066-193882322-6678351010467122" class="menulink">Roman Polanski - Micsoda?</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10130&amp;VID=066-193882322-6678351010467122" class="menulink">Chrysalis - Az emlékrabló</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10193&amp;VID=066-193882322-6678351010467122" class="menulink">A pokol bajnoka</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10446&amp;VID=066-193882322-6678351010467122" class="menulink">Szex telefonhívásra</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10447&amp;VID=066-193882322-6678351010467122" class="menulink">Ananász expressz</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10448&amp;VID=066-193882322-6678351010467122" class="menulink">Szesz, szex és steksz</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10537&amp;VID=066-193882322-6678351010467122" class="menulink">Az öreg halász és a tenger (rajzfilm)</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/film.asp?FILMAZ=10538&amp;VID=066-193882322-6678351010467122" class="menulink">Született szerelmesek</a></b></font></td>
+                          </tr>
+                           
+                          <tr align="left" valign="top"> 
+                            <td> </td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b> 
+                              &nbsp;</b></font></td>
+                          </tr>
+                          <tr align="left" valign="top"> 
+                            <td><img src="shop/kepek/nyilnar.gif" width="14" height="10"></td>
+                            <td><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/keres.asp?GOMB=7&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="336699">TOVÁBBI 
+                              ELÕRENDELHETÕ FILMEK</font> </a></b></font></td>
+                          </tr>
+                        </table>                      </td>
+                    </tr>
+                  </table>                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>
+<table cellspacing=0 cellpadding=0 
+      width=426 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=397 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">&nbsp;&nbsp;AKTUÁLIS 
+                  KÖNYV-MEGJELENÉSEK </font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=417> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td align="left" colspan="4">                      </td>
+                    </tr>
+                    
+                    <tr align="center" valign="top"> 
+                      <td width="25%"><font color="006699"><b><a href="book/prod.asp?FILMAZ=10715&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10715.jpg" width="80" border="0"></a></b></font></td>
+                      <td width="25%"><font color="006699"><b><font size="2"><a href="book/prod.asp?FILMAZ=10723&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10723.jpg" width="80" border="0"></a></font></b></font></td>
+                      <td width="25%"><font color="006699"><b><font size="2"><a href="book/prod.asp?FILMAZ=10724&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10724.jpg" width="80" border="0"></a></font></b></font></td>
+                      <td width="25%"><font color="006699"><b><font size="2"><a href="book/prod.asp?FILMAZ=10725&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10725.jpg" width="80" border="0"></a></font></b></font></td>
+                    </tr>
+                    <tr align="center" valign="top"> 
+                      <td width="25%"><a href="book/prod.asp?FILMAZ=10715&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Twilight - Alkonyat (keményborítós változat)</font></b></font></a></td>
+                      <td width="25%"><a href="book/prod.asp?FILMAZ=10723&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Twilight - Alkonyat (puhafedeles változat)</font></b></font></a></td>
+                      <td width="25%"><a href="book/prod.asp?FILMAZ=10724&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Watchmen - Az Õrzõk - I. kötet</font></b></font></a></td>
+                      <td width="25%"><a href="book/prod.asp?FILMAZ=10725&amp;VID=066-193882322-6678351010467122" class="menulink"><font color="006699"><b><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Watchmen - Az Õrzõk - II. kötet</font></b></font></a></td>
+                    </tr>
+                    <tr align="center"> 
+                      <td colspan="2" align="left"  valign="top">                      </td>
+                      <td colspan="2" align="left" valign="top">                      </td>
+                    </tr>
+                  </table>                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+          <td valign="top" rowspan="2"> 
+            <table cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=4 border=0></td>
+                <td width=188 bgcolor="818962"><a href="dvd/keres.asp?GOMB=7&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">KÖVETKEZÕ 
+                  MEGJELENÉSEK</font></b></font></a></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=195 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=208>  
+                  <table width="100%" border="0" cellspacing="2" cellpadding="0">
+                     
+                    <tr bgcolor="EEEDD8"> 
+                      <td colspan="2"> 
+                        <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font size="1">&nbsp;&nbsp;<font color="818962">MÁRCIUS 2.</font></font></b></font></div>                      </td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10658&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Sejtjeink</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr bgcolor="EEEDD8"> 
+                      <td colspan="2"> 
+                        <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font size="1">&nbsp;&nbsp;<font color="818962">MÁRCIUS 3.</font></font></b></font></div>                      </td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10447&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Ananász expressz</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10617&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Az évszázad mérkõzése: 6:3</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10537&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Az öreg halász és a tenger (rajzfilm)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10734&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Bereczki Zoltán - Szinetár Dóra: Musical Duett koncert</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10611&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">BMX banditák</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10130&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Chrysalis - Az emlékrabló</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10550&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Kínai történet</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=9846&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Roman Polanski - Micsoda?</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10615&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Sátánka - Pokoli poronty (új kiadás)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10448&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Szesz, szex és steksz</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10446&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Szex telefonhívásra</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10193&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A pokol bajnoka</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=9788&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A szeretet ereje</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=5580&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A tökéletes pasi</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="bluray/prod.asp?FILMAZ=10618&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Ananász expressz</font></b></a><font color="#2B85BA"><b>&nbsp;(BLU-RAY)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=6194&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Az ördög és a tízparancsolat</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="bluray/prod.asp?FILMAZ=10386&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Szindbád hetedik utazása</font></b></a><font color="#2B85BA"><b>&nbsp;(BLU-RAY)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10538&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Született szerelmesek</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10484&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Working On a Dream (CD)</font></b></a><font color="##996633"><b>&nbsp;(CD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=2438&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font color="#333300">A szerelem tengere (új kiadás)</font></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10467&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font color="#333300">Kalózmesék 1.</font></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=9281&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font color="#333300">Romper Stomper</font></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=9355&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font color="#333300">Újabb éjszakai rohanás</font></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr bgcolor="EEEDD8"> 
+                      <td colspan="2"> 
+                        <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font size="1">&nbsp;&nbsp;<font color="818962">MÁRCIUS 4.</font></font></b></font></div>                      </td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10498&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A Dolog</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10554&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A meztelen dobos</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10727&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Csajok maffiája</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10728&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font color="#333300">A kábelbarát (szinkronizált változat)</font></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr bgcolor="EEEDD8"> 
+                      <td colspan="2"> 
+                        <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font size="1">&nbsp;&nbsp;<font color="818962">MÁRCIUS 5.</font></font></b></font></div>                      </td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=4158&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A nagy balhé - különleges kiadás</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10676&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A Vörös sárkány (egylemezes változat)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10673&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">American Graffiti (szinkronizált változat)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10672&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Babe</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10731&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Gálvölgyi János: Paródiaparádé</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10744&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">James Bond sorozat 1-20. (egylemezes kiadványok) (20 DVD) </font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10745&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Studio Ghibli sorozat (12 DVD)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10671&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">A gyanú árnyékában</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=6968&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Füstölgõ ászok</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=6675&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Holiday</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10674&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Hulk (egylemezes változat)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=3896&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Nyakunkon az élet</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=7054&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Õslények országa IV. - Út a közös völgybe</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=3357&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Õslények országa V. - A rejtélyes sziget</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=3358&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Õslények országa VI. - A Szaurusz Szikla titka</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10670&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <b><font color="#333300">Szabotõr (szinkronizát változat)</font></b></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15" valign="top"> 
+                        <div align="right"><img src="pic/kisnyil.gif" width="14" height="10"></div>                      </td>
+                      <td>  
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="dvd/film.asp?FILMAZ=10738&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font color="#333300">A lény 3. / A lény 4. (2 DVD) (Twinpack)</font></a><font color="#990099"><b>&nbsp;(DVD)</b></font></font></td>
+                    </tr>
+                     
+                  </table>                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>
+            </td>
+        </tr>
+         
+        <tr> 
+          <td valign="top" colspan="2"> 
+            <table cellspacing=0 cellpadding=0 
+      width=426 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=416 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">AJÁNLAT 
+                  </font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td colspan=2>
+<a href="http://www.xpress.hu/bluray/keres.asp?keres=396&GOMB=42&NEV=A%20majmok%20bolygója&amp;VID=066-193882322-6678351010467122"><img src="reklamok/bdmajmok.jpg" width="425" height="160" border="0"></a></td>
+                <td background=pic/bdot.gif><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+        </tr>
+        <tr> 
+          <td valign="top" colspan="2" rowspan="2"> 
+            <table cellspacing=0 cellpadding=0 
+      width=426 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=397 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">ÚJDONSÁGOK 
+                  </font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=417>
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Halálfutam</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">A nap, amikor a Föld megállt</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Cápa 4. - A cápa bosszúja</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Ellenséges terület 3. - A kolumbiai túsz</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="bluray/prod.asp?FILMAZ=10503&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10503.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10548&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10548.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10549&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10549.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10555&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10555.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>5790 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>2890 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Hóvirágünnep</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Hupikék Törpikék 9. - Törpapa esküvõje</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Delta</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Merlin és a sárkányok világa</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10488&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10488.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10489&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10489.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10505&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10505.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10552&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10552.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>1890 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>1490 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>1890 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Mária szerelmei</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Berlin: A fal leomlik</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">15 perc hírnév (új kiadás)</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Távol az otthontól</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10591&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10591.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10592&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10592.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10616&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10616.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10594&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10594.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>1890 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>1990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">A szolgálólány meséje</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Halálfutam</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Halálfutam - Limitált, fémdobozos változat (Steelbook)</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Kínzó közelség</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10593&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10593.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10500&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10500.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10501&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10501.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10441&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10441.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>2790 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>3690 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>2790 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Ments meg! - 1. évad (4 DVD)</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Step Up 2. - Streetdance</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Vadbarmok</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Kínzó közelség</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10442&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10442.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10443&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10443.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10444&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10444.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="bluray/prod.asp?FILMAZ=10461&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10461.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>7490 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>2790 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>2790 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>6490 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Alias - 5. évad (5 DVD)</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Született feleségek - 4. évad (5 DVD)</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">A macskám, a családom és a fiúk</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Zene a sötétben</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10342&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10342.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10343&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10343.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10344&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10344.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10487&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10487.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>6690 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>6690 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>2890 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>1890 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+
+<table width="98%" border="0" cellspacing="1" cellpadding="0" align="center">
+  <tr align="center" valign="bottom"> 
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Elsüllyedt világok 1.</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Elsüllyedt világok 2.</font></b></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Elsüllyedt világok 3.</font></b></font></td>
+	<td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><font color="#000000">Elsüllyedt világok 4.</font></b></font></td>
+  </tr>
+  <tr align="center"> 
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10607&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10607.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10608&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10608.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10609&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10609.jpg" width="60" height="76" border="0"></a></td>
+    <td width="25%"><a href="dvd/film.asp?FILMAZ=10610&amp;VID=066-193882322-6678351010467122"><img src="dvd/cover/mini/10610.jpg" width="60" height="76" border="0"></a></td>
+  </tr>
+  <tr align="center" valign="top"> 
+    <td width="25%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+    <td width="25%"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><font size="1"><b>Ára: 
+      </b><font color="#CC3300"><b>990 Ft</b></font></font></font></font></td>
+  </tr>
+</table>
+ <br>
+</td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+          <td valign="top"> 
+            <table cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody>  
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=4 border=0></td>
+                <td width=188 bgcolor="818962"><a href="dvd/keres.asp?GOMB=29&amp;TCS=0&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">ÚJ 
+                  TERMÉKEK A KÍNÁLATBAN</font></b></font></a></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=195 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=208> 
+                  <table width="100%" border="0" cellspacing="2" cellpadding="0">
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=7597&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Bernard 1. 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10745&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Studio Ghibli sorozat (12 DVD) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10729&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">A per 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10730&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Kanapé New Yorkban  
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10744&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">James Bond sorozat 1-20. (egylemezes kiadványok) (20 DVD)  
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10742&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Pinokkió / Csipkerózsika (4 DVD) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10743&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Pinokkió / A dzsungel könyve (4 DVD) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10711&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">A tenger zúgása 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10731&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Gálvölgyi János: Paródiaparádé 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10738&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">A lény 3. / A lény 4. (2 DVD) (Twinpack) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10739&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Hannah és nõvérei / Alice (2 DVD) (Twinpack) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10740&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Hétalvó / Amit tudni akarsz a szexrõl... (2 DVD) (Twinpack) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10741&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Éjszaka a múzeumban / Utazás Darjeelingbe (2 DVD) (Twinpack) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10736&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">New Moon - Újhold (keményborítós változat) 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10737&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">New Moon - Újhold (puhafedeles változat) 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10735&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Alkonyat - Extra változat (2 DVD) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10732&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Péntek 13. (2009) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10733&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Péntek 13. (2009) - LIMITÁLT JASON MASZKOS kiadás (csak elegendõ rendelés esetén) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10734&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Bereczki Zoltán - Szinetár Dóra: Musical Duett koncert 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10727&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Csajok maffiája 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10728&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">A kábelbarát (szinkronizált változat) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10724&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Watchmen - Az Õrzõk - I. kötet 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10725&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Watchmen - Az Õrzõk - II. kötet 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10726&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Watchmen - Az Õrzõk - III. kötet 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10715&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Twilight - Alkonyat (keményborítós változat) 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="book/prod.asp?FILMAZ=10723&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Twilight - Alkonyat (puhafedeles változat) 
+                        <font color="#009933"><b>(KÖNYV)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10658&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Sejtjeink 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10670&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Szabotõr (szinkronizát változat) 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10671&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">A gyanú árnyékában 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                    <tr> 
+                      <td width="15"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+                       
+                      <td><a href="dvd/film.asp?FILMAZ=10672&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#333300">Babe 
+                        <font color="#990099"><b>(DVD)</b></font></font></a></td>
+                    </tr>
+                     
+                  </table>                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="#FF6600"><img height=1 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="#FF6600"><a href="dvd/keres.asp?GOMB=10&amp;KERES=8&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">FRISSEN 
+                  LEÁRAZOTT TERMÉKEK</font></b></font></a></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=204>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+   
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=3357&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Õslények országa V. - A rej...</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=3358&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Õslények országa VI. - A Sz...</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=3896&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Nyakunkon az élet</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=4158&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A nagy balhé - különleges k...</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=6675&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Holiday</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=6968&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Füstölgõ ászok</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=7054&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Õslények országa IV. - Út a...</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=7597&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Bernard 1.</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=7936&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A Bourne ultimátum</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=8283&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A királyság</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=10670&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Szabotõr (szinkronizát vált...</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=10671&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A gyanú árnyékában</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=10672&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Babe</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=10673&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">American Graffiti (szinkron...</font></a></div>
+    </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><img src="pic/kisnyil.gif" width="14" height="10"></td>      
+    <td> 
+      <div align="left"><a href="dvd/film.asp?FILMAZ=10674&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Hulk (egylemezes változat)</font></a></div>
+    </td>
+  </tr>  
+
+  <tr align="center"> 
+    <td align="right" valign="top">&nbsp;</td>      
+    <td> 
+      <div align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b><a href="dvd/keres.asp?GOMB=10&amp;KERES=8&amp;VID=066-193882322-6678351010467122"><br>
+        TOVÁBBI FRISS LEÁRAZÁSOK</a>&nbsp;</b></font></div>
+    </td>
+  </tr>  
+</table>
+</td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+        </tr>
+        <tr> 
+          <td valign="top" colspan="3"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td valign="top"> 
+                  <table cellspacing=0 cellpadding=0 
+      width=319 border=0>
+                    <tbody> 
+                    <tr> 
+                      <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                      <td width=290 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF" size="1">A 
+                        LEGÚJABB VÁSÁRLÓI KRITIKÁK</font></b></font></td>
+                      <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                    </tr>
+                    <tr> 
+                      <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                      <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                    </tr>
+                    <tr> 
+                      <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                      <td valign=top width=310>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10510&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Katasztrófafilm</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">csabi1984 
+        - (02.28 - 23:29)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10437&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Chicago - Extra változat (2 DVD)</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">ilovejuh 
+        - (02.28 - 22:12)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10535&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Hellraiser kocka - Számozott, limitált mágneszáras díszdoboz (4 DVD) (Csak megfelelõ számú elõrendelés esetén!)</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Gmiki 
+        - (02.28 - 17:00)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=3587&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>A zenevonat (2 DVD)</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Cesare Gonzago 
+        - (02.28 - 15:07)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10733&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Péntek 13. (2009) - LIMITÁLT JASON MASZKOS kiadás (csak elegendõ rendelés esetén)</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Koszika 
+        - (02.28 - 12:32)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10341&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Kaliforgia - 1. évad (3 DVD)</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Dii Papi 
+        - (02.28 - 12:19)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10637&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Drágám, a kölykök összementek!</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">tom991 
+        - (02.28 - 11:05)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10338&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Sasszem</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">- Kage - 
+        - (02.28 - 10:34)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=10556&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Az üresfejû</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">S8 
+        - (02.28 - 08:30)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="dvd/film.asp?FILMAZ=2760&amp;VID=066-193882322-6678351010467122" class="menulink">
+
+      <font color="#333333"><b>Elemi ösztön (2 DVD)</b></font></a> 
+                      <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font color="#990099"><b>(DVD)</b></font></font><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Karcsi 
+        - (02.28 - 07:31)</font></font>
+     </font></td>
+  </tr>
+   
+</table>
+</td>
+                    </tr>
+                    <tr> 
+                      <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                    </tr>
+                    </tbody> 
+                  </table>                </td>
+                <td valign="top"> 
+                  <table cellspacing=0 cellpadding=0 
+      width=320 border=0>
+                    <tbody> 
+                    <tr> 
+                      <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                      <td width=291 bgcolor="818962"><a href="forum/forum.asp?VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF" size="1">FÓRUM 
+                        HOZZÁSZÓLÁSOK </font></b></font></a></td>
+                      <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                    </tr>
+                    <tr> 
+                      <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                      <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                    </tr>
+                    <tr> 
+                      <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                      <td valign=top width=311>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=179&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>Megjelenések</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">gerbence 
+        - (02.28 - 23:33)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=4171&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>Tûzhányó (DVD)</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Dilibogyo 
+        - (02.28 - 23:32)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=1799&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>AKI DVD-t KERES</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">bluraymen 
+        - (02.28 - 23:31)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=604&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>milyen zenét hallgatsz?</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">xido 
+        - (02.28 - 23:08)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=4170&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>Katasztrófafilm (DVD)</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">vape 
+        - (02.28 - 23:05)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=79&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>Moziajánló</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666"> Tadam 
+        - (02.28 - 22:40)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=4164&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>Péntek 13. (2009) - LIMITÁLT JASON MASZKOS kiadás (csak elegendõ rendelés esetén) (DVD)</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Koszika 
+        - (02.28 - 22:15)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=305&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>KÉRDÉSEK</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Zuller 
+        - (02.28 - 21:43)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=93&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>a te dvd gyüjteményed</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Posza 
+        - (02.28 - 21:24)</font></font>
+     </font></td>
+  </tr>
+   
+  <tr> 
+    <td width="18" valign="top" align="right"><img src="pic/kisnyil.gif" width="14" height="10"></td>
+    <td valign="top"><font size="1" face="Verdana, Arial, Helvetica, Sans Serif" color="#000000"><a href="forum/forum.asp?FID=2851&amp;VID=066-193882322-6678351010467122" class="menulink"> 
+      <font color="#333333"><b>Macskarisztokraták - Extra változat (DVD)</b></font></a><br><font size="1" face="Arial, Helvetica, sans-serif"><font color="#666666">Zuller 
+        - (02.28 - 21:20)</font></font>
+     </font></td>
+  </tr>
+   
+</table>
+</td>
+                    </tr>
+                    <tr> 
+                      <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                    </tr>
+                    </tbody> 
+                  </table>                </td>
+              </tr>
+            </table>          </td>
+        </tr>
+         
+        <tr> 
+          <td valign="top">  
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">TOP 
+                  24 ÓRA</font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td valign=top width=204> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">1. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/top0.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10735&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Alkonyat - Extra változ...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">2. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=7936&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A Bourne ultimátum</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">3. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/top0.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10548&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A nap, amikor a Föld me...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">4. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10734&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Bereczki Zoltán - Szine...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">5. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10731&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Gálvölgyi János: Paródi...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">6. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=3352&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Carnivale - A vándorcir...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">7. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10711&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A tenger zúgása</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">8. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10549&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Cápa 4. - A cápa bosszú...</font></a></div>                      </td>
+                    </tr>
+                     
+                  </table>                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+          <td valign="top"> 
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1"> 
+                  </font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=204> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">9. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10729&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A per</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">10. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=3297&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Az olasz meló díszdoboz...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">11. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=6675&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Holiday</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">12. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=9299&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A bakancslista</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">13. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10501&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Halálfutam - Limitált, ...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">14. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10728&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A kábelbarát (szinkroni...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">15. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=5506&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Sebhelyek - szinkronizá...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">16. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=6614&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Hiúságok máglyája - Szi...</font></a></div>                      </td>
+                    </tr>
+                     
+                  </table>                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+          <td valign="top"> 
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=1 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=204> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">17. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=8700&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Cloverfield - Limitált ...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">18. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10500&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Halálfutam</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">19. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10742&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Pinokkió / Csipkerózsik...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">20. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=10744&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">James Bond sorozat 1-20...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">21. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=5859&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Trója (egylemezes válto...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">22. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/topfel.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=8283&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A királyság</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">23. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=8687&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A nemzet aranya 2. - Ti...</font></a></div>                      </td>
+                    </tr>
+                     
+                    <tr align="center"> 
+                      <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">24. 
+                        </font></b></td>
+                      <td align="center" valign="top"><img src="pic/tople.gif"></td>
+                      <td> 
+                        <div align="left"><a href="dvd/film.asp?FILMAZ=9306&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">I.e. 10 000</font></a></div>                      </td>
+                    </tr>
+                     
+                  </table>
+                                  </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=16 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+        </tr>
+        <tr> 
+          <td valign="top"> 
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="818962"><a href="shop/keres.asp?GOMB=21&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">ELÕRENDELÉS 
+                  TOP 10</font></b></font></a></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td valign=top width=204>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+   
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">1.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10535&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Hellraiser kocka - Számozot...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">2.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10197&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">James Bond - A Quantum csen...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">3.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10498&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A Dolog</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">4.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10518&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Hetedik - Extra változat (2...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">5.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10560&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Lost - Eltûntek - 4. évad (...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">6.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10519&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Pinokkió (Walt Disney) - Ju...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">7.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10551&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Éjféli etetés</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">8.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10543&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A mágus</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">9.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10563&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A hét mesterlövész (szinkro...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">10.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=10680&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Csillagközi romboló - 3. év...</font></a></div>
+          </td>
+  </tr>  
+
+</table>
+</td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=4 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+          <td valign="top"> 
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=8 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="818962"><a href="dvd/keres.asp?GOMB=20&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font color="#FFFFFF" size="1">ALL 
+                  TIME TOP 10</font></b></font></a></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td width=191 colspan=2><img height=5 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+                <td valign=top width=204>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+   
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">1.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=1290&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A Gyûrûk Ura - A gyûrû szöv...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">2.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=1955&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A Gyûrûk Ura - A két torony...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">3.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=2933&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A Gyûrûk Ura - A király vis...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">4.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=2478&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Star Wars trilógia - IV-VI....</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">5.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=1242&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Gyalog galopp (2 DVD)</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">6.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=1291&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Vissza a jövõbe trilógia (3...</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">7.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=1354&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">A tanú</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">8.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=4261&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Ponyvaregény</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">9.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=1966&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Mátrix újratöltve (2 DVD)</font></a></div>
+          </td>
+  </tr>  
+ 
+  <tr align="center"> 
+    <td align="right" valign="top"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="000000">10.</font></b></td>
+          <td> 
+            <div align="left"><a href="dvd/film.asp?FILMAZ=776&amp;VID=066-193882322-6678351010467122" class="menulink"><font face="Verdana, Arial, Helvetica, sans-serif" color="000000" size="1">Star Wars I - Baljós árnyak...</font></a></div>
+          </td>
+  </tr>  
+
+</table>
+ </td>
+              </tr>
+              <tr> 
+                <td colspan=2><img height=4 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+          <td valign="top"> 
+            <table height=131 cellspacing=0 cellpadding=0 
+      width=213 border=0>
+              <tbody> 
+              <tr> 
+                <td height=20 bgcolor="818962"><img height=1 alt="" src="pic/cdot.gif" width=8 border=0></td>
+                <td width=184 bgcolor="818962"><font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF" size="1">AJÁNLAT</font></b></font></td>
+                <td background=pic/wdot.gif bgcolor="818962"  
+          height=20><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              <tr> 
+                <td rowspan="3" colspan=2><a href="http://www.xpress.hu/dvd/film.asp?FILMAZ=9069&VID=066-193882322-6678351010467122"><img src="reklamok/gotham1.jpg" border="0"></a></td>
+                <td background=pic/bdot.gif 
+          rowspan=3><img height=1 alt="" src="pic/cdot.gif" width=1 border=0></td>
+              </tr>
+              </tbody> 
+            </table>          </td>
+        </tr>
+ 
+      </table>    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="336699" colspan="2" valign="middle" align="center"> 
+      <table width="100%" border="0" cellpadding="1">
+        <tr valign="middle" align="center"> 
+          <td> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">© 
+              1999-2007 Xpress.hu (0, 0, <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><i> , 0</i></font>x, 0, 0, 0)</font></div>          </td>
+        </tr>
+      </table>    </td>
+  </tr>
+</table>
+
+ <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<font color="#FAFBD9"></font></font><br>
+<map name="kismenu"> 
+    <area shape="rect" coords="0,3,57,20" href="http://www.xpress.hu/default.asp?VID=066-193882322-6678351010467122" alt="Fõoldal" title="Fõoldal"> 
+    <area shape="rect" coords="276,2,298,21" href="http://www.xpress.hu/shop/info.asp?VID=066-193882322-6678351010467122" alt="Info" title="Info">
+    <area shape="rect" coords="67,3,174,22" href="http://www.xpress.hu/shop/admin.asp?VID=066-193882322-6678351010467122" alt="Adminisztráció" title="Adminisztráció"> 
+    <area shape="rect" coords="181,2,267,22" href="http://www.xpress.hu/shop/login.asp?VID=066-193882322-6678351010467122" alt="login"> 
+    <area shape="rect" coords="302,2,331,23" href="http://www.xpress.hu/shop/rendel.asp?VID=066-193882322-6678351010467122" alt="kosár" title="kosár"> 
+</map>
+<map name="kismenu2"> 
+<area shape="rect" coords="1,2,115,25" href="http://www.xpress.hu/shop/admin.asp?VID=066-193882322-6678351010467122" alt="Adminisztráció" title="Adminisztráció">
+<area shape="rect" coords="118,1,208,29" href="http://www.xpress.hu/shop/login.asp?VID=066-193882322-6678351010467122" alt="login">
+<area shape="rect" coords="212,1,238,27" href="http://www.xpress.hu/shop/info.asp?VID=066-193882322-6678351010467122" alt="Info" title="Info">
+<area shape="rect" coords="241,1,270,37" href="http://www.xpress.hu/shop/rendel.asp?VID=066-193882322-6678351010467122" alt="kosár" title="kosár">
+</map>
+<map name="fomenuk"> 
+		<area shape="rect" coords="305,3,353,25" href="http://www.xpress.hu/default.asp?VID=066-193882322-6678351010467122" alt="DVD" title="DVD">
+		<area shape="rect" coords="354,3,493,30" href="http://www.xpress.hu/merchandising/default.asp?VID=066-193882322-6678351010467122" alt="Üvegtigris" title="Üvegtigris">
+</map> 
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2449871-1";
+urchinTracker();
+</script>
+</body>
+</html>
