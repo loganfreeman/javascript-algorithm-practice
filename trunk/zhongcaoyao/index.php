@@ -1,6 +1,6 @@
 <?php
 set_time_limit(0);
-$prescription = isset($_GET['id'])?trim($_GET['q']):"";
+$prescription = isset($_GET['q'])?trim($_GET['q']):"";
 $id = isset($_GET['id'])?intval($_GET['id']):0;
 
 $r_num = 0; //结果个数
