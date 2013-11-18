@@ -1,0 +1,28 @@
+/* CSS Document */
+body{
+font-size:14px;
+line-height:150%;
+}
+h1{
+line-height:100%;
+}
+.ss{
+cursor:hand;
+line-height:150%;
+}
+.i_p{
+border:0px;
+width:0px;
+height:0px;
+line-height:150%;
+}
+#h_h{
+clear:both;
+height:5px;
+overflow:hidden;
+}
+#src{
+width:448px;
+border:1px dotted #c0c0c0;
+padding:10px 0px 10px 0px;
+}
