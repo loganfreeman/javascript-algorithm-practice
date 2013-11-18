@@ -1,0 +1,16 @@
+﻿*{margin:0;padding:0;}
+body{font-size:12px;font-family: Geneva, Arial, Helvetica, sans-serif;}
+a img {border:0;}
+
+.red{color:#f00;}
+.center{text-align:center;}
+
+a,a:visited{color:#0353ce;}
+table {font-size:12px;}
+	table th {font-size:12px;font-weight:bold;background-color:#f7f7f7;line-height:200%;padding: 0 5px;}
+
+	table th {font-size:12px;font-weight:bold;background:#EDF7FF;padding: 0 5px;color:#014198;line-height:200%;}
+
+/* footer */
+#footer{line-height:150%;text-align:center;color:#9c9c9c;padding: 8px 0;}
+	#footer a,#footer a:visited{color:#9c9c9c;}
