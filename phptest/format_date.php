@@ -31,7 +31,7 @@ class DateUtil {
 	}
 
 }
-$t = DateUtil::format("2003");
+$t = DateUtil::format(".");
 print($t."\n");
 
 $date = new DateTime('@' . $t);
