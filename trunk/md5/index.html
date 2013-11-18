@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>MD5在线查询</title>
+<link href="md5.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function show(n_s){
+	//document.getElementById('s_md5').innerHTML='<iframe marginheight=0 marginwidth=0 scrolling="no" frameborder="0" width="760" height="80" src="md5.php?n_s="'+n_s+'></iframe>';
+	document.getElementById('s_md5').innerHTML='<font color=red>正在查询...</font>';
+	document.getElementById('s_md5').innerHTML='<iframe marginheight=0 marginwidth=0 scrolling="no" frameborder="0" width="450" height="124" src="md5.php?n_s='+n_s+'"></iframe>';
+}
+</script>
+</head>
+
+<body>
+<center>
+<br><br>
+<h1>MD5在线查询</h1>
+<div id="src">请输入欲查询的值：<input name="n_s" type="text" onkeyup='show(this.value)'></div>
+<div id="s_md5"></div>
+</center>
+</body>
+</html>
