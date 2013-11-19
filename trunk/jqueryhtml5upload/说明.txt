@@ -1,0 +1,1 @@
+jquery+html5实现图片上传并裁切功能，上传图片前可预览裁切效果，显示裁切框，应用jquery.Jcrop.min.js实现，兼容性方面，适用浏览器：FireFox、Chrome、Opera. 不支持IE8、360、Safari、傲游、搜狗、世界之窗。本示例由网上的一个jquery html5图片裁切上传修改所得，原代码中缺少上传部分，只实现了图片预览和裁切。
