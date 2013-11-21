@@ -8,7 +8,7 @@
 
 <body>
 
-<p><a href="/jiemi.php"><img src="images/jiemi.jpg" width="112" height="35" border="0"></a></p>
+<p><a href="jiemi.php"><img src="images/jiemi.jpg" width="112" height="35" border="0"></a></p>
 <p><a href="jiami.php"><img src="images/jiami.jpg" width="112" height="35" border="0"></a></p>
 <p><a href="links.php"><img src="images/links.jpg" width="112" height="35" border="0"></a></p>
 <p><a href="about.php"><img src="images/about.jpg" width="112" height="35" border="0"></a></p>
