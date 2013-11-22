@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404未找到页面-{$sitename}</title>
+<meta name="keywords" content="{$keywords}">
+<meta name="description" content="{$description}">
+<include file="Home:system_js" />
+</head>
+<body>
+<div id="page-error">
+ <div class="page-error-focus fn-clear">
+		<div id="page-error-img">
+			<a href="{$root}"><img src="{$root}static/images/logo.png" alt="{$sitename}" /></a>
+			<h1>404</h1>
+			<p><span id="tip">抱歉，你要访问的页面被站长哪混蛋搞丢了.</span></p>
+			<p><span id="gbook">你可以<a href="{$url_guestbook}">给我们留言</a></span><label>或者</label><span id="go-back"><a href="{$root}">返回{$sitename}首页</a></span></p>
+
+		</div>
+		<!-- // page-error-img -->
+		<div class="ui-box ui-tbmov" id="error-directory">
+				  <div class="directory-item">
+				<ul class="directory-list">
+					<li>
+						<dl class="tv">
+							<dt><h2><a href="{:getlistname(2,'list_url')}">电视剧</a></h2></dt>
+			                <php>$vod_type=M('list')->where(array('list_pid'=>2))->select()</php>
+                            <fflist name="vod_type" id="ppvodson">
+			                <dd><a href="{:getlistname($ppvodson['list_id'],'list_url')}">{$ppvodson.list_name|msubstr=0,2}电视剧</a></dd>
+                           </fflist>
+						</dl>
+					</li>
+					<li>
+						<dl class="movie">
+							<dt><h2><a href="{:getlistname(1,'list_url')}">电影</a></h2></dt>
+							<php>$vod_type=M('list')->where(array('list_pid'=>1))->select()</php>
+                            <fflist name="vod_type" id="ppvodson">
+			                <dd><a href="{:getlistname($ppvodson['list_id'],'list_url')}">{$ppvodson.list_name}</a></dd>
+                            </fflist>	
+						</dl>
+					</li>
+					<li>
+						<dl class="cartoon">
+							<dt><h2><a href="{:getlistname(3,'list_url')}">动漫</a></h2></dt>
+							<php>$catlist = D('Mcat')->list_cat(3);</php>
+                            <volist name="catlist" id="vo" offset="0" length='16'>
+                            <dd><a href="{$root}vodlist-3-mcid-{$vo.m_cid}.html">{$vo.m_name}</a></dd>
+                            </volist>	
+						</dl>
+					</li>
+					<li>
+						<dl class="fun">
+							<dt><h2><a href="{:getlistname(4,'list_url')}">综艺节目</a></h2></dt>				
+							<php>$catlist = D('Mcat')->list_cat(4);</php>
+                            <volist name="catlist" id="vo" offset="0" length='15'>
+                            <dd><a href="{$root}vodlist-4-mcid-{$vo.m_cid}.html">{$vo.m_name}</a></dd>
+                            </volist>
+						</dl>
+					</li>
+					<li>
+						<dl class="wei">
+							<dt><h2><a href="{:getlistname(35,'list_url')}">微电影</a></h2></dt>
+							<php>$catlist = D('Mcat')->list_cat(35);</php>
+                            <volist name="catlist" id="vo"  offset="0" length='8'>
+                            <dd><a href="{$root}vodlist-35-mcid-{$vo.m_cid}.html">{$vo.m_name}</a></dd>
+                            </volist>
+						</dl>
+					</li>
+                    <li>
+                    <!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_bdhome"></a>
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_tieba"></a>
+<a class="bds_ty"></a>
+<a class="bds_sqq"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+</li>
+				</ul>
+			</div>
+			<!-- // directory-list end -->
+		</div>
+		<!-- // ui-box end -->
+	</div>
+	<!-- // page-error-focus end -->
+  <div id="page-error-txt">
+      <div id="page-error-search">
+        <div class="search">
+          <form id="search" name="search" method="POST" action="{$root}search" onsubmit="return qrsearch();">
+            <input type="text" id="wd" name="wd" class="input-txt" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};" />
+            <input type="submit" id="searchbutton"  class="input-btn" value="" />
+          </form>
+        </div>
+      </div>
+      <div id="page-error-list">
+        <ul class="img-list fn-clear">
+          <php>$vod_err_img = ff_mysql_vod('cid:1,2,3,4;limit:5;dat:7;order:vod_addtime desc'); </php>
+          <fflist name="vod_err_img" id="ppvod">
+            <li><a class="play-img" href="{$ppvod.vod_readurl}"><img class="loading" width="110" height="150"  src="{$root}static/images/blank.png" data-original="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name}" />
+              <label class="mask"></label>
+              <label class="text">
+                <neq name="ppvod.vod_continu" value="0">第{$ppvod.vod_continu}集
+                  <else/>
+                  {$ppvod.vod_title|default='全集'}</neq>
+              </label>
+              <label class="score">
+                <eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}
+                  <else/>
+                  {$ppvod.vod_gold}</eq>
+              </label>
+              </a>
+              <h3><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></h3>
+              <p class="star">{$ppvod.vod_actor|ff_search_url}</p>
+            </li>
+          </fflist>
+        </ul>
+        <ul class="txt-list">
+          <php>$vod_err_txt = ff_mysql_vod('cid:1,2,3,4;limit:5,9;dat:7;order:vod_addtime desc'); </php>
+          <fflist name="vod_err_txt" id="ppvod">
+            <li><span><lt name="i" value="10">0{$i}.<else/><gt name="i" value="12">{$i}.<else/>{$i}.</gt></lt>
+            </span><a href="{$ppvod.vod_readurl}"  title="{$ppvod.list_name}{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,10}</a>/<a class="gray" href="{$ppvod.list_url}">{$ppvod.list_name}</a></li>
+          </fflist>
+        </ul>
+      </div>
+  </div>
+
+</div>
+
+</body>
+</html>

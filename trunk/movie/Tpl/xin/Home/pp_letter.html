@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><notempty name="list_title">{$list_title}<else/>最新{$list_name}-{$list_dir}{$list_name_big}{$list_name}-2011最新{$list_name}</notempty> - {$sitename}</title>
+<meta name="keywords" content="<notempty name="list_keywords">{$list_keywords},{$list_name},{$keywords}</notempty>,{$list_name}">
+<meta name="description" content="<notempty name="list_description">{$list_description}<else/>由丫丫电影网提供这里为你收集了{$list_name},{$list_name}国语版,{$list_name}大全,{$list_name}热门推荐榜希望我们提供{$list_name}让您喜欢哦。</notempty>">
+<include file="Home:system_js" />
+<!-- 请置于所有广告位代码之前 -->
+<base target="_blank"/>
+</head>
+<body>
+<include file="Home:pp_header" />
+<!-- // header end -->
+<div id="content" class="layout">
+  <div class="ui-sponsor">
+{:getadsurl('list_960_01')}
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs"><li class="home"><a href="{$root}">首页</a></li><li><h1><a href="{$list_url}">{$list_name}大全</a></h1></li></ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div class="ui-box">
+    <div class="ui-bar fn-clear">
+      <ul class="view-modev">
+      <li id="view-letter"><a  class="current"  " target="_self"  id="byletter">字母模式</a></li>
+        <li id="view-grid"><a  href="/vod-type-id-{$list_id}-t-1.html" data="t-1"   target="_self"  class="listv">图片模式</a></li>
+        <li id="view-list"><a  href="/vod-type-id-{$list_id}-t-2.html" data="t-2"   target="_self"  class="listv">列表模式</a></li>
+      </ul>
+      <!-- view-mode end -->
+      <div class="view-filter"><a  href="/vod-type-id-{$list_id}.html" class="order" data="order-addtime"><span data="order-2">最新{$list_name}</span></a><em>|</em><a  href="/vod-type-id-{$list_id}-order-hits.html"  class="order " data="order-hits"><span data="order-1">{$list_name}排行榜</span></a><em>|</em><a  href="/vod-type-id-{$list_id}-order-gold.html"  class="order  "  data="order-pingfen"><span data="order-3"> {$list_name}推荐榜</span></a></div>
+      <!-- view-filter end -->
+    </div>
+    <!-- // ui-bar end -->
+	<div class="letter-box">
+	<div class="letter">
+    <ul>
+    <php>$array_letter = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');</php>
+     <fflist name="array_letter" id="letter"><php>$list_vod = ff_mysql_vod('cid:'.$list_id.';letter:'.$letter.';limit:200;order:vod_letter asc,vod_addtime desc');</php>
+     <li ><empty name="list_vod"><span>{$letter|strtoupper}</span><else /><a target="_self" href="#{$letter|strtoupper}">{$letter|strtoupper}</a></empty></li></fflist>
+<php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:1,2,3,4,5,6,7,8,9;limit:1;order:vod_letter asc,vod_addtime desc');</php>
+<li class="sz"><empty name="vod_num"><span>其他</span><else /><a target="_self" href="#other">&nbsp;其他&nbsp;</a></empty></li>
+    </ul>
+  </div>
+  </div>
+    <!-- // letter End -->
+  </div>
+  <!-- letter-query end -->
+  <div id="serial-box" class="layout">
+  <if condition="$list_pid eq 1">
+   <elseif condition="$list_id eq 35"/>
+   <else />
+    <div class="ui-box" id="serial-box-lz">
+      <div class="ui-title fn-clear">
+        <h2>{$list_name}连载区更新</h2>
+      </div>
+      <div class="ui-cnt serial-union fn-clear">
+      <ul class="txt-list">
+       <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';limit:16;lz:1;order:vod_id desc');</php>
+        <fflist name="vod_mov_top" id="ppvod">
+          <li <php>if($i % 4 == 3){echo "class='even'";} else {echo "";};</php><php>if($i % 4 == 0){echo "class='even'";} else {echo "";};</php>>
+            <h3 class="show-tipinfo"><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name|getcolor=$ppvod['vod_color']}</a>/<a href="{$ppvod.lastplay_url}">{$ppvod.lastplay_name}</a><em>{$ppvod.vod_addtime|date='m-d',###}</em><php>$add_time = $ppvod['vod_addtime'];$today = date("Ymd"); if(date("Ymd", $add_time) == $today) {
+echo "<img alt='new' src='/static/images/new3.gif'>";} else {echo "";}</php></h3>
+            <div class="tipInfo">
+              <div class="play-img"><img class="loading" src="{$ppvod.vod_picurl}"  src="{$root}static/images/blank.png" data-original="{$ppvod.vod_picurl}"/></div>
+              <dl>
+                <dt>{$ppvod.vod_name}</dt>
+                <dd>
+                  <label>主演：</label>
+                  <span>{$ppvod.vod_actor|ff_search_url}</span></dd>
+                <dd class="jq">
+                  <label>剧情：</label>
+                  {$ppvod.vod_content|msubstr=0,20}…</dd>
+                <dd class="bg">
+                  <label>{$ppvod.vod_title}</label>
+                </dd>
+                <dd class="bg">
+                  <label>更新时间：</label>
+                  {$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</dd>
+              </dl>
+            </div>
+          </li>
+        </fflist>
+         </ul>
+               <div class="letter-union">
+        <!-- 广告位：list02-300 -->
+      {:getadsurl('mov_250*300_a1')}
+      </div>
+      <!-- // letter-union end -->
+    </div>
+     <div class="ui-cnt">
+      <ul class="txt-list fn-clear">
+ <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';limit:17,15;lz:1;order:vod_id desc');</php>
+        <fflist name="vod_mov_top" id="ppvod">
+          <li <php>if($i % 6 == 4 ){echo "class='even'";} else {echo "";};</php><php>if($i % 6 == 5 ){echo "class='even'";} else {echo "";};</php><php>if($i % 6 == 0 ){echo "class='even'";} else {echo "";};</php>>
+            <h3 class="show-tipinfo"><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name|getcolor=$ppvod['vod_color']}</a>/<a href="{$ppvod.lastplay_url}">{$ppvod.lastplay_name}</a><em>{$ppvod.vod_addtime|date='m-d',###}</em><php>$add_time = $ppvod['vod_addtime'];$today = date("Ymd"); if(date("Ymd", $add_time) == $today) {
+echo "<img alt='new' src='/static/images/new3.gif'>";} else {echo "";}</php></h3>
+            <div class="tipInfo">
+              <div class="play-img"><img src="{$ppvod.vod_picurl}"  onerror="javascript:this.src='{$root}static/images/m1938.gif';"  alt="{$ppvod.vod_name}"/></div>
+              <dl>
+                <dt>{$ppvod.vod_name}</dt>
+                <dd>
+                  <label>主演：</label>
+                  <span>{$ppvod.vod_actor|ff_search_url}</span></dd>
+                <dd class="jq">
+                  <label>剧情：</label>
+                  {$ppvod.vod_content|msubstr=0,20}…</dd>
+                <dd class="bg">
+                  <label>{$ppvod.vod_title}</label>
+                </dd>
+                <dd class="bg">
+                  <label>更新时间：</label>
+                  {$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</dd>
+              </dl>
+            </div>
+          </li>
+        </fflist>
+
+      </ul>
+      <!-- // txt-list end -->
+    </div>
+  </div>
+    <div class="ui-box" id="serial-box-wj">
+      <div class="ui-title fn-clear">
+        <h2>{$list_name}完结区人气</h2>
+      </div>
+      <div class="ui-cnt serial-union fn-clear">
+        <!-- 这里调用除前面16条之外的连载的 -->
+        <ul class="txt-list">
+           <php>$vod_movv_top =ff_mysql_vod('cid:'.$list_id.';lz:2;limit:16;order:vod_hits desc');</php>
+        <fflist name="vod_movv_top" id="ppvod">
+          <li <php>if($i % 4 == 3){echo "class='even'";} else {echo "";};</php><php>if($i % 4 == 0){echo "class='even'";} else {echo "";};</php>>
+            <h3 class="show-tipinfo"><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name|getcolor=$ppvod['vod_color']}</a>/<a href="{$ppvod.lastplay_url}">{$ppvod.lastplay_name}</a><em>{$ppvod.vod_addtime|date='m-d',###}</em><php>$add_time = $ppvod['vod_addtime'];$today = date("Ymd"); if(date("Ymd", $add_time) == $today) {
+echo "<img alt='new' src='/static/images/new3.gif'>";} else {echo "";}</php></h3>
+            <div class="tipInfo">
+              <div class="play-img"><img src="{$ppvod.vod_picurl}"  onerror="javascript:this.src='{$root}static/images/m1938.gif';"  alt="{$ppvod.vod_name}"/></div>
+              <dl>
+                <dt>{$ppvod.vod_name}</dt>
+                <dd>
+                  <label>主演：</label>
+                  <span>{$ppvod.vod_actor|ff_search_url}</span></dd>
+                <dd class="jq">
+                  <label>剧情：</label>
+                  {$ppvod.vod_content|msubstr=0,20}…</dd>
+                <dd class="bg">
+                  <label>{$ppvod.vod_title}</label>
+                </dd>
+                <dd class="bg">
+                  <label>更新时间：</label>
+                  {$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</dd>
+              </dl>
+            </div>
+          </li>
+        </fflist>
+      </ul>
+        <!-- // txt-list End -->
+        <div class="letter-union">
+          <!-- 广告位：list02-300 -->
+         {:getadsurl('mov_250*300_a2')}
+        </div>
+        <!-- // detail-ad End -->
+      </div>
+    </div>
+  </div>
+  <!-- // ui-box end -->
+  </if>
+  
+  <div class="ui-box fn-clear" id="letter-focus">
+    <div class="letter-ranking">
+      <div class="ui-ranking">
+        <h2>{$list_name}排行榜</h2>
+        <ul class="ranking-list">
+          <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';hits:20;limit:10;order:vod_hits desc');</php>
+      <fflist name="vod_mov_top" id="ppvod">
+        <li><span>{$ppvod.vod_gold}</span>
+          <lt name="i" value="4"><em class="stress">0{$i}.</em>
+            <else/>
+              <em><gt name="i" value="9"><em>{$i}.</em><else/><em>0{$i}.</em></gt>.</em></lt>
+          </lt>
+          <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></li>
+      </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+      <div class="ui-ranking">
+        <h2>{$list_name}推荐榜</h2>
+        <ul class="ranking-list">
+        <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';limit:4,10;order:vod_hits desc');</php>
+      <fflist name="vod_mov_top" id="ppvod">
+        <li><span>{$ppvod.vod_hits}</span>
+          <lt name="i" value="4"><em class="stress">0{$i}.</em>
+            <else/>
+              <em><gt name="i" value="9"><em>{$i}.</em><else/><em>0{$i}.</em></gt>.</em></lt>
+          </lt>
+          <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></li>
+      </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+    </div>
+    <!-- // letter-ranking end -->
+
+    <fflist name="array_letter" id="letter">
+        <php>$list_vod = ff_mysql_vod('cid:'.$list_id.';letter:'.$letter.';limit:200;order:vod_letter asc,vod_addtime desc');</php>
+   <empty name="list_vod"><else />
+    <dl class="letter-focus-item" name="{$letter|strtoupper}" id="{$letter|strtoupper}">
+      <dt><a name="{$letter}">{$letter|strtoupper}</a></dt>
+      <fflist name="list_vod" id="ppvod" mod="4">
+      <dd><span><gt name="i" value="9"><em>{$i}.</em><else/><em>0{$i}.</em></gt></span><a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,12,'utf-8',true|getcolor=$ppvod['vod_color']}</a></dd>
+      </fflist>
+    </dl>
+    </empty>
+    </fflist> 
+         <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:1,2,3,4,5,6,7,8,9;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+           <empty name="vod_num"><else />
+            <dl class="letter-focus-item" name="other" id="other">
+      <dt><a name="other">其他</a></dt>
+      <fflist name="vod_num" id="ppvod" mod="4">
+      <dd><span><gt name="i" value="9"><em>{$i}.</em><else/><em>0{$i}.</em></gt></span><a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,12,'utf-8',true|getcolor=$ppvod['vod_color']}</a></dd>
+      </fflist>
+    </dl>
+    </empty>
+  </div>
+  <!-- // ui-box end -->
+  <div class="ui-box ui-qire" id="star-collection">
+    <h3>明星合集专题</h3>
+    <ul class="txt-list fn-clear">
+     <php>$special_new = ff_mysql_special('limit:0,16;order:special_id desc');</php>
+    <fflist name="special_new" id="ppvod">
+      <li><a href="{$ppvod.special_readurl}" target="_blank">{$ppvod.special_name|msubstr=0,20}</a></li>
+    </fflist>
+    </ul>
+  </div>
+  <!-- // star-collection end -->
+</div></div>
+<!-- // wrap End -->
+<include file="Home:pp_footer" />
+<script type="text/javascript">
+$(function(){
+	$("img.itemimg").lazyload({effect:"fadeIn",event:"sporty"});
+	$(".show-tipinfo a,.show-tipinfo span.line").hover(
+	function(){
+		$(this).parents("li").find("div.lvbox").show();
+		$(this).parents("li").find("img.itemimg").trigger("sporty");
+		},
+	function(){
+		$(this).parents("li").find("div.lvbox").hide();
+	});
+	
+	$(".letter ul li a").click(function(){
+		var rel=$(this).attr("href");
+		var pos=$(rel).offset().top;//获取该点到头部的距离
+		$("html,body").stop(true,false).animate({scrollTop:pos-60}, 800);
+		return false;
+	});
+	commonFixed(".letter");
+});
+//通用fixed固定
+function commonFixed(selector,top,offset){
+	var el = $(selector);
+	if(!el.length) return;
+	var	h = top || el.offset().top,
+		height = el.outerHeight(true),
+		offt = offset || 0,
+		isIE6 = $.browser.msie && $.browser.version=="6.0";
+	if(isIE6){
+		$(window).bind("scroll.fixed",function(){
+			if($(this).scrollTop() > h){
+				el.css({"position":"relative","z-index":"999","opacity":"0","top":$(this).scrollTop() - h + offt}).stop(true,false).animate({opacity:1});
+			}else{
+				el.css("position","static");
+			}
+		}).trigger("scroll.fixed");
+	}else{
+		$(window).bind("scroll.fixed",function(){
+			if($(this).scrollTop() > h){
+				el.hasClass("fixed")?"":el.addClass("fixed");
+			}else{
+				el.hasClass("fixed")?el.removeClass("fixed"):"";
+			}
+		}).trigger("scroll.fixed");
+	}
+}
+</script>
+</body>
+</html>

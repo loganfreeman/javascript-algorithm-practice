@@ -1,0 +1,566 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>快播常见问题解决方案</title>
+<link href="css/FIQ.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$(".zk").hide();
+        var u_num = getQueryString('u_sea');
+        if(u_num == 0 || u_num == null || u_num < 0 || u_num > 25){
+           u_num = 1; 
+        }
+    //$("#zk_"+u_num).slideToggle();
+    //$("#"+u_num).addClass('xz');
+	$(".clik").click(function(){
+		var u_class = $(this).attr('class');
+		if(u_class == 'clik'){
+			$(this).addClass('xz');
+		}else{
+			$(this).removeClass('xz');
+		}
+		var zk_id = '#zk_'+$(this).attr('id');
+		$(zk_id).slideToggle(200);
+		return false;
+	});
+});
+ 
+function getQueryString(paras){
+    var url = location.href;
+    var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");
+    var paraObj = {}
+    for (i=0; j=paraString[i]; i++){
+        paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length);  
+    }  
+    var returnValue = paraObj[paras.toLowerCase()];  
+    if(typeof(returnValue)=="undefined"){
+        return "";  
+    }else{
+        return returnValue; 
+    }
+}
+ 
+
+function SubmitKeyClick(obj, evt) {
+        evt = (evt) ? evt : ((window.event) ? window.event : "")
+        keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
+        if (keyCode == 13) {
+           u_search();
+        }
+    } 
+ 
+</script>
+
+</head>
+<body>
+<div id="wrap">
+	<div class="com">
+		<div class="top">
+		<a href="http://www.tbmov.com" target="_blank" class="logo_links"></a>
+		<span>
+			<a href="http://www.tbmov.com" target="_blank" style=" color:#29ADEB; font-size: 12px;">同步影视网</a>&nbsp;&nbsp;<br/>
+		</span>
+		</div>
+		<div class="search">
+			<div class="L_q"><p>常见问题</p></div>
+			
+
+		</div>
+		<div class="con_info">
+			<div class="info_left">
+				<ul class="dh">
+										<li class="xz"><a href="/faq/index.html">FLASH常见问题</a></li>
+                                        <li class="xz"><a href="/faq/baiduplayer/F.html">百度影音常见问题</a></li>
+									</ul>
+			</div>
+			
+		<div class="info_right">
+<div class="liebiao">
+<ul>
+<li id="1" class="clik"><span class="num">1</span>网络连接失败、网络类型(-1)、(0-6)说明</li>
+<li id="zk_1" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">网络连接失败<br />
+①可能由于您系统自带防火墙或其他防护软件限制了快播的使用，所以提示网络连接失败。<br />
+请确认把快播安装文件夹下qvodplayer.exe与qvodterminal.exe加入到允许或信任的列表中，然后开启路由上的UPNP功能再试（已开启状态下请确认系统自带防火墙未阻止UPNP框架）。<br />
+②如果按上述方法仍不能解决，建议问问相同网络环境的其它用户或朋友能否正常使用快播，如果都不能正常使用，可能是网络环境限制（可下载：</span><span style="font-size:smaller;">用户环境检查工具</span><span style="font-size:smaller;"> 测试，提示请检查您的80端口是否受限！...与服务器通信失败，如下图），请与网络提供商或运营商联系咨询看看。</span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/20120307113733.jpg" width="400" height="279" /></span></p>
+<p><span style="font-size:smaller;">网络类型(-1) <br />
+快播联网程序qvodterminal.exe 没有启动或无法访问网络。<br />
+可能是电脑装了防火墙或杀毒软件等，在运行QVOD播放器时提示用户是否允许qvodterminal.exe访问网络，用户选择了否。<br />
+解决办法：<br />
+①把QvodTerminal.exe和QvodPlayer.exe选择允许并将其添加到信任域（退出或关闭，防火墙等仍是会自动拦截，并不起作用的）<br />
+②尝试先卸载相关防火墙、安全软件，重新安装快播安装包再试试。<br />
+③在网吧等公共场所，可能是管理员在系统限制快播运行，可咨询管理员看看。</span></p>
+<p><span style="font-size:smaller;">网络类型(0)是正常情况。</span></p>
+<p><span style="font-size:smaller;">网络类型(1～3)<br />
+属于内网环境，虽然也可以使用，但是效果稍差，请在路由器内，开启UPNP，可参考：</span><span style="font-size:smaller;">http://bbs.kuaibo.com/viewthread.php?tid=24529&amp;highlight=UPNP</span></p>
+<p><span style="font-size:smaller;">网络类型(4～6)<br />
+这个情况是所在网络环境有关，快播无法正常连接互联网。<br />
+①首先查看本地防火墙（还有系统自带的防火墙），是否拦截了快播QvodTerminal.exe 进程的运行和网络通信，建议都完全关闭，然后重新做检测。<br />
+②如果最近更换了路由器出现，请尝试不接路由器直接联网测试，如果正常，说明是路由器本身设置引起的，可参看路由器说明书进行设置。<br />
+③如果使用的网络是小区宽带网络，公司网络，校园网等通常会有这个情况发生，（可下载：</span><span style="font-size:smaller;">用户环境检查工具</span><span style="font-size:smaller;"> 测试确认），可联系网络提供商或网络管理员咨询具体情况。<br />
+</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="2" class="clik"><span class="num">2</span>看完电影关闭了快播，为什么还有数据在下载上传呢？</li>
+<li id="zk_2" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-family:宋体;">出现这种情况是因为没有完全退出快播，快播的网络模块程序（</span><span lang="EN-US">qvodterminal</span><span style="font-family:宋体;">）仍在后台运行引起的。</span></span></p>
+<p style="text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph"><span style="font-size:smaller;"><span style="font-family:宋体;">如果您不想要快播继续传输数据，可在任务栏右下角右键点击快播图标，选择完全退出就可以啦。</span></span><span lang="EN-US"><?xml:namespace prefix = o /><o:p></o:p></span></p>
+<p style="text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph"><span style="font-size:smaller;"><span style="font-family:宋体;">如图：</span></span></p>
+<p style="text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph"><span style="font-size:smaller;"><img alt="" src="images/123.png" width="167" height="242" /></span></p>
+<p style="text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph"><span lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="3" class="clik"><span class="num">3</span>安装快播后有时可能会有网速变慢的情况，该如何解决？</li>
+<li id="zk_3" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;<span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;">快播有提供速度限制模式喔，大大方便用户可根据需要自主调整带宽占用情况。实现方式：在系统托盘右键点击</span></span><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;">快播图标</span></span><span style="font-size:smaller;"><span style="background-color:white;font-family:Verdana, sans-serif;color:black;background-origin:initial;background-clip:initial;" lang="EN-US">-限速模式</span><span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;">。如果您在用快播看电影时，为保证流畅观看，建议将速度限制模式改为自动模式，不看电影的时候设置禁止传输或完全退出即可。</span></span></p>
+<p><span style="font-size:smaller;">如图：</span></p>
+<p><span style="font-size:smaller;">&nbsp;</span></p>
+<p style="text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph"><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;"><img alt="" src="images/image/655.jpg" width="279" height="424" /></span></span><span style="font-family:'Verdana','sans-serif';background:white;color:black;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="4" class="clik"><span class="num">4</span>在线点播一直只显示缓冲却不能播放？</li>
+<li id="zk_4" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;<span style="font-family:宋体;color:black;">这种情况一般是由以下几种情况引起的：</span></span></p>
+<p><span style="font-size:smaller;"><strong style="text-align:left;line-height:normal;font-style:normal;word-wrap:break-word;font-weight:bold;">情况一：由防火墙引起的。</strong></span></p>
+<p><span style="font-family:宋体;color:black;font-size:smaller;">解决办法很简单：请在您开启的防火墙或是杀毒软件里设置允许</span><span style="font-family:Verdana, sans-serif;color:black;font-size:smaller;" lang="EN-US">QvodTerminal.exe</span><span style="font-family:宋体;color:black;font-size:smaller;">和</span><span style="font-family:Verdana, sans-serif;color:black;font-size:smaller;" lang="EN-US">QvodPlayer.exe</span><span style="font-family:宋体;color:black;font-size:smaller;">访问网络。</span><span style="font-size:smaller;"><span style="font-family:宋体;color:black;">常见防火墙和杀毒软件默认不会拦截，如果不小心设置了可参考以下方法修改</span>：</span></p>
+<p><img alt="" src="images/mcafee1.png" width="600" height="464" /></p>
+<p>&nbsp;</p>
+<p><img alt="" src="images/mcafee2.png" width="600" height="386" /></p>
+<p><img alt="" src="images/mcafee1.png" width="0" height="0" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size:smaller;"><strong style="text-align:left;line-height:normal;font-style:normal;word-wrap:break-word;font-weight:bold;">情况二：由网络<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25B4_25F8_25BF_25ED">带宽</span>不足引起的。</strong><br style="line-height:normal;word-wrap:break-word;" />
+若出现能够接收到数据，连接到的源也比较多，但接收数据为几K/S，可能是由网络带宽不足所致，而网络太慢则可以尝试关掉其它的网络进程后，开启文件-选项-网络-HTTP协议后再试。<br style="line-height:normal;word-wrap:break-word;" />
+<br style="line-height:normal;word-wrap:break-word;" />
+<strong style="text-align:left;line-height:normal;font-style:normal;word-wrap:break-word;font-weight:bold;">情况三：由影片<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25D7_25CA_25D4_25B4">资源</span>失效引起的。</strong><br style="line-height:normal;word-wrap:break-word;" />
+快播（QvodPlayer）开始运行后都会需要一段时间的缓冲，但如果长时间缓冲后，仍显示接收数据为零，有可能是该片<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25C1_25B4_25BD_25D3">链接</span>失效或者下载的<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25D6_25D6_25D7_25D3">种子</span>文件被删除或损坏，请重新寻找影片资源再下载。多换几个不同的<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25CD_25F8_25D5_25BE">网站</span>试一下（如:</span><span style="font-size:smaller;">http://v.ifeng.com/kuaibo/</span><span style="font-size:smaller;">）。<br style="line-height:normal;word-wrap:break-word;" />
+<br style="line-height:normal;word-wrap:break-word;" />
+<strong style="text-align:left;line-height:normal;font-style:normal;word-wrap:break-word;font-weight:bold;">情况四：由影片资源太少引起的。</strong><br style="line-height:normal;word-wrap:break-word;" />
+若出现能够接收到数据，但连接数较少而接收数据为几K/S，则可能是资源太少导致，<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25BD_25A8_25D2_25E9">建议</span>重新寻找源多的文件下载或是更换<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25CB_25D9_25B6_25C8">速度</span>更好的网站在线点播。<br style="line-height:normal;word-wrap:break-word;" />
+<br style="line-height:normal;word-wrap:break-word;" />
+<strong style="text-align:left;line-height:normal;font-style:normal;word-wrap:break-word;font-weight:bold;">情况五：qvodterminal没有启动引起的。</strong><br style="line-height:normal;word-wrap:break-word;" />
+在<span style="border-bottom:#ff0000 1px solid;line-height:normal;word-wrap:break-word;white-space:nowrap;cursor:pointer;" class="t_tag" href="tag.php@name=_25C8_25CE_25CE_25F1">任务</span>管理查看qvodterminal是否随快播启动而启动，如果没有，请尝试重新安装快播，并在启动快播时留意是否有提示，选择允许快播两个程序联网。</span></p>
+<p style="text-align:left;text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph" align="left"><span style="color:black;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="5" class="clik"><span class="num">5</span>视频框架、更多调节设置后，更换视频还是要重新设置</li>
+<li id="zk_5" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">由于每一个视频默认比例有所不同，考虑到视频沿用相同设置，可能会直接影响到下个视频的播放比例，所以目前这些功能仅针对当前播放有效。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="6" class="clik"><span class="num">6</span>已经安装了快播播放器，在网页点播仍提示未安装？</li>
+<li id="zk_6" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">出现这类问题可能有以下几种原因：&nbsp;</span></p>
+<p><span style="font-size:smaller;"><span lang="EN-US">1.</span><span style="font-family:宋体;">由于您使用的浏览器属于多核心浏览器，如：搜狗、火狐等，请使用兼容模式点播（点击高速切换），或者使用系统自带</span><span lang="EN-US">IE</span><span style="font-family:宋体;">浏览器进行点播。</span></span></p>
+<p><span style="font-size:smaller;">如图：</span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/jianrong(1).jpg" width="326" height="127" /></span></p>
+<p><span style="font-size:smaller;"><span lang="EN-US">2.</span><span style="font-family:宋体;">由于您的浏览器管理加载项中禁用了快播插件引起。解决办法：打开</span><span lang="EN-US">IE</span><span style="font-family:宋体;">浏览器，在菜单栏工具项→找到加载项管理器→“启用”或“禁用”加载项，并在弹出的对话框中启用所有以</span><span lang="EN-US">ShenZhen QVOD </span><span style="font-family:宋体;">开头的加载项，</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">如图：</span></span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/image/jiaz.jpg" width="267" height="288" /></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:smaller;"><img alt="" src="images/image/guanli.jpg" width="480" height="342" /></span></p>
+<p class="MsoNormal"><span style="font-size:smaller;"><span lang="EN-US">3.</span><span style="font-family:宋体;">由于浏览器加载项没有快播插件，请重新安装最新版快播。快播</span><span lang="EN-US">5</span><span style="font-family:宋体;">下载地址：</span></span></p>
+<p class="MsoNormal"><span style="font-size:smaller;"><span lang="EN-US">http://dl.kuaibo.com/QvodSetupPlus5.exe</span></span></p>
+<p class="MsoNormal"><span style="font-size:smaller;">4.64位win7、vista系统请用非64位IE或其他32位浏览器点播（如360浏览器、世界之窗浏览器）</span></p>
+<p><span style="font-size:smaller;">如图：</span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/image/_25E9_259D_259E64_25E4_25BD_258Die.jpg" width="390" height="301" /></span></p>
+<p style="margin-left:15.75pt;mso-para-margin-left:1.5gd;" class="MsoNormal"><span style="font-size:smaller;"><img alt="" src="images/image/jiaz.jpg" width="0" height="0" /></span></p>
+<p style="margin-left:15.75pt;mso-para-margin-left:1.5gd;" class="MsoNormal"><span style="font-size:smaller;"><img alt="" src="images/image/jiaz.jpg" width="0" height="0" /></span></p>
+<p style="margin-left:15.75pt;mso-para-margin-left:1.5gd;" class="MsoNormal"><span lang="EN-US"><o:p></o:p></span></p>
+<p style="margin-left:15.75pt;mso-para-margin-left:1.5gd;" class="MsoNormal"><span lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="7" class="clik"><span class="num">7</span>网页点播或本地点播出现Runtime Error？</li>
+<li id="zk_7" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;<span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;">出现这样的情况有可能是系统运行库损坏，</span><span style="font-family:宋体;">建议您先进行病毒木马查杀，然后升级当前系统硬件的驱动程序，</span><span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;">重新安装运行库（</span></span><span lang="EN-US"><span style="font-size:smaller;"><span style="background-color:white;font-family:Verdana, sans-serif;color:#006699;background-origin:initial;background-clip:initial;">http://dl.pconline.com.cn/download/84617.html</span></span></span><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;color:black;background-origin:initial;background-clip:initial;">）</span><span style="font-family:宋体;">完成上述步骤后，再进行重新点播。</span></span></p>
+<p style="text-align:left;text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph" align="left"><span lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="8" class="clik"><span class="num">8</span>在点播过程出现：打开失败，（错误码：0x700...等），或是提示缺少相关解码器及无声音现象？</li>
+<li id="zk_8" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">出现这种情况可能是解码器出现错误。请尝试到快播官网（</span></span><span lang="EN-US"><span style="font-size:smaller;"><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;">www.kuaibo.com</span></span></span><span style="font-size:smaller;"><span style="font-family:宋体;">）</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">下载最新版快播安装后再试。</span></span></p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><b><span lang="EN-US"><o:p></o:p></span></b><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">另可参考：</span></span></p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><span style="font-size:smaller;"><span lang="EN-US">1、如果您在使用快播点播<span class="t_tag" href="tag.php@name=_25CA_25D3_25C6_25B5">视频</span>过程中遇到<span class="t_tag" href="tag.php@name=_25CC_25E1_25CA_25BE">提示</span>错误代码40XX或者有<span class="t_tag" href="tag.php@name=_25C9_25F9_25D2_25F4">声音</span>没图像的情况，可以通过<span class="t_tag" href="tag.php@name=_25CF_25C2_25D4_25D8">下载</span>附件中的pncrt.dll<span class="t_tag" href="tag.php@name=_25BF_25D8_25BC_25FE">控件</span>，找到系统文件目录（C:\WINDOWS\system32）下替换原来的pncrt.dll控件即可<span class="t_tag" href="tag.php@name=_25BD_25E2_25BE_25F6">解决</span>。</span></span><span lang="EN-US"><span style="white-space:nowrap;" id="attach_7762" initialized="true" outfunc="null" unselectable="true"><span style="font-size:smaller;"><strong>pncrt.rar</strong></span></span></span><span style="font-size:smaller;"><span lang="EN-US">&nbsp;</span></span></p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><span style="font-size:smaller;"><span lang="EN-US">2、有图像没声音的解决方法：<br />
+点击<span class="t_tag" href="tag.php@name=_25C8_25CE_25CE_25F1">任务</span>栏上：开始——运行——dxdiag，结果可能会提示出dsound.dll、ksuser.dll、kernel32.dll或quartz.dll等控件丢失。<br />
+这些控件都在C:\WINDOWS\system32路径下，选择以下附件中相对应的文件名下载后，将所原文件目录（C:\WINDOWS\system32）下替换掉即可，不需要注册。<br />
+<span style="white-space:nowrap;" id="attach_7759" initialized="true" outfunc="null" unselectable="true"><img class="absmiddle" border="0" alt="" src="images/attachicons/rar.gif" /></span></span></span><span lang="EN-US"><span style="white-space:nowrap;" id="attach_7759" initialized="true" outfunc="null" unselectable="true"><span style="font-size:smaller;"><strong>dsound.rar</strong></span></span><span style="font-size:smaller;">&nbsp;&nbsp;<img class="absmiddle" border="0" alt="" src="images/attachicons/rar.gif" /></span><span style="white-space:nowrap;" id="attach_7761" initialized="true" outfunc="null" unselectable="true"><span style="font-size:smaller;"><strong>ksuser.rar</strong></span></span><span style="font-size:smaller;">&nbsp;<img class="absmiddle" border="0" alt="" src="images/attachicons/rar.gif" /></span><span style="white-space:nowrap;" id="attach_7760" initialized="true" outfunc="null" unselectable="true"><span style="font-size:smaller;"><strong>kernel32.rar</strong></span></span><span style="font-size:smaller;">&nbsp;&nbsp;<img class="absmiddle" border="0" alt="" src="images/attachicons/rar.gif" /></span><span style="white-space:nowrap;" id="attach_7757"><span style="font-size:smaller;"><strong>quartz.rar</strong></span></span><span style="font-size:smaller;">&nbsp; <img class="absmiddle" border="0" alt="" src="images/attachicons/rar.gif" /> </span><span style="white-space:nowrap;" id="attach_7758" initialized="true" outfunc="null" unselectable="true"><span style="font-size:smaller;"><strong>d3d8.rar</strong></span></span></span><span style="font-size:smaller;"><span lang="EN-US">&nbsp;&nbsp;&nbsp;</span></span></p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><span style="font-size:smaller;"><span lang="EN-US">另外：如果dxdiag提示出错的文件太多，<span class="t_tag" href="tag.php@name=_25BD_25A8_25D2_25E9">建议</span><span class="t_tag" href="tag.php@name=_25D3_25C3_25BB_25A7">用户</span>重新<span class="t_tag" href="tag.php@name=_25B0_25B2_25D7_25B0">安装</span>DirectX9.0C以上的版本。</span></span></p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><span style="font-size:smaller;"><span lang="EN-US"><img class="absmiddle" border="0" alt="" src="images/attachicons/rar.gif" /></span></span><span lang="EN-US"><span style="font-size:smaller;">DirectX9.0C</span></span><span style="font-size:smaller;"><span lang="EN-US"><br />
+</span></span></p>
+<p style="text-indent:-18pt;margin-left:18pt;mso-char-indent-count:0;mso-list:l0 level1 lfo1;" class="MsoListParagraph"><span style="font-size:smaller;"><span style="font-family:宋体;">如通过上述方法未能解决您的问题，请联系在线客服排查。</span></span><span style="font-family:'Verdana','sans-serif';background:white;color:black;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="9" class="clik"><span class="num">9</span>在网吧无法使用快播</li>
+<li id="zk_9" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">有个别网吧会禁止下载，如果您在网吧不能使用快播，请第一时间与所在网吧管理员咨询是否网吧限制了快播，</span></p>
+<p><span style="font-size:smaller;">如果确认限制，请寻找网管给予解封 或者如果能够下载但无法安装，可尝试将快播安装文件名修改为其它后再运行试试喔；</span></p>
+<p><span style="font-size:smaller;">同时，可以给网管建议使用快播网吧版服务器（下载地址： </span><span style="font-size:smaller;">http://www.qvod.com/product/wangba.htm</span><span style="font-size:smaller;">），即可满足用户需求，又可解除占用带宽的问题呢。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="10" class="clik"><span class="num">10</span>声音与画面（音视频）不同步</li>
+<li id="zk_10" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;<span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">当您在使用快播时出现声音与画面不同步的情况时，请尝试在播放时在界面左上角关闭画质增强功能或者在快播播放器设置</span><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US">-</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">选项</span><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US">-</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">播放</span><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US">-</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">播放模式调到性能模式后看看。</span></span></p>
+<p><span style="font-size:smaller;">如图：</span></p>
+<p><span style="font-size:smaller;"><img alt="" src="attachments/1112191031bc96f76619fa0648.png" /></span></p>
+<p><span style="font-size:smaller;">&nbsp;</span></p>
+<p><span style="font-size:smaller;"><img alt="" src="attachments/111219102461251a1ef6e35616.jpg" /></span></p>
+<p><span style="font-size:smaller;">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">如果上述调整仍无效，请排查是否个别文件本身问题，可更换其它文件播放对比是否正常，或者把硬件配置发给客服人员为您分析。</span></span><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US"><o:p></o:p></span></p>
+<p><span style="font-size:smaller;">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:'Verdana','sans-serif';background:white;color:black;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="11" class="clik"><span class="num">11</span>快播5如何观看电视直播？</li>
+<li id="zk_11" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">快播5的直播功能仍处于测试阶段，后续将会带给您更多精彩。</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;"><span style="font-family:宋体;">如果想抢先体验，（可直接点击：</span></span></span><span style="font-family:宋体;"><span lang="EN-US"><span style="font-family:宋体;" lang="EN-US"><span lang="EN-US"><span style="font-size:smaller;">湖南卫视</span></span></span><span style="font-size:smaller;"><span style="font-family:宋体;" lang="EN-US"><span lang="EN-US">&nbsp;&nbsp;</span></span></span><span style="font-family:宋体;" lang="EN-US"><span lang="EN-US"><span style="font-size:smaller;">央视新闻</span></span></span></span></span><span style="font-family:宋体;" class="Apple-style-span">）</span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;"><span style="font-family:宋体;">请关注此贴：</span></span></span><span style="font-family:宋体;"><span lang="EN-US"><span style="font-size:smaller;"><span style="font-family:宋体;">http://www.kuaibo.com/bbs/thread-35847-1-1.html</span></span></span><span class="MsoHyperlink"><span style="font-family:宋体;mso-bidi-font-size:10.5pt;mso-hansi-theme-font:minor-fareast;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;" lang="EN-US"><o:p></o:p></span></span></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="12" class="clik"><span class="num">12</span>能不能只用快播在线观看电影而不用下载到本机上，下载到本机是否会伤硬盘？</li>
+<li id="zk_12" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp; &nbsp; &nbsp; 快播是一款万能播放器，在线点播是否保存电影在硬盘上是由发布者在服务器上设定的（目前大多数快播网站都没有设置防下载功能）。</span></p>
+<p><span style="font-size:smaller;">&nbsp; &nbsp; &nbsp; 对于硬盘方面，快播对读写数据方面已经做过优化的,先缓冲比较多的数据再进行写入。并且有针对的对文件进行缩放处理的。比传统的BT软件硬盘读写功能是会好很多的。</span></p>
+<p><span style="font-size:smaller;">&nbsp; &nbsp; &nbsp; 至于会不会伤硬盘，其实硬盘的使用，不存在伤与不伤的说法，硬盘的使用都是在正常的设计使用寿命范围内，并不会因为你通电开机后不读写硬盘，而使硬盘寿命增加。 所以，快播使用了缓冲机制，不会频繁读写硬盘，请放心使用^.^</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="13" class="clik"><span class="num">13</span>为什么下载完成后文件后缀名还是！mv？</li>
+<li id="zk_13" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;<span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US">!mv</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">是快播下载的临时文件，在没有下载完成前是</span><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US">.!mv</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">结尾，下载完成后，会自动改名，去掉</span><span style="background-color:white;font-family:Verdana, sans-serif;background-origin:initial;background-clip:initial;" lang="EN-US">.!mv</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">，如果改名不成功，说明系统中有其它软件在使用该文件。请关闭该软件后再试，或者重启电脑后再进行改名。</span></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="14" class="clik"><span class="num">14</span>用快播在线点播，下载速度很慢怎么解决？</li>
+<li id="zk_14" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">首先请您确认选择了设置<span lang="EN-US">-</span>选项<span lang="EN-US">-</span>网络中的</span><span lang="EN-US">“</span><span style="font-family:宋体;">加入缓冲优化计划</span><span lang="EN-US">”</span><span style="font-family:宋体;">，并以自动模式点播，该模式下会根据您所在的网络环境自动调整接收速度的喔。</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">另外，使用快播时请注意关闭后台有下载或上传功能的软件。</span></span></p>
+<p><span style="font-family:宋体;"><span lang="EN-US"><o:p></o:p></span></span><span style="font-size:smaller;"><span style="font-family:宋体;">如果您经常使用快播请注意定期将接收完成的任务清理掉或是移到其它文件夹。</span></span></p>
+<p><span style="font-family:宋体;"><span lang="EN-US"><o:p></o:p></span></span><span style="font-size:smaller;"><span style="font-family:宋体;">上述方法都是可以帮助您提升快播在线接收速度的小窍门喔。</span></span></p>
+<p><span style="font-family:宋体;"><span lang="EN-US"><o:p></o:p></span></span><span style="font-size:smaller;"><span style="font-family:宋体;">一般情况下，按上述方法调整后，您可到快播官网</span></span><span lang="EN-US"><span style="font-size:smaller;"><span style="font-family:宋体;">www.kuaibo.com</span></span></span><span style="font-size:smaller;"><span style="font-family:宋体;">点播试片资源验证看看接收速度是否有提升。</span></span></p>
+<p><span style="font-family:宋体;"><span lang="EN-US"><o:p></o:p></span></span><span style="font-size:smaller;"><span style="font-family:宋体;">如果官网试片资源接收速度仍没有得到解决，可能与网络环境不稳定等因素有关，请将网络检测结果（主菜单</span><span style="font-family:'Times New Roman', serif;" lang="EN-US">-</span><span style="font-family:宋体;">设置</span><span style="font-family:'Times New Roman', serif;" lang="EN-US">-</span><span style="font-family:宋体;">选项</span><span style="font-family:'Times New Roman', serif;" lang="EN-US">-</span><span style="font-family:宋体;">网络）通过<span style="color:#ff0000;"><strong>论坛</strong></span>或<span style="color:#ff0000;"><strong>客服专区</strong></span>提供给技术人员为您更全面的分析。</span></span><span style="font-family:宋体;mso-bidi-font-size:10.5pt;mso-hansi-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-bidi-font-family:宋体;mso-font-kerning:0pt;"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="15" class="clik"><span class="num">15</span>用快播点播时出现网络异常（断网）</li>
+<li id="zk_15" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">首先建议将快播的速度限制模式改为自动模式或90%以下试试。</span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">如果仍有断网的情况，建议您可从以下方法排查原因：</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;"><o:p></o:p></span><span style="font-family:宋体;">1、使用的ADSL Modem带有自动断流保护功能，当连接数达到指定的数值时会自动断开网络，可以参考设置说明书关闭此功能试试。</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;"><o:p></o:p></span><span style="font-family:宋体;">2、路由器的CPU功能不强劲也经常会出现这样的问题，您尝试不接路由器，直接拨号上网看看。</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;"><o:p></o:p></span><span style="font-family:宋体;">3、如果您是直接拨号也出现此情况，可能跟网络限制有关，可咨询下网络提供商是否有下载速度或连接数方面的限制。</span></span><span style="font-family:宋体;color:black;mso-bidi-font-size:10.5pt;mso-hansi-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-bidi-font-family:宋体;mso-font-kerning:0pt;mso-ansi-language:ZH-CN;"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="16" class="clik"><span class="num">16</span>快播下载电影会自动暂停</li>
+<li id="zk_16" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">自动暂停的原因一般是当前的下载任务中，有一个或者多个遇到磁盘读写错误，为了防止程序崩溃才暂停的。</span></p>
+<p><span style="font-size:smaller;">目前已知的有两种情况会导致这个问题:</span></p>
+<p><span style="font-size:smaller;">1、使用移动硬盘下载，然后又拔除，如果是此类情况，请将保存在移动硬盘的任务删除，重新下载到硬盘即可；</span></p>
+<p><span style="font-size:smaller;">2、另外，磁盘可能存在坏簇或无写入权限，建议将接收文件保存路径指定到其他分区，然后删除掉下载的任务再重新下载。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="17" class="clik"><span class="num">17</span>在网页点播提示插件损坏</li>
+<li id="zk_17" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">此问题一般是浏览器没有加载到快播插件，或快播网络模块程序qvodterminal没能正常启动引起的。</span></p>
+<p><span style="font-size:smaller;">您可根据以下方法排查：</span></p>
+<p><span style="font-size:smaller;">1、通过浏览器设置中的管理加载项，检查浏览器中快播组件是否被禁用，若没找到，可尝试重新安装快播并点播，在点播过程有安全软件或网页提示插件允许时，请点允许。</span></p>
+<p><span style="font-size:smaller;">如图：</span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/image/guanli.jpg" width="680" height="485" /></span></p>
+<p><span style="font-size:smaller;">&nbsp;</span></p>
+<p><span style="font-size:smaller;">2、浏览器有快播加载项，但是在任务管理器没有找到qvodterminal，这种情况请重新安装快播，如果还是没有启动，可能是防护软件或自带防火墙限制是否限制或拦截快播，建议将快播安装文件夹内qvodplayer.exe与qvodterminal.exe程序加入到允许或例外列表中（详情设置可参考：</span><span style="font-size:smaller;">http://bbs.kuaibo.com/thread-1705-1-1.html</span><span style="font-size:smaller;">第2点）</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="18" class="clik"><span class="num">18</span>运行快播提示应用程序错误</li>
+<li id="zk_18" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">出现此类问题的原因比较多，大多数情况是由于磁盘存在坏道引起的，</span></p>
+<p><span style="font-size:smaller;">建议您可以通过以下方法排查：</span></p>
+<p><span style="font-size:smaller;">1、请尝试在快播安装目录所在磁盘分区右键-属性-工具-查错修复下磁盘或者将当前的快播完整卸载，然后重启电脑后再安装快播，请在安装时改变安装路径喔。</span></p>
+<p><span style="font-size:smaller;">2、如果您使用是不是最新版快播，请到快播官网</span><span style="font-size:smaller;">www.kuaibo.com</span><span style="font-size:smaller;">下载最新版安装后再试试。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="19" class="clik"><span class="num">19</span>如何在看连续剧的时候点以下自动播放下一集？</li>
+<li id="zk_19" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">自动播放下一集功能快播在很早前的版本就有，该功能是需要网站支持的，当前大部分快播电影站都已支持自动缓冲下集功能，您可以在</span></span><span lang="EN-US"><span style="background-color:white;font-family:Simsun, serif;background-origin:initial;background-clip:initial;"><span style="font-size:smaller;">www.yayamov.com</span></span></span><span style="font-size:smaller;"><span lang="EN-US"><span style="background-color:white;font-family:Simsun, serif;background-origin:initial;background-clip:initial;">&nbsp;</span></span><span style="font-family:宋体;">电影分类中</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">查找自己喜欢的电影网站体验在线点播，在此收录的免费电影站都是用户体验良好的网站喔轻松实现观看连续剧集。</span></span></p>
+<p><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">另外，将想要观看的文件点播创建任务后，在快播主菜单</span><span style="background-color:white;font-family:Simsun, serif;background-origin:initial;background-clip:initial;" lang="EN-US">--</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">设置</span><span style="background-color:white;font-family:Simsun, serif;background-origin:initial;background-clip:initial;" lang="EN-US">--</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">选项</span><span style="background-color:white;font-family:Simsun, serif;background-origin:initial;background-clip:initial;" lang="EN-US">--</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">网络中选择启用网络任务连下连播功能也可自动接收。</span></span><span style="background-color:white;font-family:Simsun, serif;background-origin:initial;background-clip:initial;" lang="EN-US"><o:p></o:p></span></p>
+<p><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">如图：</span></span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/image/291.jpg" /></span></p>
+<p><span style="font-size:smaller;"><img alt="" src="images/image/291.jpg" width="0" height="0" /></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="20" class="clik"><span class="num">20</span> 已经安装了官网下载的快播，但是在某些网站点播还提示下载快播？</li>
+<li id="zk_20" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;"><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">如果只是某些网站不能播放，一般情况下是第三方网站刻意做此提示，意在引导用户安装非官方版本的播放器，此类非官方版本软件可能带有不安全因素，为将您的上网安全体验风险减至最低，建议不要安装。请</span><span style="background-color:white;font-family:宋体;background-origin:initial;background-clip:initial;">选择其它体验良好的网站在线点播。（可在www.yayamov.com&nbsp;查找)</span></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="21" class="clik"><span class="num">21</span>新版打开微视频地址提示任务创建失败或缺少相关解码器</li>
+<li id="zk_21" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">快播5暂时未增加打开微视频地址功能，如果在快播菜单-文件-打开url里打开微视频地址，就有可能出现该提示。</span></p>
+<p><span style="font-size:smaller;">请不用担忧喔，该功能深受广大用户喜爱，在后续版本是会加入的。 如果您希望马上体验到该功能，可通过快播官网</span><span style="font-size:smaller;">www.kuaibo.com</span><span style="font-size:smaller;">下载安装3.5不升级版。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="22" class="clik"><span class="num">22</span>网络任务重启丢失</li>
+<li id="zk_22" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;这种情况一般是由异常原因（如：电脑异外重启、突然断电或者直接结束程序等）导致网络任务丢失，目前无法恢复，如果您出现该情况，请重新资源点播即可。</span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">另外如果您使用非快播最新版（以官网发布为准），建议到快播官网</span></span><span style="font-family:宋体;"><span lang="EN-US"><span style="font-size:smaller;">www.kuaibo.com</span></span><span style="font-size:smaller;">下载安装。</span><span lang="EN-US"><o:p></o:p></span></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="23" class="clik"><span class="num">23</span>快播一直下载很快，最近变慢了，如何解决？</li>
+<li id="zk_23" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p>
+<p><span style="font-size:smaller;">描述：快播一直下载很快，最近下了10几部电影后突然变慢了，网络检测正常，也没改变过设置。</span></p>
+<p></p>
+<p>
+<p><span style="font-size:smaller;">解决方法：该情况可能是接收文件保存路径中文件夹文件过多所致，请将无需保存的文件进行清理或移动到别的其它文件夹后再重新点播即可。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="24" class="clik"><span class="num">24</span>用快播接收下载完的视频怎么转到手机上观看？</li>
+<li id="zk_24" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">首先需要确定您的手机支持所下载的视频文件，可通过快播网络任务右键打开文件位置，找到已下载完成的文件直接拷贝到手机或移动盘（</span><span style="font-family:Arial, sans-serif;" lang="EN-US">MP5</span><span style="font-family:宋体;">等）即可播放。如果移动盘或手机等不支持该视频格式，请使用视频转换软件将下载的视频转换成相关的格式再拷贝。</span>&nbsp;</span></p>
+<p style="margin-left:21pt;mso-para-margin-left:2.0gd;" class="MsoNormal"><span style="font-size:smaller;"><span style="font-family:宋体;">小贴示：</span></span></p>
+<p style="margin-left:21pt;mso-para-margin-left:2.0gd;" class="MsoNormal"><span style="font-size:smaller;"><span style="font-family:宋体;">①手机支持视频格式目前种类较复杂，相同格式可能因为尺寸不同而造成转换视频不支持。建议先确认一下手机支持格式然后进行转换后再试。</span></span></p>
+<p style="margin-left:21pt;mso-para-margin-left:2.0gd;" class="MsoNormal"><span style="font-size:smaller;"><span style="font-family:Arial, sans-serif;" lang="EN-US"><o:p></o:p></span><span style="font-family:宋体;">②</span><span style="font-family:宋体;">快播针对移动设备已推出了快播安卓版、快播苹果（</span><span lang="EN-US">IOS</span><span style="font-family:宋体;">）版，如果您的设备是使用上述系统，请赶快下载即时享受手机在线点播的快感吧。</span></span><span lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent:0cm;margin-left:18pt;mso-char-indent-count:0;" class="MsoListParagraph"><span style="font-size:smaller;"><span style="font-family:宋体;">快播安卓版下载链接：</span></span><span lang="EN-US"><span style="font-size:smaller;">http://dl.kuaibo.com/android/QvodPlayer.apk</span><o:p></o:p></span></p>
+<p style="margin-left:21pt;mso-para-margin-left:2.0gd;" class="MsoNormal"><span style="font-size:smaller;"><span style="font-family:宋体;">快播苹果（</span><span lang="EN-US">IOS</span><span style="font-family:宋体;">）版下载链接：</span></span><span lang="EN-US"><span style="font-size:smaller;">http://itunes.apple.com/cn/app//id475596116</span></span><span lang="EN-US"><o:p></o:p></span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+<li id="25" class="clik"><span class="num">25</span>网络任务丢失后，DATA文件夹下的种子文件是否可以直接打开继续下载？</li>
+<li id="zk_25" class="zk">
+<div class="zk_con">
+<div class="pc_1"></div>
+<div class="pc_2">
+<p></p>
+<p>
+<p><span style="font-size:smaller;">&nbsp;<span style="font-family:宋体;" lang="EN-US">Data</span><span style="font-family:宋体;">文件夹下的<span lang="EN-US">.torrent</span>文件是点播电影的下载进度信息文件，不被其它<span lang="EN-US">BT</span>软件识别。此类文件不会上传，也不会影响电脑正常使用。</span></span></p>
+<p><span style="font-size:smaller;"><span style="font-family:宋体;">如果出现网络任务丢失的情况，是无法通过</span><span style="font-family:宋体;" lang="EN-US">Data</span><span style="font-family:宋体;">文件夹下的文件继续下载，</span>请重新点播。</span></p>
+<p></p>
+<p></p>
+</div>
+<div class="pc_3"></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div></div>
+		<div class="foot">
+			<p style="padding-top:15px; ">Copyright 2006-2011 Shenzhen www.tbmov.com  All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

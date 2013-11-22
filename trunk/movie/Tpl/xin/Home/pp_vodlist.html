@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<php>
+$s_area=explode(',',C('play_area'));
+$s_language=explode(',',C('play_language'));
+$s_order=array('vod_addtime','vod_hits','vod_gold');
+$s_year=explode(',',C('play_year'));
+$s_lz=array('1','2');
+$s_t=array('1','2');
+$s_letter=(range(A,Z));
+if($_GET[year]) $u_year="-year-".$_GET[year];else $u_year=NULL;if($_GET[area]) $u_area="-area-".$_GET[area];else $u_area=NULL;if($_GET[language]) $u_language="-language-".$_GET[language];else $u_order=NULL;if($_GET[order]) $u_order="-order-".$_GET[order];else $u_order=NULL;
+if($_GET[mcid]) $u_mcid="-mcid-".$_GET['mcid'];else $u_mcid=NULL;if($_GET[letter]) $u_letter="-letter-".$_GET[letter];else $u_letter=NULL;if($_GET[lz]) $u_lz="-lz-".$_GET[lz];else $u_lz=NULL;if($_GET[t]) $u_t="-t-".$_GET[t];else $u_t=NULL;
+</php>
+  <php>$get=($_GET[order]);</php>
+<empty name="get"><php>if($_GET[order]) $s_order=$_GET[order]." DESC"; else $s_order="vod_addtime desc,vod_hits desc,vod_gold desc";  $vod_list=ff_mysql_vod('mcid:'.$_GET['mcid'].';cid:'.$list_id.';year:'.$_GET[year].';lz:'.$_GET[lz].';letter:'.$_GET[letter].';area:'.$_GET[area].';language:'.$_GET[language].';limit:25;page:true;order:'.$s_order.';');$page = $vod_list[0]['page'];$pagetop = $vod_list[0]['pagetop'];$pags = $vod_list[0]['pags'];</php>
+<else />
+<php>
+$vod_list =ff_mysql_vod('mcid:'.$_GET['mcid'].';cid:'.$list_id.';year:'.$_GET[year].';lz:'.$_GET[lz].';letter:'.$_GET[letter].';area:'.$_GET[area].';language:'.$_GET[language].';limit:20;page:true;order:vod_'.$list_order.' desc,vod_id desc');$page = $vod_list[0]['page'];$pagetop = $vod_list[0]['pagetop'];$pagetops = $vod_list[0]['pagetops'];$pagetopt = $vod_list[0]['pagetopt'];$pags = $vod_list[0]['pags'];</php>
+</empty>
+<include file="Home:vodlist_seo_title" />
+<include file="Home:system_js" />
+</head>
+<body>
+<include file="Home:pp_header" />
+<!-- // header end -->
+<div id="content" class="layout">
+  <div class="ui-sponsor">
+{:getadsurl('list_960_01')}
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="{$root}">首页</a></li><h1><if condition="$list_pid eq 1"><li><a href="{$list_url_big}">{$list_name_big}</a></li><elseif condition="$list_pid eq 2" /><li><a href="{$list_url_big}">{$list_name_big}</a></li><else/></if><li><a href="{$list_url}">{$list_name}</a></li><?php foreach($s_area as $aid=>$avalue){ if($_GET[area]==$avalue) echo "","<li><a href=".$root."vod-type-id-".$list_id.$u_mcid."-area-".urlencode($avalue).".html>".$avalue."地区</a></li>";} ?><?php foreach($s_year as $yid=>$yvalue){ if($_GET[year]==$yvalue) echo "","<li><a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area."-year-".$yvalue.".html>".$yvalue."".年."</a></li>";} ?><?php foreach($s_language as $yid=>$vvalue){ if($_GET[language]==$vvalue) echo "","<li><a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year."-language-".$vvalue.".html>".$vvalue."</a></li>";} ?> <?php foreach($s_letter as $yid=>$vvalue){ if($_GET[letter]==$vvalue) echo "","<li><a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year.$u_language."-letter-".$vvalue.$u_order.".html>".按字母.":".$vvalue."</a></li>";} ?><if condition="$list_pid eq 1"><volist name="mcat" id="cat_menu"><eq name="cat_menu.m_cid" value="$_GET['mcid']"><li><a href="{$root}vod-type-id-{$list_id}-mcid-{$cat_menu.m_cid}.html">{$cat_menu.m_name}片</a></li></eq></volist><elseif condition="$list_id eq 1"/><volist name="mcat" id="cat_menu"><eq name="cat_menu.m_cid" value="$_GET['mcid']"><li><a href="{$root}vod-type-id-{$list_id}-mcid-{$cat_menu.m_cid}.html">{$cat_menu.m_name}片</a></li></eq></volist><elseif condition="$list_pid eq 2"/><volist name="mcat" id="cat_menu"><eq name="cat_menu.m_cid" value="$_GET['mcid']"><li><a href="{$root}vod-type-id-{$list_id}-mcid-{$cat_menu.m_cid}.html">{$cat_menu.m_name}剧</a></li></eq></volist><elseif condition="$list_id eq 2"/><volist name="mcat" id="cat_menu"><eq name="cat_menu.m_cid" value="$_GET['mcid']"><li><a href="{$root}vod-type-id-{$list_id}-mcid-{$cat_menu.m_cid}.html">{$cat_menu.m_name}剧</a></li></eq></volist><else /><volist name="mcat" id="cat_menu"><eq name="cat_menu.m_cid" value="$_GET['mcid']"><li><a href="{$root}vod-type-id-{$list_id}-mcid-{$cat_menu.m_cid}.html">{$cat_menu.m_name}</a></li></eq></volist></if><?php  if ($_GET[order]=='addtime') {echo ">  最新";} elseif ($_GET[order]=='hits') {echo "> 排行榜";} elseif ($_GET[order]=='gold') {echo "> 推荐榜";} else {echo "";} ?></h1>
+    </ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div class="ui-box filter-focus">
+    <div class="ui-title">
+      <h3>{$list_name}索引</h3>
+      <span><a href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html"  class="conreset">重置条件</a></span>
+      <p class="conbread"></p>
+    </div>
+      <if condition="$list_id eq 2">
+     <div class="ui-cnt">
+ <div class="filter-list fn-clear">
+ <h5>分类：</h5>
+<ul>
+<li><a  class="current" target="_self" href="{$root}vod-type-id-{$list_pid}{$u_mcid}{$u_area}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_t}.html" data="id-{$list_id}">全部</a></li>
+<elseif condition="$list_pid eq 2"/>
+<div class="ui-cnt">
+<div class="filter-list fn-clear"><h5>分类：</h5>
+<ul>
+<li>
+<a  target="_self" href="{$root}vod-type-id-{$list_pid}{$u_mcid}{$u_area}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_t}.html" data="id-{$list_id}">全部</a></li>
+<elseif condition="$list_id eq 1"/>
+<div class="ui-cnt">
+<div class="filter-list fn-clear"><h5>分类：</h5>
+<ul>
+<li>
+<a  class="current" target="_self" href="{$root}vod-type-id-{$list_pid}{$u_mcid}{$u_area}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_t}.html" data="id-{$list_id}">全部</a></li>
+<elseif condition="$list_pid eq 1"/>
+<div class="ui-cnt">
+          <div class="filter-list fn-clear">
+            <h5>
+              分类：
+            </h5>
+            <ul>
+<li>
+<a  target="_self" href="{$root}vod-type-id-{$list_pid}{$u_mcid}{$u_area}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_t}.html" data="id-{$list_id}">全部</a></li>
+<else/></if>
+<if condition="$list_id eq 2"> 
+			<php>$cidarrr=array(15,16,23,24,18,17,25,19);</php>
+			<volist name="cidarrr" id="ppcid">
+			<li><a <eq name="ppcid" value="$list_id"> class="current"</eq> href="{:getlistname($ppcid,'list_url')}" data="id-{$ppcid}">{:getlistname($ppcid)}</a></li> 
+			</volist> </ul></div></div>
+<elseif condition="$list_pid eq 2"/>
+			<php>$cidarrr=array(15,16,23,24,18,17,25,19);</php>
+			<volist name="cidarrr" id="ppcid">
+			<li><a <eq name="ppcid" value="$list_id"> class="current"</eq> href="{:getlistname($ppcid,'list_url')}" data="id-{$ppcid}">{:getlistname($ppcid)}</a></li>  
+			</volist>
+             </ul></div></div>
+     <elseif condition="$list_id eq 1"/>
+			<php>$cidarrr=array(9,8,11,12,10,13,26,28,36);</php>
+			<volist name="cidarrr" id="ppcid">
+			<li><a <eq name="ppcid" value="$list_id"> class="current"</eq> href="{:getlistname($ppcid,'list_url')}" data="id-{$ppcid}">{:getlistname($ppcid)}</a></li>  
+			</volist>  
+                  </ul></div></div>
+               <elseif condition="$list_pid eq 1"/>
+			<php>$cidarrr=array(9,8,11,12,10,13,26,28,36);</php>
+			<volist name="cidarrr" id="ppcid">
+			<li><a <eq name="ppcid" value="$list_id"> class="current"</eq> href="{:getlistname($ppcid,'list_url')}" data="id-{$ppcid}">{:getlistname($ppcid)}</a></li> 
+			</volist>   </ul> </div>  </div>
+            <else /></if>  
+    <div class="ui-cnt">
+      <div class="filter-list fn-clear">
+        <h5>类型：</h5>
+        <ul>
+          <li><a <php>if (!isset($_GET['mcid'])){</php> class="current"<php>}</php>  href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="mcid-0">全部</a></li>
+         <volist name="mcat" id="cat_menu" offset="0" length='31'>
+          <li><a  <eq name="cat_menu.m_cid" value="$_GET['mcid']"> class="current"</eq>  href="{$root}vod-type-id-{$list_id}-mcid-{$cat_menu.m_cid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language}{$u_letter}{$u_order}{$u_t}.html" data='mcid-{$cat_menu.m_cid}'>{$cat_menu.m_name}</a></li>
+</volist>
+        </ul>
+      </div>
+    <if condition="$list_id eq 3">  
+       <div class="filter-list fn-clear">
+        <h5>状态：</h5>
+        <ul>
+       <li><a<php>if (!isset($_GET['lz'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="lz-0">全部</a></li>
+<?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-1.html' <?php if($_GET[lz]=="1") echo "class='current'"; ?> data="lz-1">连载中</a></li>
+ <?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-2.html' <?php if($_GET[lz]=="2") echo "class='current'"; ?> data="lz-2">已完结</a></li>           
+        </ul>
+      </div>
+    <elseif condition="$list_pid eq 2"/> 
+           <div class="filter-list fn-clear">
+        <h5>状态：</h5>
+        <ul>
+       <li><a<php>if (!isset($_GET['lz'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="lz-0">全部</a></li>
+<?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-1.html' <?php if($_GET[lz]=="1") echo "class='current'"; ?> data="lz-1">连载中</a></li>
+ <?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-2.html' <?php if($_GET[lz]=="2") echo "class='current'"; ?> data="lz-2">已完结</a></li>           
+        </ul>
+      </div> 
+          <elseif condition="$list_id eq 2"/> 
+           <div class="filter-list fn-clear">
+        <h5>状态：</h5>
+        <ul>
+       <li><a<php>if (!isset($_GET['lz'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="lz-0">全部</a></li>
+<?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-1.html' <?php if($_GET[lz]=="1") echo "class='current'"; ?> data="lz-1">连载中</a></li>
+ <?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-2.html' <?php if($_GET[lz]=="2") echo "class='current'"; ?> data="lz-2">已完结</a></li>           
+        </ul>
+      </div> 
+      
+       <elseif condition="$list_id eq 4"/>
+           <div class="filter-list fn-clear">
+        <h5>状态：</h5>
+        <ul>
+       <li><a<php>if (!isset($_GET['lz'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="lz-0">全部</a></li>
+<?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-1.html' <?php if($_GET[lz]=="1") echo "class='current'"; ?> data="lz-1">连载中</a></li>
+ <?php echo "<li><a href='".$root."vod-type-id-".$list_id.$u_lz.$u_mcid.urlencode($u_area).$u_year.$u_language.$u_letter.$u_t; ?>-lz-2.html' <?php if($_GET[lz]=="2") echo "class='current'"; ?> data="lz-2">已完结</a></li>           
+        </ul>
+      </div><else /></if>
+<if condition="$list_pid eq 2">  
+    <elseif condition="$list_id eq 2"/>   
+      <else/> 
+            <div class="filter-list fn-clear">
+        <h5>地区：</h5>
+        <ul>
+       <li><a<php>if (!isset($_GET['area'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="area-0">全部</a></li> 
+<?php  $out=0; foreach($s_area as $yid=>$avalue){ if($_GET[area]==$avalue) $class=" class='current'";else $class=NULL;echo "<li ><a $class href='".$root."vod-type-id-".$list_id.$u_mcid.$u_lz.$u_year."-area-".urlencode($avalue).$u_language.$u_order.$u_t.".html' data='area-".urlencode($avalue)."'>".$avalue."</a></li>";
+if($out>12)
+
+break;else 
+
+$out++;}
+ ?></eq>    
+        </ul>
+      </div>
+ </if> 
+      <div class="filter-list fn-clear">
+        <h5>年代：</h5>
+        <ul>
+        <li><a <php>if (!isset($_GET['year'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html" data="year-0">全部</a></li>
+          <?php $out=0; foreach($s_year as $yid=>$yvalue){ if($_GET[year]==$yvalue) $class=" class='current'";else $class=NULL;echo "<li><a $class href='".$root."vod-type-id-".$list_id.$u_mcid.$u_lz.urlencode($u_area)."-year-".$yvalue.$u_language.$u_letter.$u_order.$u_t.".html' data='year-".$yvalue."'>".$yvalue."</a></li>";
+if($out>14)
+
+break;else 
+
+$out++;}
+ ?>
+        </ul>
+      </div>
+      <div class="filter-list filter-vod-type-id-letter fn-clear">
+        <h5>字母：</h5>
+        <ul>
+        <li><a <php>if (!isset($_GET['letter'])){</php> class="current"<php>}</php> href="{$root}vod-type-id-{$list_id}{$u_mcid}{$u_lz}{$u_area|urlencode}{$u_year}{$u_language|urlencode}{$u_letter}{$u_order}{$u_t}.html"   data="letter-0">全部</a></li>
+          <?php foreach($s_letter as $yid=>$vvalue){ if($_GET[letter]==$vvalue) $class=" class='current'";else $class=NULL;echo "<li><a $class href='".$root."vod-type-id-".$list_id.$u_mcid.$u_lz.urlencode($u_area).$u_year.$u_language."-letter-".$vvalue.$u_order.$u_t.".html' data='letter-".$vvalue."'>".$vvalue."</a></li>";} ?>
+        </ul>
+      </div>
+    </div>
+    <!-- // filter-item end -->
+  </div>
+  <!-- // filter-focus end -->
+
+  <!-- filter-focus end -->
+  <div class="ui-box ui-tbmov fn-clear" id="list-focus">
+    <div class="tbmov-box">
+      <div class="ui-bar fn-clear">
+        <ul class="view-mode">
+<li id="view-grid"><?php echo "<a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>.html data=t-1 <?php if($_GET[t]=="1") echo "class='current'"; ?><?php if($_GET[t]=="") echo "class='current'"; ?>>海报模式</a></li>  
+<li id="view-list"><?php echo "<a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>.html data=t-2 <?php if($_GET[t]=="2") {echo "class='current'";}else{echo "class=''";} ?>>列表模式</a></li>
+        </ul>
+        <!-- view-mode end -->
+        <div class="view-filter"> 
+<?php echo "<a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-addtime.html <?php if($_GET[order]=="addtime") echo "class='current order'"; ?><?php if($_GET[order]=="") echo "class='current order'"; ?> data="order-vod_addtime"><span>按时间</span></a><em>|</em>
+<?php echo "<a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-hits.html <?php if($_GET[order]=="hits") {echo "class='current order'";}else{echo "class='order'";} ?> data="order-vod_hits"><span>按人气</span></a><em>|</em>
+<?php echo "<a href=".$root."vod-type-id-".$list_id.$u_mcid.$u_area.$u_year.$u_language.$u_letter; ?>-order-gold.html <?php if($_GET[order]=="gold") {echo "class='current order'";}else{echo "class='order'";} ?> data="order-vod_gold"><span>按评分</span></a>
+<a href="{$list_url}index.html"  id="byletter"><span>字母大全</span></a><em>|</em>
+</div>
+        <!-- view-filter end -->
+        <div class="ui-pages short-page  fn-right" id="short-page">{$pagetop}</div>
+      </div>
+      <!-- // ui-bar end -->
+      <ul class="<?php if($_GET[t]=="1") echo "grid-mode"; ?><?php if($_GET[t]=="") echo "grid-mode"; ?><?php if($_GET[t]=="2") echo "list-mode"; ?> show-list fn-clear" id="contents">
+       <neq name="vod_list.0.count" value="0">
+     <volist name="vod_list" id="ppvod">
+        <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img class="loading" width="110" height="150"  src="{$root}static/images/blank.png" data-original="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name}" /><label class="mask"></label><label class="score">{$ppvod.vod_gold}</label></a>
+          <div class="play-txt">
+            <h3><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></h3>
+            <p class="actor"><em>主演:</em>{$ppvod.vod_actor|ff_search_url}</p>
+            <p class="type fn-left"><em>类型：</em>{$ppvod.vod_mcid|ff_mcat_url=$list_id}</p>
+            <p class="type"><em class="long">更新时间：</em>{$ppvod.vod_addtime|date='Y-m-d',###}</p>
+            <p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,100,'utf-8',true}…</p>
+            <p class="state"><em>状态：</em><a target="_blank" href="{$ppvod.vod_playurl}" class="goplay"><span class="mod_version"><in name="ppvod.vod_cid" value="3,15,16,17,18,19,23,24,25"><notempty name="ppvod.vod_continu">第{$ppvod.vod_continu}集<else/>全集</notempty><else/><switch name="ppvod.vod_cid"><case value="4"><notempty name="ppvod.vod_continu">第{$ppvod.vod_continu}期<else/>全期</notempty></case><default />{$ppvod.vod_title|default="高清"}</switch></in></span></a></p>
+            <p class="more-desc"><a class="more" target="_blank" href="{$ppvod.vod_readurl}">详细</a></p>
+          </div>
+        </li>
+      </volist>
+      <!-- // show-list End -->
+          <else/>
+       	 <ul>该分类暂无数据！</ul>
+      </neq> 
+      </ul>
+      <!-- // vod-type-id-page End -->
+        <div class="ui-bar vod-type-id-page fn-clear">
+            <div class="ui-pages ui-page-big" id="long-page">{$page}</div>
+        </div>
+    </div>
+    <!-- // tbmov-box end -->
+    <div class="tbmov-bar">
+      <div class="ui-sponsor250">{:getadsurl('mov_250*300_a1')}</div>
+      <!-- // ui-sponsor250 end -->
+<include file="Home:list_right" />
+      <!-- // ui-ranking end -->
+      <div class="ui-sponsor250">
+       {:getadsurl('mov_250*300_a2')}
+      </div>
+      <!-- // ui-sponsor250 end -->
+    </div>
+  </div>
+  <!-- // ui-box#vod-type-id-focus end -->
+  <div class="ui-sponsor">
+   {:getadsurl('mov_250*300_a3')}
+  </div>
+  <!-- // ui-sponsor end -->
+</div>
+<!-- // content end -->
+<!-- // footer start -->
+<include file="Home:pp_footer" />
+<script type="text/javascript">
+    var windowuall='/index.php?s=vod-type-id-{$list_id}-mcid-{$_GET["mcid"]}-area-{$_GET["area"]|urlencode}-year-{$_GET["year"]}';
+    var parms = new Array();
+    $('.filter-list ul li a').click(function (e){
+                e.preventDefault();
+                var constr='';
+                var curobj=$(this);
+                var curdata=curobj.attr('data').split('-');
+
+                parms[curdata[0]]=curdata[1];
+                parms['p'] = 1;
+                var url=parseurl(parms);
+
+                    curobj.parent().siblings().children("a").removeClass('current');
+                    curobj.addClass('current');
+                    pagegooo(url);
+                    $('.filter-list ul li a').each(function(e){
+                        if( $(this).attr('class')=='current'){
+                            if($(this).html() == '全部')
+                                constr+=' ';
+                            else
+                                constr +='<em>'+$(this).html()+'</em>';
+                        }
+                    });
+                    if(constr !=''){
+                        $('.conbread').html(constr);
+                    }
+
+
+            }
+    );
+    function pagegooo(url){
+        $("#contents").html('<li class="kong"><label>努力加载中……</label></li>');
+        $.get(url,function(r){
+                    if(r.data.ajaxtxt ==''){
+                        $("#contents").html('<li class="kong">抱歉，没有找到相关内容！</li>');
+                    }else{
+                        $("#contents").html(r.data.ajaxtxt);
+                        if(($('#contents li').length > 3)) $("html,body").animate({scrollTop:$("#contents").offset().top - 93},500);
+                    }
+                    $("#short-page").html(r.data.short_page);
+                    $("#long-page").html(r.data.long_page);
+                    $(".ui-pages a").click(function (e){
+                        e.preventDefault();
+                        var curdata=$(this).attr('data').split('-');
+
+                        parms[curdata[0]]=curdata[1];
+
+                        var url=parseurl(parms);
+                        pagegooo(url);
+                        return false;
+                    });
+                },'json'
+        );}
+
+    $(".ui-pages a").click(function (e){
+        e.preventDefault();
+        var curdata=$(this).attr('data').split('-');
+
+        parms[curdata[0]]=curdata[1];
+
+        var url=parseurl(parms);
+        pagegooo(url);
+        return false;
+    });
+    var constrf='';
+    $('.filter-list ul li a').each(function(e){
+        if($(this).html() != '全部' && $(this).attr('class')=='current' ){
+            constrf +='<em>'+$(this).html()+'</em>';
+        }
+    });
+    if(constrf !=''){
+        $('.conbread').html(constrf);
+    }
+    $('.conreset').click(function(e){
+        e.preventDefault();
+        pagegooo(windowuall);
+        $('.filter-list ul li a').each(function(e){
+            $(this).removeClass('current');
+            if($(this).html() == '全部'){
+                $(this).attr('class','current');
+                $('#curlist').html("<li>全部</li>");
+                $('.conbread').html('');
+            }
+        });
+        return false;
+    });
+
+    $('.order').click(function (e){
+                e.preventDefault();
+                $(this).addClass('current');
+                $(this).siblings().removeClass('current');
+
+                var curdata=$(this).attr('data').split('-');
+
+                parms[curdata[0]]=curdata[1];
+
+                var url=parseurl(parms);
+                pagegooo(url);
+            }
+    );
+
+    function parseurl(rr){
+        var url='/index.php?s=vod-type-id-{$list_id}-mcid-{$_GET["mcid"]}-area-{$_GET["area"]|urlencode}-year-{$_GET["year"]}';
+        for(var c in rr){
+            if(rr[c]!='0'){
+                url=url+"-"+c+"-"+rr[c];
+            }
+        }
+        return url;
+    }
+	 $('.view-mode li a').click(function (e){
+                e.preventDefault();
+               var constr='';
+               var curobj=$(this);
+                var url = curobj.attr('href');
+                curobj.parent().siblings().children("a").removeClass('current');
+                curobj.addClass('current');
+	   var url='';
+		if(parms!=undefined&&parms!=null){
+			var curdata=$(this).attr('data').split('-');
+			parms[curdata[0]]=curdata[1];
+			if(curdata[1]=='1'){
+				$("#contents").removeClass('vod-type-id-mode');
+				$("#contents").addClass('grid-mode');
+			}else{
+				$("#contents").addClass('vod-type-id-mode');
+				$("#contents").removeClass('grid-mode');
+		}
+
+		}
+});
+</script>
+</body>
+</html>
