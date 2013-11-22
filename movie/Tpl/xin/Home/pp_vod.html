@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>《{$vod_name}》<if condition="$list_pid eq 1">{$vod_title}百度影音在线观看 {$list_name}{$list_name_big}-{$sitename}<elseif condition="$list_pid eq 2"/>全集在线观看 {$list_name|msubstr=0,2}{$list_name_big} 百度影音在线观看-{$sitename}<elseif condition="$list_id eq 3"/>全集 {$list_name|msubstr=2,4} 百度影音在线观看-{$sitename}<elseif condition="$list_id eq 4"/>最新全期在线观看 {$list_name|msubstr=0,2}节目 百度影音在线观看-{$sitename}<elseif condition="$list_id eq 35" />{$vod_title}在线观看-{$sitename}<else/>在线观看 {$list_name}-{$sitename}</if></title>
+<if condition="$list_pid eq 1">
+<meta name="keywords" content="{$vod_name}{$vod_title},{$list_name}{$vod_name},{$vod_name}国语,{$vod_name}百度影音在线观看,{$vod_name}下载">
+<elseif condition="$list_pid eq 2"/>
+<meta name="keywords" content="{$vod_name}全集,{$vod_name}百度影音在线观看,{$vod_name}{$list_name_big}全集,{$list_name}{$vod_name},{$vod_name}国语版,{$vod_name}在线观看,{$vod_name}下载">
+<elseif condition="$list_id eq 3"/>
+<meta name="keywords" content="{$vod_name}全集,{$vod_name}在线观看,{$vod_name}国语,<volist name="vod_playlist" id="ppvod">{$vod_name}{$ppvod.playername}在线观看,</volist>{$vod_name}下载">
+<elseif condition="$list_id eq 4"/>
+<meta name="keywords" content="{$vod_name}在线观看,{$vod_name}最新一期,{$vod_name}全期在线观看,<volist name="vod_playlist" id="ppvod">{$vod_name}{$ppvod.playername}在线观看,</volist>{$vod_name}下载">
+<else />
+<meta name="keywords" content="{$vod_name}{$vod_title},{$list_name}{$vod_name},{$vod_name}国语,<volist name="vod_playlist" id="ppvod">{$vod_name}{$ppvod.playername}在线观看,</volist>{$vod_name}下载">
+</if>
+<if condition="$list_pid eq 1">
+<meta name="description" content="{$list_name_big}{$vod_name}{$vod_title},{$list_name}{$vod_name}免费高清在线观看由{$sitename}收集于互联网本站提供<volist name="vod_playlist" id="ppvod">{$ppvod.playername}在线观看,</volist>等《{$vod_name}》是由{$vod_actor}等主演的一部{$vod_mcid|ff_mcat_admin=$vod_cid}电影,{$vod_name}主要讲述{$vod_content|h|msubstr=0,80},分为普通视频观看、百度影音高清播放模式，其中普通观看模式需要安装Adobe Flash插件，百度影音需要安装相应的高清播放器，如果你觉得{$vod_name}不错的话，推荐给你的朋友一起加速观看吧">
+
+<elseif condition="$list_pid eq 2"/>
+<meta name="description" content="{$list_name_big}{$vod_name}全集免费在线观看由{$sitename}收集于互联网{$list_name}{$vod_name}由{$vod_actor}等主演{$vod_year}年上映的一部{$vod_area}{$vod_mcid|ff_mcat_admin=$vod_cid}剧分为普通视频观看、百度影音高清播放模式，其中普通观看模式需要安装Adobe Flash插件，百度影音需要安装相应的高清播放器，如果你觉得花非花雾非雾不错的话，推荐给你的朋友一起加速观看吧。">
+
+
+<elseif condition="$list_id eq 3"/>
+<meta name="description" content="{$vod_name}全集免费在线观看由{$sitename}收集于互联网，{$vod_name}{$list_name}是一部{$vod_mcid|ff_mcat_admin=$vod_cid}动漫,经典动漫《{$sitename}》分为普通视频观看、百度影音高清播放模式,普通观看模式需要安装Adobe Flash插件，百度影音需要安装相应的高清播放器，如果你觉得火影忍者不错的话，推荐给你的朋友一起加速观看吧">
+<elseif condition="$list_id eq 4"/>
+<meta name="description" content="{$vod_name}全集免费在线观看由{$sitename}收集于互联网,{$vod_name}是一档{$vod_mcid|ff_mcat_admin=$vod_cid}节目,分为普通视频观看、百度影音高清播放模式，其中普通观看模式需要安装Adobe Flash插件，百度影音需要安装相应的高清播放器，如果你觉得{$vod_name}不错的话，推荐给你的朋友一起加速观看吧">
+<else />
+<meta name="description" content="{$vod_name}全集，免费在线观看和高清晰播放模式均由{$sitename}收集于互联网，{$list_name}《{$vod_name}》是一部{$vod_mcid|ff_mcat_admin=$vod_cid}电影分为普通视频观看、百度影音高清播放模式，其中普通观看模式需要安装Adobe Flash插件，百度影音需要安装相应的高清播放器，如果你觉得{$vod_name}不错的话，推荐给你的朋友一起加速观看吧">
+</if>
+<include file="Home:system_js" />
+<script type="text/javascript">var loadcomm=0;</script>
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+<div class="ui-sponsor">{:getadsurl('vod_960_01')}</div>
+  <!-- // ui-sponsor end -->
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="{$siteurl}">首页</a></li><if condition="$list_pid eq 1"><li><a href="{$list_url_big}">{$list_name_big}</a></li><elseif condition="$list_pid eq 2" /><li><a href="{$list_url_big}">{$list_name_big}</a></li><else/></if><li><a href="{$list_url}">{$list_name}</a></li><li><a href="{$vod_readurl}">{$vod_name}</a></li>
+    </ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+      <div class="ui-box" id="detail-box">
+	  <div class="rating-box" id="rating-main" style="display: block;"><div class="rating-total fn-clear"><label class="rating-total-item" id="total">&nbsp;</label><div class="pingfen-total"><strong id="pingfen"></strong><em id="pingfen2"></em></div></div><div class="rating-panle"><div class="rating-bar"><div class="rating-bar-item" id="fenshu">&nbsp;</div></div><ul class="rating-show"><li><span title="力荐" class="starstop star5">力荐</span><div class="power"><div class="power-item" id="pam"></div></div><em id="pa">人</em></li><li><span title="推荐" class="starstop star4">推荐</span><div class="power"><div class="power-item" id="pbm"></div></div><em id="pb">人</em></li><li><span title="还行" class="starstop star3">还行</span><div class="power"><div class="power-item" id="pcm"></div></div><em id="pc">人</em></li><li><span title="较差" class="starstop star2">较差</span><div class="power"><div class="power-item" id="pdm"></div></div><em id="pd">人</em></li><li><span title="很差" class="starstop star1">很差</span><div class="power"><div class="power-item" id="pem"></div></div><em id="pe">人</em></li></ul></div></div>
+	  <div class="rating-box" id="rating-kong" style="display: none;"><div class="rating-kong-item"><span class="loading">评分加载中...</span></div></div>
+        <!-- // rating-box End -->
+    <div class="detail-title fn-clear">
+      <h1>{$vod_name}<if condition="$list_pid eq 1">{$vod_title}<else /></if></h1>
+      <div class="detail-sect">
+        <div class="interest-sect user-bt"><a rel="nofollow" class="sect-btn"  onclick='window.external.AddFavorite("{$siteurl}{$vod_readurl}","{$vod_name}{$sitename}在线观看")'>收藏</a></div>
+        <!-- // interest_sect End -->
+        <div class="interest-rss user-bt"><a  class="rss-btn sect-btn" href="{$vod_rssurl}">订阅</a></div>
+        <div id="zhuomian" class="fn-left"><a rel="nofollow" title="{$vod_name}存放到桌面可随时在线观看" href="/url.php?url={$siteurl}{$vod_readurl}&name={$vod_name}-{$sitename}在线观看">将本片放到桌面</a></div>
+      </div>
+      <!-- // detail-sect End -->
+    </div>
+    <!-- // detail-title End -->
+    <div class="detail-cols fn-clear">
+      <div class="detail-pic fn-left"><img width="225" height="300" src="{$vod_picurl}" alt="{$vod_name}" />
+      <if condition="$list_id eq 4">
+      <label class="mask">&nbsp;</label>
+        <label class="text"><neq name="vod_continu" value="0">更新至{$vod_continu}期<else/>全期</neq></label>
+        <elseif condition="$list_id eq 3"/>
+        <label class="mask">&nbsp;</label>
+         <label class="text"><neq name="vod_continu" value="0">更新至{$vod_continu}集<else/>全集</neq></label>
+        <elseif condition="$list_pid eq 2"/>
+        <label class="mask">&nbsp;</label>
+         <label class="text"><neq name="vod_continu" value="0">更新至{$vod_continu}集<else/>全集</neq></label>
+         <else /></if>
+        </div>
+       <!-- // detail-pic End -->
+          <div class="detail-info fn-left">
+            <div id="detail-rating" class="fn-clear">
+				<div id="rating" class="fn-left"><span class="label">我也要给这影片打分：</span>
+                <ul class="rating" id="fenshu">
+                <li class="one current active" title="很差" val="1">很差</li>
+                <li class="two current active" title="较差" val="2">较差</li>
+                <li class="three current active" title="还行" val="3">还行</li>
+                <li class="four active" title="推荐" val="4">推荐</li>
+                <li class="five active" title="力荐" val="5">力荐</li>
+            </ul>
+            <span id="ratewords"><switch name="vod_gold">
+            <case value="0">评分</case>
+            <case value="1">很差</case>
+            <case value="1.1">很差</case>
+            <case value="1.2">很差</case>
+            <case value="1.3">很差</case>
+            <case value="1.4">很差</case>
+            <case value="1.5">很差</case>
+            <case value="1.6">很差</case>
+            <case value="1.7">很差</case>
+            <case value="1.8">很差</case>
+            <case value="1.9">很差</case>
+            <case value="2">很差</case>
+            <case value="2.1">很差</case>
+            <case value="2.2">很差</case>
+            <case value="2.3">很差</case>
+            <case value="2.4">很差</case>
+            <case value="2.5">很差</case>
+            <case value="2.6">很差</case>
+            <case value="2.7">很差</case>
+            <case value="2.8">很差</case>
+            <case value="2.9">很差</case>
+            <case value="3">较差</case>
+            <case value="3.1">较差</case>
+            <case value="3.2">较差</case>
+            <case value="3.3">较差</case>
+            <case value="3.4">较差</case>
+            <case value="3.5">较差</case>
+            <case value="3.6">较差</case>
+            <case value="3.7">较差</case>
+            <case value="3.8">较差</case>
+            <case value="3.9">较差</case>
+            <case value="4">较差</case>
+            <case value="4.1">较差</case>
+            <case value="4.2">较差</case>
+            <case value="4.3">较差</case>
+            <case value="4.4">较差</case>
+            <case value="4.5">较差</case>
+            <case value="4.6">较差</case>
+            <case value="4.7">较差</case>
+            <case value="4.8">较差</case>
+            <case value="4.9">较差</case>
+            <case value="5">还行</case>
+            <case value="5.1">还行</case>
+            <case value="5.2">还行</case>
+            <case value="5.3">还行</case>
+            <case value="5.4">还行</case>
+            <case value="5.5">还行</case>
+            <case value="5.6">还行</case>
+            <case value="5.7">还行</case>
+            <case value="5.8">还行</case>
+            <case value="5.9">还行</case>
+            <case value="6">还行</case>
+            <case value="6.1">还行</case>
+            <case value="6.2">还行</case>
+            <case value="6.3">还行</case>
+            <case value="6.4">还行</case>
+            <case value="6.5">还行</case>
+            <case value="6.6">还行</case>
+            <case value="6.7">还行</case>
+            <case value="6.8">还行</case>
+            <case value="6.9">还行</case>
+            <case value="7">推荐</case>
+            <case value="7.1">推荐</case>
+            <case value="7.2">推荐</case>
+            <case value="7.3">推荐</case>
+            <case value="7.4">推荐</case>
+            <case value="7.5">推荐</case>
+            <case value="7.6">推荐</case>
+            <case value="7.7">推荐</case>
+            <case value="7.8">推荐</case>
+            <case value="7.9">推荐</case>
+            <case value="8">推荐</case>
+            <case value="8.1">推荐</case>
+            <case value="8.2">推荐</case>
+            <case value="8.3">推荐</case>
+            <case value="8.4">推荐</case>
+            <case value="8.5">推荐</case>
+            <case value="8.6">推荐</case>
+            <case value="8.7">推荐</case>
+            <case value="8.8">推荐</case>
+            <case value="8.9">推荐</case>
+            <case value="9">力荐</case>
+            <case value="9.1">力荐</case>
+            <case value="9.2">力荐</case>
+            <case value="9.3">力荐</case>
+            <case value="9.4">力荐</case>
+            <case value="9.5">力荐</case>
+            <case value="9.6">力荐</case>
+            <case value="9.7">力荐</case>
+            <case value="9.8">力荐</case>
+            <case value="9.9">力荐</case>
+            <case value="10">力荐</case>
+            <case value="10.0">力荐</case>
+            <default />
+            </switch></span></div>
+			</div><!-- // detail-rating End -->
+        <div class="info fn-clear">
+          <if condition="$list_pid eq 1">
+          <dl><dt>主演：</dt><dd><notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty></dd></dl>
+          <dl><dt>状态：</dt><dd><span class="color"><neq name="vod_continu" value="0">更新至{$vod_continu}集<else/><font color="#FF0000">{$vod_title}</font></neq></span></dd></dl>
+          <dl class="fn-left"><dt>类型：</dt><dd><a href="{$list_url}">{$list_name|msubstr=0,3}</a>{$vod_mcid|ff_mcat_url=$vod_cid}</dd></dl>
+          <dl class="fn-right"><dt>地区：</dt><dd><span><a href="{$siteurl}vod-type-id-{$list_id}-area-{$vod_area|default='其他'|urlencode}.html" target="_blank">{$vod_area|default='其他'}</a></span></dd></dl>
+          <dl class="fn-left"><dt>语言：</dt><dd><span>{$vod_language|default='未知'}</span></dd></dl>
+          <dl class="fn-right"><dt>导演：</dt><dd><notempty name="vod_director">{$vod_director|ff_director_url}<else />未录入</notempty></dd></dl>
+          <dl class="fn-left"><dt>时间：</dt><dd><span id="addtime">{$vod_addtime|date='Y-m-d H:i:s',###}</span></dd></dl>
+          <dl class="fn-right"><dt>年份：</dt><dd><span>{$vod_year|default='未录入'}</span></dd></dl>
+          
+          <elseif condition="$list_pid eq 2"/> 
+           <dl><dt>主演：</dt><dd><notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty></dd></dl>
+          <neq name="vod_continu" value="0"><dl><dt>提醒：</dt><dd><font color="#FF0000">{$vod_tvcont}</font> <span class="color"><neq name="vod_continu" value="0">已更新至{$vod_continu}集<else/>全集</neq></span></dd></dl><else/>
+          </neq>
+          <dl class="fn-left"><dt>类型：</dt><dd><a href="{$list_url}">{$list_name|msubstr=0,3}</a>{$vod_mcid|ff_mcat_url=$vod_cid}</dd></dl>
+          <dl class="fn-right"><dt>地区：</dt><dd><span><a href="{$siteurl}vod-type-id-{$list_id}-area-{$vod_area|default='其他'|urlencode}.html" target="_blank">{$vod_area|default='其他'}</a></span></dd></dl>
+          <dl class="fn-left"><dt>语言：</dt><dd><span>{$vod_language|default='未知'}</span></dd></dl>
+          <dl class="fn-right"><dt>导演：</dt><dd><notempty name="vod_director">{$vod_director|ff_director_url}<else />未录入</notempty></dd></dl>
+          <dl class="fn-left"><dt>时间：</dt><dd><span id="addtime">{$vod_addtime|date='Y-m-d H:i:s',###}</span></dd></dl>
+          <dl class="fn-right"><dt>年份：</dt><dd><span>{$vod_year|default='未录入'}</span></dd></dl>
+          <elseif condition="$list_id eq 3" />
+          <dl><dt>主演：</dt><dd><notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty></dd></dl>
+          <dl><dt>状态：</dt><dd><font color="#FF0000"><neq name="vod_continu" value="0">连载中,待更新<else/></neq></font> <span class="color"><neq name="vod_continu" value="0">更新至第{$vod_continu}话<else/>完结</neq></span></dd></dl>
+          <dl class="fn-left"><dt>类型：</dt><dd><a href="{$list_url}">{$list_name|msubstr=3,4}</a>{$vod_mcid|ff_mcat_url=$vod_cid}</dd></dl>
+          <dl class="fn-right"><dt>地区：</dt><dd><span><a href="{$siteurl}vod-type-id-{$list_id}-area-{$vod_area|default='其他'|urlencode}.html" target="_blank">{$vod_area|default='其他'}</a></span></dd></dl>
+          <dl class="fn-left"><dt>语言：</dt><dd><span>{$vod_language|default='未知'}</span></dd></dl>
+          <dl class="fn-right"><dt>导演：</dt><dd><notempty name="vod_director">{$vod_director|ff_director_url}<else />未录入</notempty></dd></dl>
+          <dl class="fn-left"><dt>时间：</dt><dd><span id="addtime">{$vod_addtime|date='Y-m-d H:i:s',###}</span></dd></dl>
+          <dl class="fn-right"><dt>年份：</dt><dd><span>{$vod_year|default='未录入'}</span></dd></dl>
+          <elseif condition="$list_id eq 4" />
+          <dl><dt>主持：</dt><dd><notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty></dd></dl>
+          <dl><dt>状态：</dt><dd><neq name="vod_continu" value="0"><font color="#FF0000">{$vod_tvcont}</font><else/></neq></font> <span class="color"><neq name="vod_continu" value="0">已更新至第{$vod_continu}期<else/>全期</neq></span></dd></dl>
+          <dl class="fn-left"><dt>类型：</dt><dd><a href="{$list_url}">{$list_name|msubstr=0,2}</a>{$vod_mcid|ff_mcat_url=$vod_cid}</dd></dl>
+          <dl class="fn-right"><dt>地区：</dt><dd><span><a href="{$siteurl}vod-type-id-{$list_id}-area-{$vod_area|default='其他'|urlencode}.html" target="_blank">{$vod_area|default='其他'}</a></span></dd></dl>
+          <dl class="fn-left"><dt>语言：</dt><dd><span>{$vod_language|default='未知'}</span></dd></dl>
+          <dl class="fn-right"><dt>电视：</dt><dd><notempty name="vod_diantai">{$vod_diantai}<else />未录入</notempty></dd></dl>
+          <dl class="fn-left"><dt>时间：</dt><dd><span id="addtime">{$vod_addtime|date='Y-m-d H:i:s',###}</span></dd></dl>
+          <dl class="fn-right"><dt>年份：</dt><dd><span>{$vod_year|default='未录入'}</span></dd></dl>
+          <else />
+           <dl><dt>主演：</dt><dd><notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty></dd></dl>
+          <dl><dt>状态：</dt><dd><font color="#FF0000"><neq name="vod_continu" value="0">{$vod_title}<else/>{$vod_title}</neq></font> <span class="color"><neq name="vod_continu" value="0">更新至{$vod_continu}集<else/>全集</neq></span></dd></dl>
+          <dl class="fn-left"><dt>类型：</dt><dd><h2><a href="{$list_url}">{$list_name|msubstr=0,2}</a></h2>{$vod_mcid|ff_mcat_url=$vod_cid}</dd></dl>
+          <dl class="fn-right"><dt>地区：</dt><dd><span><a href="{$siteurl}vod-type-id-{$list_id}-area-{$vod_area|default='其他'|urlencode}.html" target="_blank">{$vod_area|default='其他'}</a></span></dd></dl>
+          <dl class="fn-left"><dt>语言：</dt><dd><span>{$vod_language|default='未知'}</span></dd></dl>
+          <dl class="fn-right"><dt>导演：</dt><dd><notempty name="vod_director">{$vod_director|ff_director_url}<else />未录入</notempty></dd></dl>
+          <dl class="fn-left"><dt>时间：</dt><dd><span id="addtime">{$vod_addtime|date='Y-m-d H:i:s',###}</span></dd></dl>
+          <dl class="fn-right"><dt>年份：</dt><dd><span>{$vod_year|default='未录入'}</span></dd></dl>
+           </if>
+          <dl>
+            <dt>评论：</dt>
+            <dd id="link-cmt" >
+            <php>$count=M('cm')->where(array('cm_cid'=>$vod_id))->select();</php>
+              <label>当前有<strong id="commnum">{:count($count)}</strong>条评论，</label><a rel="nofollow" href="#comment">我也要评论</a></dd> </dl>
+          <dl class="juqing">
+            <dt>剧情：</dt>
+            <dd>{$vod_content|msubstr=0,40}… <a rel="nofollow" class="link detail-desc" href="#juqing">详细剧情</a></dd>
+          </dl>
+          <dl>
+                   <dt>分享：</dt>
+                   <dd>
+<!-- Baidu Button BEGIN -->
+					<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{
+					'url':'{$vod_readurl}',
+					'desc':'{$vod_content|msubstr=0,80}…',
+					'text':'{$vod_name}',
+					'pic':'{$vod_picurl}'
+					}">
+					<a class="bds_qzone"></a>
+					<a class="bds_tsina"></a>
+					<a class="bds_tqq"></a>
+					<a class="bds_douban"></a>
+					<a class="bds_renren"></a>
+					<a class="bds_t163"></a>
+					<a class="bds_taobao"></a>
+					<a class="bds_kaixin001"></a>
+					<a class="bds_tqf"></a>
+					<a class="bds_baidu"></a>
+					<span class="bds_more"></span>
+					<a class="shareCount"></a>
+					</div>
+					<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6556540" ></script>
+					<script type="text/javascript" id="bdshell_js"></script>
+					<script type="text/javascript">
+					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+					</script>
+                    </dd>
+        </div>
+        <!-- // info End -->
+      </div>
+      <!-- // detail-info End -->
+      <div class="detail-union fn-right">{:getadsurl('vod_300_01')}</div>
+      <!-- // detail-ad End -->
+    </div>
+    <!-- // detail-cols End -->
+          <php>$tab_wd = ff_mysql_vod('name:'.msubstr($vod_name,0,4).';num:8;order:vod_hits desc,vod_id desc');
+if(!$tab_wd || count($tab_wd) == 1) {
+$tab_wd = ff_mysql_vod('name:'.msubstr($vod_name,0,3).';num:8;order:vod_hits desc,vod_id desc');
+}</php>
+<php>if(count($tab_wd) > 1){</php>
+    <div class="detail-related fn-clear">
+      <h5 class="hd">你是否也在<strong>寻找</strong>：</h5>
+      <p class="bd">
+<volist name="tab_wd" id="ppvod">
+<h3><a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,15}</a></h3>
+</volist>
+  </p>
+    </div>
+    <!-- // detail-related End -->
+<php>}</php>
+  </div>
+  <!-- // ui-box#detail-box end -->
+  <div class="ui-sponsor">
+{:getadsurl('vod_960_02')}
+  </div>
+  <!-- // ui-sponsor end -->
+<div class="publicbox" id="detail-list">
+	<div class="vodhottitle">
+    <div class="play_list" >
+     <if condition="$list_pid eq 1">
+            <fflist name="vod_playlist" id="ppvod">
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">{$ppvod.playname|msubstr=0,3}</fflist></em></a></dd></fflist> 
+          <elseif condition="$list_pid eq 2"/>
+                     <fflist name="vod_playlist" id="ppvod">
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">第{$ppvod.playcount}集</fflist></em></a></dd></fflist>  
+         <elseif condition="$list_id eq 4"/>
+         <fflist name="vod_playlist" id="ppvod">
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">第{$ppvod.playcount}期</fflist></em></a></dd></fflist>  
+        <elseif condition="$list_id eq 3"/>
+            <fflist name="vod_playlist" id="ppvod" >
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"><php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">第{$ppvod.playcount}话</fflist></em></a></dd></fflist> 
+            <else />
+            <fflist name="vod_playlist" id="ppvod">
+			<dd <gt name="i" value="1"><else/>class="current"</gt>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">{$ppvod.playcount}</fflist></em></a></dd></fflist>  
+            </if></div>    
+        <div class="txtt"><a href="{$url_guestbook}" target="_blank">不能播放，报错</a></div>
+        
+    </div>
+ <volist name="vod_playlist" id="ppvod"> 
+	<div class="vodplaybox" id="{$ppvod.playname}-pl-list" <gt name="i" value="1">style="display:none"<else/>style="display:block"</gt>>
+			<div class="wxts" style="margin:0px 20px 10px 20px;">
+				<div class="snvtvb" ><span class="snvd">温馨提示：</span>[DVD：标准清晰版]&nbsp;[BD：高清无水印]&nbsp;[HD：高清版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</div>
+                 <eq name="ppvod.playname" value="qiyi"><div class="snvtvs" ><span class="snvd">[爱奇艺]</span> 在线观看无须安装播放器,建议安装爱奇艺影音客户端观看更流畅 <a class="playdown_btn" rel="nofollow" target="_blank" href="http://static.qiyi.com/ext/common/iQIYI/QIYILittle_02_13.exe">点击下载</a>。</div></eq>
+        <eq name="ppvod.playname" value="letv"><div class="snvtvs" ><span class="snvd">[乐视网]</span>在线观看无须安装播放器,建议安装乐视影音客户端观看更流畅 <a class="playdown_btn" rel="nofollow" target="_blank" href="http://dl1.letv.com/letvlive/letvplayer/1.0.0.410/LePlayer_setup.exe">点击下载</a>。</div></eq>
+        <eq name="ppvod.playname" value="bdhd"><div class="snvtvs" ><span class="snvd">[百度影音]</span>需要安装播放器才能观看<a class="playdown_btn" href="http://dl.p2sp.baidu.com/BaiduPlayerAB.php">点击下载最新版本</a></div></eq>
+        <eq name="ppvod.playname" value="qvod"><div class="snvtvs" ><span class="snvd">[快播]</span>需要安装播放器才能观看<a class="playdown_btn" href="http://dl.kuaibo.com/QvodSetupPlus5.exe">点击下载最新版本</a></div></eq>
+        <div class="txt"></div>
+        </div>
+        <php>$countjii=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+        <gt name="countjii" value="5"><div class="order">列表排序：<a rel="nofollow" class="desc" href="javascript:void(0);" data="{$i-1}">降序</a></div> <else/></gt>
+            <p class="player_list">
+         <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+         <volist name="ppvod['son']" id="ppvodson" key="iii">
+         <a <neq name="i" value="1">rel="nofollow"</neq> target="_blank" href="{$ppvodson.playurl}" title="{$ppvodson.playname}">{$ppvodson.playname|msubstr=0,10}<eq name="iii" value="1"><php>$add_time = $vod_addtime;$today = date("Ymd"); if(date("Ymd", $add_time) == $today) {
+echo "<span class='new'>new</span>";} else {echo "";}</php></eq></a>
+        </volist>
+</p> 
+   </div>       
+            </volist>       
+</div>
+
+  <!-- // ui-box end -->
+<div class="ui-sponsor">{:getadsurl('vod_960_03')}</div>
+  <!-- // ui-sponsor end -->
+ <div class="ui-box" id="like-focus">
+    <div class="ui-title">
+      <ul>
+        <li id="latest1" onclick="setTab('latest',1,3);" class="current">除了"<strong>{$vod_name}</strong>"你也可能喜欢以下影片：</li>
+        <li id="latest2" onclick="setTab('latest',2,3);" class="">同主演</li>
+        <li id="latest3" onclick="setTab('latest',3,3);" class="">同导演</li>
+      </ul>
+    </div>
+    <div class="box" id="con_latest_1">
+      <div class="ujian-hook"></div>
+      <ol class="img-list">
+       <php>$vod_gold=ff_mysql_vod('cid:'.$list_id.';limit:7;order:rand()');</php>
+     <volist name="vod_gold" id="ppvod">
+      <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img class="loading" width="110" height="150"  src="{$root}static/images/blank.png" data-original="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name}({$ppvod.list_name})" />
+        <label class="mask"></label>
+        <label class="text"><in name="ppvod.vod_cid" value="3,15,16,17,18,19,23,24,25"><notempty name="ppvod.vod_continu">连载至{$ppvod.vod_continu}集<else/>完结</notempty><else/><switch name="ppvod.vod_cid"><case value="4"><notempty name="ppvod.vod_continu">{$ppvod.vod_continu}期<else/>完结</notempty></case><default />{$ppvod.vod_title|default="高清版"}</switch></in></label>
+        <label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+        </a>
+        <h3><a target="_blank" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,25}</a></h3>
+      </li>
+  </volist> 
+      </ol>
+      <ul class="txt-list txt-list-small">
+         <php>$hot_week = ff_mysql_vod('cid:'.$list_id.';limit:5,20;order:vod_hits_month desc,vod_addtime desc');</php>
+         <volist name="hot_week" id="ppvod">
+      <li><span>{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,25}</a></li>
+</volist> 
+      </ul>
+    </div>
+    <div class="box" id="con_latest_2" style="display:none">
+      <ol class="img-list">
+<php>$tab_actor = ff_mysql_vod('actor:'.msubstr($vod_actor,0,3).';num:7;order:vod_hits desc,vod_id desc');
+if(!$tab_actor || count($tab_actor) == 1){
+$tab_actor = ff_mysql_vod('cid:'.$vod_cid.';num:7;order:vod_stars desc,vod_hits desc');
+}</php>
+			<volist name="tab_actor" id="ppvod">
+			<li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name}" onerror="javascript:this.src='{$root}static/images/blank.png';"/>
+			<label class="mask"></label>
+			<label class="text"><in name="ppvod.vod_cid" value="3,15,16,17,18,19,23,24,25"><notempty name="ppvod.vod_continu">连载至{$ppvod.vod_continu}集<else/>完结</notempty><else/><switch name="ppvod.vod_cid"><case value="4"><notempty name="ppvod.vod_continu">{$ppvod.vod_continu}期<else/>完结</notempty></case><default />{$ppvod.vod_title|default="高清版"}</switch></in></label>
+			<label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+			</a>
+			<h3><a target="_blank" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></h3>
+			</li>
+			</volist>
+      </ol>
+    </div>
+    <div class="box" id="con_latest_3" style="display:none">
+      <ol class="img-list">
+  <ol class="img-list">
+<php>$tab_director = ff_mysql_vod('director:'.msubstr($vod_director,0,3).';num:7;order:vod_hits desc,vod_id desc');
+if(!$tab_director || count($tab_director) == 1){
+$tab_director = ff_mysql_vod('cid:'.$vod_cid.';num:7;limit:7,7;order:vod_stars desc,vod_hits desc');
+}</php>
+			<volist name="tab_director" id="ppvod">
+			<li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name}" onerror="javascript:this.src='{$root}static/images/blank.png';"/>
+			<label class="mask"></label>
+			<label class="text"><in name="ppvod.vod_cid" value="3,15,16,17,18,19,23,24,25"><notempty name="ppvod.vod_continu">连载至{$ppvod.vod_continu}集<else/>完结</notempty><else/><switch name="ppvod.vod_cid"><case value="4"><notempty name="ppvod.vod_continu">{$ppvod.vod_continu}期<else/>完结</notempty></case><default />{$ppvod.vod_title|default="高清版"}</switch></in></label>
+			<label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+			</a>
+			<h3><a target="_blank" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></h3>
+			</li>
+			</volist>
+      </ol>
+    </div>
+  </div>
+  <div class="ui-box" id="juqing" >
+    <div class="ui-title">
+      <h3><strong>{$vod_name}</strong>剧情介绍</h3>
+    </div>
+    <div class="tjuqing">
+    <if condition="$list_id eq 4">综艺节目{$vod_name}是{$vod_diantai}的一档{$vod_mcid|ff_mcat}节目由{$vod_director},<notempty name="vod_actor">{$vod_actor}<else />未录入</notempty>等主持<a href="{$siteurl}">{$sitename}</a>已经<neq name="vod_continu" value="0">更新至{$vod_continu}期<else/>全集</neq> 在线观看希望您能喜下面是节目的主要内容</a>
+  <else/><a href="{$list_url}">{$list_name}</a><a href="{$list_url_big}">{$list_name_big}</a>{$vod_name}是由<notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty>主演的一部{$vod_mcid|ff_mcat_admin=$vod_cid}{$list_name_big}{$vod_name}剧情介绍</if> 
+  {$vod_content} {$sitename}为您提供了包括<a href="{$siteurl}">2013最新电影排行榜</a>，还同时提供了<a href="{$siteurl}">电视剧排行榜</a>电影电视剧以及动画综艺节目的在线观看服务。希望您能喜欢并能收藏我们的网址{$siteurl}</div>
+    </div>
+  <!-- // ui-box#like-focus end -->
+<div class="ui-box" id="comment" >
+    <div class="ui-title">
+      <h3>网友评论</h3>
+    </div>
+    <div class="ui-cnt">
+      <form id="commform" method="post">
+        <div class="ui-form" id="cmt-input-tip">
+          <input type="text" class="ui-input" value="我也要写评论。。。" />
+        </div>
+        <!-- // cmt-input-tip -->
+        <div class="ui-form" id="cmt-input-bd" style="display:none;">
+            <div class="ui-form-item">
+                <p class="comment-nickname">
+                    <label class="comment-label">昵称：</label>
+                    <input type="text" name="nickname" id="nickname" class="ui-input">
+                </p>
+            </div>
+          <div class="ui-form-item">
+            <textarea cols="60" rows="5" class="ui-input ui-textarea" name="comment_content" id="comment_content" onfocus="if(this.value=='请在这里发表您的个人看法，最多1000个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多1000个字。';};"></textarea>
+            <input type="hidden" id="vod_id" name="vod_id"/>
+          </div>
+          <div class="ui-form-info fn-clear">
+          
+          <a rel="nofollow" class="ui-button fn-right" id="subcomm" href="javascript:void(0);" onclick="FF.Comment.Post();">提交</a>
+            <p class="fn-right">请勿提交非法信息和广告，违反者查封ID，甚至永久删除！谢谢合作~</p>
+          </div>
+        </div>
+        <!-- // ui-form End -->
+      </form>
+      <!-- // ui-form End -->
+      <div class="ui-bar fn-clear">
+        <div class="view-filter"><a rel="nofollow" class="current"  href="javascript:void(0);" data="#"><span>最新评论</span></a><em>|</em><a href="javascript:void(0);" data="#"><span>精华评论</span></a></div>
+        <div class="ui-pages commpage fn-right" id="pagebox"></div>
+      </div>
+      <!-- // ui-bar end -->
+ <div class="comment-focus">
+        <div  id="Comment">
+        </div>
+        <!-- // i-list End -->
+      </div>
+      <!-- // comment-focus end -->
+    </div>
+    <!-- // comment End -->
+  </div>
+  <!-- // ui-box end -->
+  <div class="ui-sponsor">
+{:getadsurl('vod_960_04')}
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="ui-box ui-tbmov" id="star-collection">
+    <h3>明星合集专题</h3>
+    <ul class="txt-list fn-clear">
+    <php>$special_new = ff_mysql_special('limit:0,16;order:special_id desc');</php>
+<fflist name="special_new" id="ppvod">
+      <li><a href="{$ppvod.special_readurl}" target="_blank">{$ppvod.special_name|msubstr=0,20}</a></li>
+      </fflist>	
+    </ul>
+  </div>
+  <!-- // star-collection end -->
+</div>
+<!-- // wrap End -->
+<include file="Home:pp_footer" />
+<script type="text/javascript" src="{$root}static/js/jquery.vod.js"></script>
+<script type="text/javascript" src="{$root}static/js/gold.js"></script>
+<script language="javascript">FF.History.Insert('{$vod_name}','{$vod_readurl}',10,7,'','');</script>
+{$vod_hits_insert}
+</body>
+</html>

@@ -1,0 +1,23 @@
+ <div class="ui-ranking">
+        <h2>{$type_id|getlistname}推荐榜</h2>
+        <ul class="ranking-list">
+         <php>$qq182377860_gold = ff_mysql_vod('cid:'.$type_id.';limit:20;order:vod_gold desc');</php>
+                <fflist name="qq182377860_gold" id="ppvod"> 
+          <li><span class="score">{$ppvod.vod_gold}</span><lt name="i" value="4"><em class="stress">0{$i}.</em>
+           <else/><em><gt name="i" value="9"><em>{$i}.</em><else/><em>0{$i}.</em></gt></em></lt><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}[{$ppvod.list_name|msubstr=0,2}]</a></li>
+       </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+      <div class="ui-ranking">
+        <h2>{$type_id|getlistname}排行榜</h2>
+        <ul class="ranking-list">
+           <php>$qq182377860_hot = ff_mysql_vod('cid:'.$type_id.';limit:20;order:vod_hits  desc');</php>
+                <fflist name="qq182377860_hot" id="ppvod"> 
+          <li><span>{$ppvod.vod_hits}</span><lt name="i" value="4"><em class="stress">0{$i}.</em>
+           <else/><em><gt name="i" value="9"><em>{$i}.</em><else/><em>0{$i}.</em></gt></em></lt><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}[{$ppvod.list_name|msubstr=0,2}]</a></li>
+       </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div> 

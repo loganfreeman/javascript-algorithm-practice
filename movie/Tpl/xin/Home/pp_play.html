@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+<if condition="$list_pid eq 1">《{$vod_name}》{$vod_title}{$vod_playername}在线观看<elseif condition="$list_pid eq 2" />{$vod_name}{$vod_jiname}
+{$vod_playername}在线观看<elseif condition="$list_id eq 3" />{$vod_name}{$vod_jiname}<notempty name="vod_title">{$vod_title}</notempty>{$vod_playername}在线观看<elseif condition="$list_id eq 4" />{$vod_name}第<notempty name="vod_jiname">{$vod_jiname}</notempty>期{$vod_playername}在线观看<else />《{$vod_name}》{$vod_jiname}{$vod_playername}在线观看</if>-{$sitename}</title>
+<if condition="$list_pid eq 2">
+<meta name="keywords" content="{$vod_name}{$vod_jiname},{$vod_name}{$vod_jiname}在线观看,{$vod_name}全集,电视剧{$vod_name}{$vod_jiname},
+<notempty name="vod_title">{$vod_title}</notempty>在线观看,{$vod_name}{$vod_jiname}
+{$vod_playername},{$vod_name}{$vod_playername}在线观看">
+<meta name="description" content="{$list_name}{$vod_name}全集由{$title}为您提供,正在为您播放{$vod_name}{$vod_jiname}
+<notempty name="vod_title">{$vod_title}</notempty>{$vod_playername}在线观看{$vod_name}是{$vod_area}地区电视剧由{$vod_director}执导{$vod_actor}等主演参演的一部{$vod_mcid|ff_mcat_admin=$vod_cid}电视剧上映时间为{$vod_year}年主要剧情：{$vod_content|h|msubstr=0,100}。">
+<elseif condition="$list_pid eq 1" />
+<meta name="keywords" content="{$vod_name}<notempty name="vod_title">{$vod_title}</notempty>,{$vod_name},{$vod_name}在线观看,{$vod_name}{$vod_playername},{$vod_name}下载,{$list_name}{$vod_name},{$vod_name}电影,{$vod_name}<notempty name="vod_title">{$vod_title}</notempty>在线观看,{$vod_name}{$vod_playername}在线观看.">
+<meta name="description" content="{$list_name}{$vod_name}由{$title}为您提供,正在为您播放{$vod_name}<notempty name="vod_title">{$vod_title}</notempty>{$vod_playername}在线观看{$vod_name}是{$vod_area}地区{$list_name}电影由{$vod_director}执导{$vod_actor}等参演的一部{$vod_mcid|ff_mcat_admin=$vod_cid}电影上映时间为{$vod_year}年主要剧情：{$vod_content|h|msubstr=0,100}。">
+<elseif condition="$list_id eq 3" />
+<meta name="keywords" content="{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}画,{$vod_name}{:str_replace(array('第','集'),array('',''),$vod_jiname)}集,{$vod_name}{$vod_jiname}
+在线观看,{$vod_name}全集,动画{$vod_name}{$vod_jiname}
+,{$vod_name}{$vod_jiname}
+<notempty name="vod_title">{$vod_title}</notempty>在线观看,{$vod_name}{$vod_jiname}
+{$vod_playername},{$vod_name}{$vod_playername}在线观看">
+<meta name="description" content="{$list_name}{$vod_name}全集由{$title}为您提供,正在为您播放{$vod_name}{$vod_jiname}
+<notempty name="vod_title">{$vod_title}</notempty>{$vod_playername}在线观看,{$vod_name}是{$vod_area}制作,配音以及演员包括{$vod_actor}等属于{$vod_mcid|ff_mcat_admin=$vod_cid}动画出品时间为{$vod_year}年主要剧情：{$vod_content|h|msubstr=0,100}。">
+<elseif condition="$list_id eq 4" />
+<meta name="keywords" content="{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}期,{$vod_name}{:str_replace(array('第','集'),array('',''),$vod_jiname)}期,{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}期在线观看,{$vod_name}全集,综艺节目{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}期,{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}期<notempty name="vod_title">{$vod_title}</notempty>在线观看,{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}期{$vod_playername},{$vod_name}{$vod_playername}在线观看">
+<meta name="description" content="综艺节目{$vod_name}由{$title}为您提供,正在为您播放{$vod_name}第{:str_replace(array('第','集'),array('',''),$vod_jiname)}期<notempty name="vod_title">{$vod_title}</notempty>{$vod_playername}在线观看{$vod_name}是{$vod_area}地区综艺节目由{$vod_director}制作主持人{$vod_actor}等的{$vod_mcid|ff_mcat_admin=$vod_cid}电视节目节目详细：{$vod_content|h|msubstr=0,100}。">
+<else />
+<meta name="keywords" content="{$vod_name}下载,{$vod_name}在线观看,{$vod_name}高清下载,{$vod_name}qvod,{$vod_name}高清">
+<meta name="description" content="{$vod_name}高清在线观看 {$vod_name}电影 {$vod_name}下载 {$vod_name}演员表 {$vod_name}上映时间：{$vod_year} {$vod_name}剧情：{$vod_content|h|msubstr=0,100}">
+</if>
+<include file="Home:system_js" />
+<script>PlayHistoryObj.addPlayHistory('{$vod_name}{$vod_jiname}',location.href)</script>
+</head>
+<body id="topper">
+<include file="Home:pp_header" />
+  <!-- // subnav end -->
+  <div class="bread-crumb-nav bread-crumb-nav-play">
+    <div class="layout fn-clear">
+      <div class="fn-right"><a href="/faq/">无法观看?</a></div>
+      <ul class="bread-crumbs">
+        <li class="home"><a href="{$root}">首页</a></li>
+        <li><a href="{$list_url}">{$list_name}</a> {$vod_mcid|ff_mcat_url=$vod_cid}</li>
+        <li><h1><a href="{$vod_playurl}">{$vod_name}{$vod_jiname}</a></h1></li>
+      </ul>
+      <!-- // bread-crumbs end -->
+    </div>
+  </div>
+  <!-- // bread-crumb-nav end -->
+</div>
+<!-- // header end -->
+<div id="play-focus">
+  <!-- // layout End -->
+ <div  class="layout fn-clear">
+<div class="players" id="players">{$vod_player}</div>
+    <!-- // player End -->
+<!--<div class="right" id="mright">{:getadsurl('play1')}<br />{:getadsurl('play2')}</div>-->
+    <!-- // player-ad End -->
+  </div>
+  <!-- // play End -->
+</div>
+ 
+<div id="light"></div>
+<div id="content" class="layout">
+ <div  id="rating-main" style="display:none;"><div id="fenshu"  style="display:none;">&nbsp;</div></div>
+<div id="sgold" class="box978 publicbox">
+	<div class="p10" style=" width:958px;">
+		<div class="vodgoldbox_play">
+		  <div class="goldbox fn-left">
+  <div id="detail-rating">
+				<div id="rating" class="fn-left"><span class="label">我也要给这影片打分：</span>
+                <ul class="rating" id="fenshu">
+                <li class="one current active" title="很差" val="1">很差</li>
+                <li class="two current active" title="较差" val="2">较差</li>
+                <li class="three current active" title="还行" val="3">还行</li>
+                <li class="four active" title="推荐" val="4">推荐</li>
+                <li class="five active" title="力荐" val="5">力荐</li>
+            </ul>
+            <span id="ratewords"><switch name="vod_gold">
+            <case value="0">暂无</case>
+            <case value="1">很差</case>
+            <case value="1.1">很差</case>
+            <case value="1.2">很差</case>
+            <case value="1.3">很差</case>
+            <case value="1.4">很差</case>
+            <case value="1.5">很差</case>
+            <case value="1.6">很差</case>
+            <case value="1.7">很差</case>
+            <case value="1.8">很差</case>
+            <case value="1.9">很差</case>
+            <case value="2">很差</case>
+            <case value="2.1">很差</case>
+            <case value="2.2">很差</case>
+            <case value="2.3">很差</case>
+            <case value="2.4">很差</case>
+            <case value="2.5">很差</case>
+            <case value="2.6">很差</case>
+            <case value="2.7">很差</case>
+            <case value="2.8">很差</case>
+            <case value="2.9">很差</case>
+            <case value="3">较差</case>
+            <case value="3.1">较差</case>
+            <case value="3.2">较差</case>
+            <case value="3.3">较差</case>
+            <case value="3.4">较差</case>
+            <case value="3.5">较差</case>
+            <case value="3.6">较差</case>
+            <case value="3.7">较差</case>
+            <case value="3.8">较差</case>
+            <case value="3.9">较差</case>
+            <case value="4">较差</case>
+            <case value="4.1">较差</case>
+            <case value="4.2">较差</case>
+            <case value="4.3">较差</case>
+            <case value="4.4">较差</case>
+            <case value="4.5">较差</case>
+            <case value="4.6">较差</case>
+            <case value="4.7">较差</case>
+            <case value="4.8">较差</case>
+            <case value="4.9">较差</case>
+            <case value="5">还行</case>
+            <case value="5.1">还行</case>
+            <case value="5.2">还行</case>
+            <case value="5.3">还行</case>
+            <case value="5.4">还行</case>
+            <case value="5.5">还行</case>
+            <case value="5.6">还行</case>
+            <case value="5.7">还行</case>
+            <case value="5.8">还行</case>
+            <case value="5.9">还行</case>
+            <case value="6">还行</case>
+            <case value="6.1">还行</case>
+            <case value="6.2">还行</case>
+            <case value="6.3">还行</case>
+            <case value="6.4">还行</case>
+            <case value="6.5">还行</case>
+            <case value="6.6">还行</case>
+            <case value="6.7">还行</case>
+            <case value="6.8">还行</case>
+            <case value="6.9">还行</case>
+            <case value="7">推荐</case>
+            <case value="7.1">推荐</case>
+            <case value="7.2">推荐</case>
+            <case value="7.3">推荐</case>
+            <case value="7.4">推荐</case>
+            <case value="7.5">推荐</case>
+            <case value="7.6">推荐</case>
+            <case value="7.7">推荐</case>
+            <case value="7.8">推荐</case>
+            <case value="7.9">推荐</case>
+            <case value="8">推荐</case>
+            <case value="8.1">推荐</case>
+            <case value="8.2">推荐</case>
+            <case value="8.3">推荐</case>
+            <case value="8.4">推荐</case>
+            <case value="8.5">推荐</case>
+            <case value="8.6">推荐</case>
+            <case value="8.7">推荐</case>
+            <case value="8.8">推荐</case>
+            <case value="8.9">推荐</case>
+            <case value="9">力荐</case>
+            <case value="9.1">力荐</case>
+            <case value="9.2">力荐</case>
+            <case value="9.3">力荐</case>
+            <case value="9.4">力荐</case>
+            <case value="9.5">力荐</case>
+            <case value="9.6">力荐</case>
+            <case value="9.7">力荐</case>
+            <case value="9.8">力荐</case>
+            <case value="9.9">力荐</case>
+            <case value="10">力荐</case>
+            <case value="10.0">力荐</case>
+            <default />
+            </switch></span></div>
+			</div>
+			  <div class="w p3 w350 playvodb" style="clear: both;">
+				  <span class="zybox_t">总评分：<font color="#FF0066">{$vod_gold}</font><font color="#000000">分</font>&nbsp;</span>
+				  <span id='zgoldtxtbox' class="zybox_n"><switch name="vod_gold">
+            <case value="0">未评分</case>
+            <case value="1">很差，浪费时间</case>
+            <case value="1.1">很差，浪费时间</case>
+            <case value="1.2">很差，浪费时间</case>
+            <case value="1.3">很差，浪费时间</case>
+            <case value="1.4">很差，浪费时间</case>
+            <case value="1.5">很差，浪费时间</case>
+            <case value="1.6">很差，浪费时间</case>
+            <case value="1.7">很差，浪费时间</case>
+            <case value="1.8">很差，浪费时间</case>
+            <case value="1.9">很差，浪费时间</case>
+            <case value="2">很差，浪费时间</case>
+            <case value="2.1">很差，浪费时间</case>
+            <case value="2.2">很差，浪费时间</case>
+            <case value="2.3">很差，浪费时间</case>
+            <case value="2.4">很差，浪费时间</case>
+            <case value="2.5">很差，浪费时间</case>
+            <case value="2.6">很差，浪费时间</case>
+            <case value="2.7">很差，浪费时间</case>
+            <case value="2.8">很差，浪费时间</case>
+            <case value="2.9">很差，浪费时间</case>
+            <case value="3">一般, 平庸之作</case>
+            <case value="3.1">一般, 平庸之作</case>
+            <case value="3.2">一般, 平庸之作</case>
+            <case value="3.3">一般, 平庸之作</case>
+            <case value="3.4">一般, 平庸之作</case>
+            <case value="3.5">一般, 平庸之作</case>
+            <case value="3.6">一般, 平庸之作</case>
+            <case value="3.7">一般, 平庸之作</case>
+            <case value="3.8">一般, 平庸之作</case>
+            <case value="3.9">一般, 平庸之作</case>
+            <case value="4">一般, 平庸之作</case>
+            <case value="4.1">一般, 平庸之作</case>
+            <case value="4.2">一般, 平庸之作</case>
+            <case value="4.3">一般, 平庸之作</case>
+            <case value="4.4">一般, 平庸之作</case>
+            <case value="4.5">一般, 平庸之作</case>
+            <case value="4.6">一般, 平庸之作</case>
+            <case value="4.7">一般, 平庸之作</case>
+            <case value="4.8">一般, 平庸之作</case>
+            <case value="4.9">一般, 平庸之作</case>
+            <case value="5">不错,不妨一看</case>
+            <case value="5.1">不错,不妨一看</case>
+            <case value="5.2">不错,不妨一看</case>
+            <case value="5.3">不错,不妨一看</case>
+            <case value="5.4">不错,不妨一看</case>
+            <case value="5.5">不错,不妨一看</case>
+            <case value="5.6">不错,不妨一看</case>
+            <case value="5.7">不错,不妨一看</case>
+            <case value="5.8">不错,不妨一看</case>
+            <case value="5.9">不错,不妨一看</case>
+            <case value="6">不错,不妨一看</case>
+            <case value="6.1">不错,不妨一看</case>
+            <case value="6.2">不错,不妨一看</case>
+            <case value="6.3">不错,不妨一看</case>
+            <case value="6.4">不错,不妨一看</case>
+            <case value="6.5">不错,不妨一看</case>
+            <case value="6.6">不错,不妨一看</case>
+            <case value="6.7">不错,不妨一看</case>
+            <case value="6.8">不错,不妨一看</case>
+            <case value="6.9">不错,不妨一看</case>
+            <case value="7">很好,佳作之品</case>
+            <case value="7.1">很好,佳作之品</case>
+            <case value="7.2">很好,佳作之品</case>
+            <case value="7.3">很好,佳作之品</case>
+            <case value="7.4">很好,佳作之品</case>
+            <case value="7.5">很好,佳作之品</case>
+            <case value="7.6">很好,佳作之品</case>
+            <case value="7.7">很好,佳作之品</case>
+            <case value="7.8">很好,佳作之品</case>
+            <case value="7.9">很好,佳作之品</case>
+            <case value="8">很好,佳作之品</case>
+            <case value="8.1">很好,佳作之品</case>
+            <case value="8.2">很好,佳作之品</case>
+            <case value="8.3">很好,佳作之品</case>
+            <case value="8.4">很好,佳作之品</case>
+            <case value="8.5">很好,佳作之品</case>
+            <case value="8.6">很好,佳作之品</case>
+            <case value="8.7">很好,佳作之品</case>
+            <case value="8.8">很好,佳作之品</case>
+            <case value="8.9">很好,佳作之品</case>
+            <case value="9">力荐，不容错过</case>
+            <case value="9.1">力荐，不容错过</case>
+            <case value="9.2">力荐，不容错过</case>
+            <case value="9.3">力荐，不容错过</case>
+            <case value="9.4">力荐，不容错过</case>
+            <case value="9.5">力荐，不容错过</case>
+            <case value="9.6">力荐，不容错过</case>
+            <case value="9.7">力荐，不容错过</case>
+            <case value="9.8">力荐，不容错过</case>
+            <case value="9.9">力荐，不容错过</case>
+            <case value="10">力荐，不容错过</case>
+            <case value="10.0">力荐，不容错过</case>
+            <default />
+            </switch>！</span>
+				  <span class="zybox_n"><span id="golder">{$vod_golder}</span>人评分&nbsp;</span>
+				  <span class="zybox_n"><span id="looker">{$vod_hits}</span>人看过&nbsp;</span>
+				  <span class="zybox_n"><php>$count=M('cm')->where(array('cm_cid'=>$vod_id))->select();</php><a href="#uyan" id="uyan_count_unit" class="av" >影评({:count($count)})</a></span>
+				  <div class="cl"></div>
+			  </div>
+			  <div class="cl"></div>
+		  </div>
+		</div>
+		<div class="updownbtnbox">
+		<a class="scbtnbox" href="#">搜藏此片</a>
+		<a href="javascript:void(0)" class="Up" id="Up"><span></span></a><a href="javascript:void(0)" class="Down" id="Down"><span></span></a>
+		</div>
+		<div class="playfxbox">
+			<!-- Baidu Button BEGIN -->
+			<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" data="{
+				'url':'{$vod_readurl}',
+				'desc':'{$vod_content|msubstr=0,80}…',
+				'text':'{$vod_name}',
+				'pic':'{$vod_picurl}'
+			}">
+			<a class="bds_qzone"></a>
+			<a class="bds_tsina"></a>
+			<a class="bds_tsohu"></a>
+			<a class="bds_tqq"></a>
+			<a class="bds_renren"></a>
+			<a class="bds_kaixin001"></a>
+			<a class="bds_baidu"></a>
+			<a class="bds_tieba"></a>
+			<a class="bds_hi"></a>
+			<a class="bds_douban"></a>
+			<a class="bds_taobao"></a>
+			<span class="bds_more"></span>
+			</div>
+			<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6556540" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+			document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+			</script>
+			<!-- Baidu Button END -->
+		<div class="cl"></div></div>
+		<div class="cl"></div>
+	</div>
+</div>
+<php>$lay=$vod_playname;</php>
+<php>$ji=$vod_pid-1;</php>
+<div class="publicbox box980" id="detail-list">
+	<div class="vodhottitle">
+    <div class="play_list" >
+     <if condition="$list_pid eq 1">
+            <fflist name="vod_playlist" id="ppvod">
+            <php>$laya=$ppvod[playname];</php>
+			<dd <?php  if($lay==$laya) echo "class='current'"; else echo ""; ?>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">{$ppvod.playname|msubstr=0,3}</fflist></em></a></dd></fflist> 
+          <elseif condition="$list_pid eq 2"/>
+                     <fflist name="vod_playlist" id="ppvod">
+                     <php>$laya=$ppvod[playname];</php>
+			<dd <?php  if($lay==$laya) echo "class='current'"; else echo ""; ?>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">第{$ppvod.playcount}集</fflist></em></a></dd></fflist>  
+         <elseif condition="$list_id eq 4"/>
+         <fflist name="vod_playlist" id="ppvod">
+         <php>$laya=$ppvod[playname];</php>
+			<dd <?php  if($lay==$laya) echo "class='current'"; else echo ""; ?>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">第{$ppvod.playcount}期</fflist></em></a></dd></fflist>  
+        <elseif condition="$list_id eq 3"/>
+            <fflist name="vod_playlist" id="ppvod">
+            <php>$laya=$ppvod[playname];</php>
+			<dd <?php  if($lay==$laya) echo "class='current'"; else echo ""; ?>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"><php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">第{$ppvod.playcount}话</fflist></em></a></dd></fflist> 
+            <else />
+            <fflist name="vod_playlist" id="ppvod">
+            <php>$laya=$ppvod[playname];</php>
+			<dd <?php  if($lay==$laya) echo "class='current'"; else echo ""; ?>><a title="{$ppvod.playername}" id="{$ppvod.playname}-pl" ><span></span><em class="no_v"> <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php><fflist name="ppvod['son']" id="ppvod" offset="0" length='1' key="iii">{$ppvod.playcount}</fflist></em></a></dd></fflist>  
+            </if></div>    
+        <div class="txtt"><a href="{$url_guestbook}" target="_blank">不能播放，报错</a></div>
+        
+    </div>
+ <volist name="vod_playlist" id="ppvod"> 
+ <php>$layaa=$ppvod[playname];</php>
+	<div class="vodplaybox" id="{$ppvod.playname}-pl-list" <?php  if($lay==$layaa) echo "style='display:block'"; else echo "style='display:none;'"; ?>>
+			<div class="wxts" style="margin:0px 10px 10px 10px;">
+            <if condition="$vod_playname eq bdhd">
+				<div class="snvtvb" ><span class="snvd">温馨提示：</span>[DVD：标准清晰版]&nbsp;[BD：高清无水印]&nbsp;[HD：高清版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</a></div>
+				<div class="snvtvs" >
+				<div class="askbox">
+						<span class="asktitle">[百度影音-常见问题]</span>
+						<p><span class="snvd">紧急BUG一：</span>当您打开影片时候，出现了一部已经缓冲完毕，且影片内容不正确时，请打开baidu player这个下载目录，删除清空里面下载的影片，然后刷新页面即可。注：删除前，请退出打开了百度影音播放页面和"百度影音"播放器或"baidup2pservice"进程，防止由于软件对内容的读写导致无法删除。</p>
+						<p><span class="snvd">紧急BUG二：</span>当缓冲一直为0时，请尝试刷新一下页面。</p>
+						<p><span class="snvd">常见问题一：</span>如打开本页的播放窗口提示需要安装播放器，请点击下载百度影音，一路"下一步"安装，完毕后刷新页面即可</p>
+						<p><span class="snvd">常见问题二：</span>开始播后将有5-15秒左右的缓冲时间，属于正常现象；如播放的页面长时间一直显示为0%，很有可能资源被删除，您可以点击这里留言报错</p>
+						<p><span class="snvd">常见问题三：</span>百度影音太占网速，一播放家里其他人都不能上网了怎么办？百度影音为达到更好的缓冲效果，有时可能会出现过度占用网速的情况。您可以在播放器设置-下载面板中设置最大上传下载速度。也可以在播放器设置-系统中勾选"退出时自动结束p2p进程"，然后在系统托盘图标上右键选择完全退出。</p>
+						<p><span class="snvd">播放技巧一：</span>正常情况下的新片和热片，百度影音都能保持非常流畅的播放；如有出现不流畅，您可以选择暂停缓冲一会再观看，或是检查一下自己电脑是否开启了其他占用网速的软件。（百度影音是一个P2P的播放软件，用户越多速度越快，所以部分老片冷片会速度较慢，用户数增加后这个问题会很快解决）</p>
+						<p><span class="snvd">播放技巧二：</span>页面播放的东西，会在本地存一份，具体可在"播放器设置"-"下载面板"中可以查看和设置缓冲文件目录。在下载过程中若硬盘空间不足，百度影音会弹出提示窗口。只需重新设置缓冲目录或者删除旧缓冲文件即可。</p>
+						<p>具体可以访问以下图文并茂的链接百度影音常见问题、产品简介、快速入门、操作指南。</p>
+					</div>												</div>
+                 <elseif condition="$vod_playname eq qvod"/>
+                 				<div class="snvtvb" ><span class="snvd">温馨提示：</span>[DVD：标准清晰版]&nbsp;[BD：高清无水印]&nbsp;[HD：高清版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</a></div>
+				<div class="snvtvs" >
+				<div class="askbox">
+						<span class="asktitle">[快播QVOD-常见问题]</span>
+						<p><span class="snvd">紧急BUG一：</span>当您打开影片时候，出现了一部已经缓冲完毕，且影片内容不正确时，请打开baidu player这个下载目录，删除清空里面下载的影片，然后刷新页面即可。注：删除前，请退出打开了百度影音播放页面和"百度影音"播放器或"baidup2pservice"进程，防止由于软件对内容的读写导致无法删除。</p>
+						<p><span class="snvd">紧急BUG二：</span>当缓冲一直为0时，请尝试刷新一下页面。</p>
+						<p><span class="snvd">常见问题一：</span>如打开本页的播放窗口提示需要安装播放器，请点击下载百度影音，一路"下一步"安装，完毕后刷新页面即可</p>
+						<p><span class="snvd">常见问题二：</span>开始播后将有5-15秒左右的缓冲时间，属于正常现象；如播放的页面长时间一直显示为0%，很有可能资源被删除，您可以点击这里留言报错</p>
+						<p><span class="snvd">常见问题三：</span>快播影音太占网速，一播放家里其他人都不能上网了怎么办？百度影音为达到更好的缓冲效果，有时可能会出现过度占用网速的情况。您可以在播放器设置-下载面板中设置最大上传下载速度。也可以在播放器设置-系统中勾选"退出时自动结束p2p进程"，然后在系统托盘图标上右键选择完全退出。</p>
+						<p><span class="snvd">播放技巧一：</span>正常情况下的新片和热片，百度影音都能保持非常流畅的播放；如有出现不流畅，您可以选择暂停缓冲一会再观看，或是检查一下自己电脑是否开启了其他占用网速的软件。（快播影音是一个P2P的播放软件，用户越多速度越快，所以部分老片冷片会速度较慢，用户数增加后这个问题会很快解决）</p>
+						<p><span class="snvd">播放技巧二：</span>页面播放的东西，会在本地存一份，具体可在"播放器设置"-"下载面板"中可以查看和设置缓冲文件目录。在下载过程中若硬盘空间不足，百度影音会弹出提示窗口。只需重新设置缓冲目录或者删除旧缓冲文件即可。</p>
+						<p>具体可以访问以下图文并茂的链接百度影音常见问题、产品简介、快速入门、操作指南。</p>
+					</div>												</div>
+                 <else/>
+                 				<div class="snvtvb" ><span class="snvd">温馨提示：</span>[DVD：标准清晰版]&nbsp;[BD：高清无水印]&nbsp;[HD：高清版]&nbsp;[TS：抢先非清晰版] - 其中，BD和HD版本不太适合4M以下的宽带的用户和网速过慢的用户观看。</a></div>
+				<div class="snvtvs" >
+												<div class="askbox">
+						<span class="asktitle">[Flash常见问题]</span>
+						<p><span class="snvd">常见问题一：</span>如打开本页的播放窗口空白或有个是个大叉叉，请点击这里下载Flash 9插件,然后重启浏览器</p>
+						<p><span class="snvd">常见问题二：</span>在已安装Flash的情况下，如打开的本页播放区域是空白一片，可以尝试刷新本页（网速慢使播放器加载稍慢)</p>
+						<p><span class="snvd">常见问题三：</span>节目出现双语对白，可打开电脑上音量调节功能，拉动平衡杆到任意一边调整语种。</p>
+						<p><span class="snvd">常见问题四：</span>为何有的节目看到一半就断掉或没有响应了？最有效的解决方法是：IE浏览器--工具-- Internet选项--点击"删除文件"按钮，然后关闭浏览器重新打开</p>
+						<p><span class="snvd">播放技巧一： </span>部分视频如果出现卡的情况，可暂停一会，让其缓冲后再播放</p>
+						<p><span class="snvd">播放技巧二： </span>可提前打开下一集的页面，播放后按暂停（不要关闭），让其缓冲，这样看完这集就可以很流畅的看下一集了。</p>
+					</div>				</div>
+                 </if>   
+			</div>
+        <php>$countjii=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+        <gt name="countjii" value="5"><div class="order">列表排序：<a rel="nofollow" class="desc" href="javascript:void(0);" data="{$i-1}">降序</a></div> <else/></gt>
+            <p class="player_list">
+            <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+         <volist name="ppvod['son']" id="ppvodson" key="iii">
+          <php>$jii=$key;</php>
+          <php>$laya=$ppvod[playname];</php>
+         <a <?php  if($lay==$laya) {if($ji==$key) echo "class='cur'"; else echo "";} else echo "";?> <neq name="i" value="1">rel="nofollow"</neq> target="_blank" href="{$ppvodson.playurl}" title="{$ppvodson.playname}">{$ppvodson.playname|msubstr=0,10}<eq name="iii" value="1"><php>$add_time = $vod_addtime;$today = date("Ymd"); if(date("Ymd", $add_time) == $today) {
+echo "<span class='new'>new</span>";} else {echo "";}</php></eq></a>
+        </volist>
+</p> 
+   </div>
+            </volist> 
+            
+</div>
+
+  <div class="ui-box" id="like-focus">
+    <div class="detail-related fn-clear">
+      <h5 class="hd">你是否也在<strong>寻找</strong>：</h5>
+      <p class="bd"></p>
+    </div>
+    <!-- // detail-related End -->
+    <ul class="img-list">
+      <php>$vod_gold=ff_mysql_vod('cid:'.$list_id.';limit:7;order:rand()');</php>
+     <volist name="vod_gold" id="ppvod">
+      <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name|msubstr=0,25}" />
+        <label class="mask"></label>
+        <label class="text"><neq name="ppvod.vod_continu" value="0">第{$ppvod.vod_continu}集<else/>{$ppvod.vod_title|default='全集'}</neq></label>
+        <label class="score"><eq name="ppvod.vod_gold" value="0">{$ppvod.vod_gold}<else/>{$ppvod.vod_gold}</eq></label>
+        </a>
+        <h3><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,25}</a></h3>
+      </li>
+  </volist> 
+    </ul>
+    <!-- // pic-list End -->
+    <ul class="txt-list txt-list-small">
+    <php>$hot_week = ff_mysql_vod('cid:'.$list_id.';limit:5,20;order:vod_hits_month desc,vod_addtime desc');</php>
+         <volist name="hot_week" id="ppvod">
+      <li><span>{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,25}</a></li>
+</volist>
+    </ul>
+    <!-- // txt-list End -->
+  </div>
+  <!-- //like-focus end -->
+  <div class="ui-sponsor">{:getadsurl('vod_960_04')}</div>
+  <!-- // ui-sponsor end -->
+  <div class="ui-box" id="juqing" >
+    <div class="ui-title">
+      <h3><strong>{$vod_name}</strong>剧情介绍</h3>
+    </div>
+    <div class="tjuqing">
+    <if condition="$list_id eq 4">综艺节目{$vod_name}是{$vod_diantai}的一档{$vod_mcid|ff_mcat}节目由{$vod_director},<notempty name="vod_actor">{$vod_actor}<else />未录入</notempty>等主持<a href="{$siteurl}">{$sitename}</a>已经<neq name="vod_continu" value="0">更新至{$vod_continu}期<else/>全集</neq> 在线观看希望您能喜下面是节目的主要内容</a>
+  <else/><a href="{$list_url}">{$list_name}</a><a href="{$list_url_big}">{$list_name_big}</a>{$vod_name}是由<notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty>主演的一部{$vod_mcid|ff_mcat_admin=$vod_cid}{$list_name_big}{$vod_name}剧情介绍</if> 
+  {$vod_content} {$sitename}为您提供了包括<a href="{$siteurl}">2013最新电影排行榜</a>，还同时提供了<a href="{$siteurl}">电视剧排行榜</a>电影电视剧以及动画综艺节目的在线观看服务。希望您能喜欢并能收藏我们的网址{$siteurl}</div>
+    </div>
+  <!-- // ui-box#like-focus end -->
+  <div class="ui-box" id="comment" >
+    <div class="ui-title">
+      <h3>网友评论</h3>
+    </div>
+    <div class="ui-cnt">
+      <form id="commform" method="post">
+        <div class="ui-form" id="cmt-input-tip">
+          <input type="text" class="ui-input" value="我也要写评论。。。" />
+        </div>
+        <!-- // cmt-input-tip -->
+        <div class="ui-form" id="cmt-input-bd" style="display:none;">
+            <div class="ui-form-item">
+                <p class="comment-nickname">
+                    <label class="comment-label">昵称：</label>
+                    <input type="text" name="nickname" id="nickname" class="ui-input">
+                </p>
+            </div>
+          <div class="ui-form-item">
+            <textarea cols="60" rows="5" class="ui-input ui-textarea" name="comment_content" id="comment_content" onfocus="if(this.value=='请在这里发表您的个人看法，最多1000个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多1000个字。';};"></textarea>
+            <input type="hidden" id="vod_id" name="vod_id"/>
+          </div>
+          <div class="ui-form-info fn-clear">
+          
+          <a rel="nofollow" class="ui-button fn-right" id="subcomm" href="javascript:void(0);" onclick="FF.Comment.Post();">提交</a>
+            <p class="fn-right">请勿提交非法信息和广告，违反者查封ID，甚至永久删除！谢谢合作~</p>
+          </div>
+        </div>
+        <!-- // ui-form End -->
+      </form>
+      <!-- // ui-form End -->
+      <div class="ui-bar fn-clear">
+        <div class="view-filter"><a rel="nofollow" class="current"  href="javascript:void(0);" data="#"><span>最新评论</span></a><em>|</em><a href="javascript:void(0);" data="#"><span>精华评论</span></a></div>
+        <div class="ui-pages commpage fn-right" id="pagebox"></div>
+      </div>
+      <!-- // ui-bar end -->
+ <div class="comment-focus">
+        <div  id="Comment">
+        </div>
+        <!-- // i-list End -->
+      </div>
+      <!-- // comment-focus end -->
+    </div>
+    <!-- // comment End -->
+  </div>
+</div>
+<!-- // content end -->
+<include file="Home:pp_footer" />
+<script type="text/javascript" src="{$root}static/js/jquery.vod.js"></script>
+<script type="text/javascript" src="{$root}static/js/gold.js"></script>
+<script language="javascript">FF.History.Insert('{$vod_name}','{$vod_readurl}',10,7,'','');</script>
+{$vod_hits_insert}
+</html>

@@ -1,0 +1,66 @@
+<div class="ui-box ui-tbmov" id="directory-focus">
+    <div class="directory-item">
+      <ul class="directory-list">
+        <li>
+          <dl class="tv">
+            <dt><a href="{:getlistname(2,'list_url')}">电视剧</a></dt>
+           <php>$type_id = 2;</php>
+          <php>$catlist = D('Mcat')->list_cat(2);</php>
+            <volist name="catlist" id="vo" offset="0" length='18'>
+<dd><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></dd></volist>  
+          </dl>
+        </li>
+        <li>
+          <dl class="movie">
+            <dt><a href="{:getlistname(1,'list_url')}">电影</a></dt>
+           <php>$type_id = 1;</php>
+          <php>$catlist = D('Mcat')->list_cat(1);</php>
+            <volist name="catlist" id="vo" offset="0" length='15'>
+<dd><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></dd></volist> 
+          </dl>
+        </li>
+        <li>
+          <dl class="cartoon">
+            <dt><a href="{:getlistname(3,'list_url')}">动漫</a></dt>
+           <php>$type_id = 3;</php>
+          <php>$catlist = D('Mcat')->list_cat(3);</php>
+            <volist name="catlist" id="vo" offset="0" length='12'>
+<dd><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></dd></volist> 
+          </dl>
+        </li>
+        <li>
+          <dl class="fun">
+            <dt><a href="{:getlistname(4,'list_url')}">综艺娱乐</a></dt>
+           <php>$type_id = 4;</php>
+          <php>$catlist = D('Mcat')->list_cat(4);</php>
+            <volist name="catlist" id="vo" offset="0" length='14'>
+<dd><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></dd></volist> 
+          </dl>
+        </li>
+        <li>
+          <dl class="wei">
+            <dt><a href="{:getlistname(24,'list_url')}">微电影</a></dt>
+           <php>$type_id = 24;</php>
+          <php>$catlist = D('Mcat')->list_cat(24);</php>
+            <volist name="catlist" id="vo" offset="0" length='9'>
+<dd><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></dd></volist> 
+
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <!-- // directory-list end -->
+    <div class="directory-search fn-clear">
+      <div class="ui-search">
+          <form id="ffsearch" name="ffsearch"  method="POST" action="{$root}/search" onSubmit="return qrsearch();">
+            <input type="text" id="wd" name="wd" class="search-input" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};" />
+            <input type="submit" id="searchbutton"  class="search-button" value="" />
+          </form>
+      </div>
+      <!-- // search End -->
+      <div class="hotkeys">{$hotkey}</div>
+      <!-- // hotkeys End -->
+    </div>
+    <!-- // directory-search end -->
+  </div>
+  <!-- // ui-box end -->

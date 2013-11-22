@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网站地图 - {$sitename}</title>
+<meta name="keywords" content="<notempty name="list_keywords">{$list_keywords}<else/>最新{$list_name},{$keywords}</notempty>">
+<meta name="description" content="<notempty name="list_description">{$list_description}<else/>{$description}</notempty>">
+<include file="Home:system_js" />
+</head>
+<body>
+<include file="Home:pp_header" />
+<!-- // header end -->
+<div id="content" class="layout">
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="{$root}">首页</a></li>
+      <li><h1>网站地图</h1></li>
+    </ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div class="ui-box sitemap-item">
+    <h2><a href="{:getlistname(2,'list_url')}">电视剧</a></h2>
+    <dl class="sitemap-list fn-clear">
+      <dt>地区</dt>
+      <dd>
+        <ul>
+            <php>$vod_type=M('list')->where(array('list_pid'=>2))->select()</php>
+            <fflist name="vod_type" id="ppvodson">
+			<li><h3><a href="{:getlistname($ppvodson['list_id'],'list_url')}" title="{$ppvodson.list_name|msubstr=0,2}电视剧">{$ppvodson.list_name}</a></h3></li>
+            </fflist>
+        </ul>
+      </dd>
+    </dl>
+    <dl class="sitemap-list fn-clear">
+      <dt>类型</dt>
+      <dd>
+        <ul>
+        <php>$type_id = 2;</php>
+          <php>$catlist = D('Mcat')->list_cat(2);</php>
+            <volist name="catlist" id="vo">
+<li><h3><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></h3></li></volist> 
+        </ul>
+      </dd>
+    </dl>
+  </div>
+  <!-- // sitemap-item end-->
+  <div class="ui-box sitemap-item">
+    <h2><a href="{:getlistname(1,'list_url')}">电影</a></h2>
+    <dl class="sitemap-list fn-clear">
+      <dt>分类</dt>
+      <dd>
+        <ul>
+            <php>$vod_type=M('list')->where(array('list_pid'=>1))->select()</php>
+            <fflist name="vod_type" id="ppvodson">
+			<li><h3><a href="{:getlistname($ppvodson['list_id'],'list_url')}" title="{$ppvodson.list_name|msubstr=0,2}电影">{$ppvodson.list_name}</a></h3></li>
+            </fflist>
+        </ul>
+      </dd>
+    </dl>
+    <dl class="sitemap-list fn-clear">
+      <dt>类型</dt>
+      <dd>
+        <ul>
+        <php>$type_id = 1;</php>
+          <php>$catlist = D('Mcat')->list_cat(1);</php>
+            <volist name="catlist" id="vo">
+<li><h3><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></h3></li></volist> 
+        </ul>
+      </dd>
+    </dl>
+  </div>
+  <!-- // sitemap-item end-->
+  <div class="ui-box sitemap-item">
+    <h2><a href="{:getlistname(3,'list_url')}">经典动漫</a></h2>
+    <dl class="sitemap-list fn-clear">
+      <dt>类型</dt>
+      <dd>
+        <ul>
+        <php>$type_id = 3;</php>
+          <php>$catlist = D('Mcat')->list_cat(3);</php>
+            <volist name="catlist" id="vo">
+<li><h3><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></h3></li></volist> 
+        </ul>
+      </dd>
+    </dl>
+  </div>
+  <!-- // sitemap-item end-->
+  <div class="ui-box sitemap-item">
+    <h2><a href="{:getlistname(4,'list_url')}">综艺娱乐</a></h2>
+    <dl class="sitemap-list fn-clear">
+      <dt>类型</dt>
+      <dd>
+        <ul>
+        <php>$type_id = 4;</php>
+          <php>$catlist = D('Mcat')->list_cat(4);</php>
+            <volist name="catlist" id="vo">
+<li><h3><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></h3></li></volist> 
+        </ul>
+      </dd>
+    </dl>
+  </div>
+   <!-- // sitemap-item end-->
+  <div class="ui-box sitemap-item">
+    <h2><a href="{:getlistname(35,'list_url')}">微电影</a></h2>
+    <dl class="sitemap-list fn-clear">
+      <dt>类型</dt>
+      <dd>
+        <ul>
+        <php>$type_id = 35;</php>
+          <php>$catlist = D('Mcat')->list_cat(35);</php>
+            <volist name="catlist" id="vo">
+<li><h3><a href="{$root}vod-type-id-{$type_id}-mcid-{$vo.m_cid}.html" title="{$vo.m_name}">{$vo.m_name}</a></h3></li></volist> 
+        </ul>
+      </dd>
+    </dl>
+  </div>
+ 
+</div>
+<!-- // content end -->
+<include file="Home:pp_footer" />
+</body>
+</html>

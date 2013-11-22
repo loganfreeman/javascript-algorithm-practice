@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>喜欢的节目 杂谈 口水榜 - 分享精彩影视- {$sitename}</title>
+<include file="Home:system_js" />
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+    <div class="bread-crumb-nav fn-clear"><ul class="bread-crumbs"><li class="home"><a href="/">首页</a></li><li><a href="/like/">口水</a></li></ul><!-- // bread-crumbs end --></div>
+    <!--// 瀑布流 --S //-->
+    <div id="water-fall" class="fn-clear">
+       <volist name="vod_list" id="vo">
+           <div class="ui-waterfall" data="{$vo.vod_id}">
+               <div class="fall-img">
+        <div class="fall-action"><a class="ks-btn ks-fav" id="wish" href="{:ff_data_url('vod',$vo['vod_id'],$vo['vod_cid'],$vo['vod_name'],1,$vo['vod_playurl'])}"> 观看 </a><a rel="nofollow" class="ks-btn ks-rss" id="dingyue" href="/url.php?url={$siteurl}{:ff_data_url('vod',$vo['vod_id'],$vo['vod_cid'],$vo['vod_name'],1,$vo['vod_playurl'])}&name={$vo.vod_name}"> 收藏 </a></div>
+                   <a target="_blank" href="{:ff_data_url('vod',$vo['vod_id'],$vo['vod_cid'],$vo['vod_name'],1,$vo['vod_jumpurl'])}"><img class="loading" width="211" height="300"  src="{$root}static/images/blank.png" data-original="{$vo.vod_pic|getpicurl}"  alt="{$vo.vod_title}" /></a>
+                   <div class="fall-ing-txt">{$vo.vod_title}</div>
+                   <div class="fall-ing-bg">&nbsp;</div>
+               </div>
+               <div class="fall-desc">
+                   <p><a href="{:ff_data_url('vod',$vo['vod_id'],$vo['vod_cid'],$vo['vod_name'],1,$vo['vod_jumpurl'])}">{$vo.vod_name}</a></p>
+                   <p>{$vo.vod_addtime|date="Y-m-d H:i:s",###}</p>
+               </div>
+               <div class="fall-comment">
+                   <ul>
+                       <volist name="vo.comment" id="sub">
+                           <li>
+                               <a rel="nofollow" href="#" target="_blank"><img src="{$root}static/images/noavatar_small.gif" alt="{$sub.cm_nickname|default='游客'}"/></a>
+                               <p><a rel="nofollow" href="#" target="_blank">{$sub.cm_nickname|default='游客'}</a>: <em>{$sub.cm_content}</em></p>
+                           </li>
+                       </volist>
+                   </ul>
+                   <div class="viewmore"><a target="_blank" href="{:ff_data_url('vod',$vo['vod_id'],$vo['vod_cid'],$vo['vod_name'],1,$vo['vod_jumpurl'])}">查看全部{$vo.surplus_comment}条评论</a></div></div></div><!-- // ui-waterfall End -->
+       </volist>
+    </div>
+    <!--// 瀑布流 --E //-->
+</div>
+<script type="text/javascript" src="{$root}static/js/jquery.masonry.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// ui-waterfall
+		$(".ui-waterfall").hover(function(){		
+			$(this).find(".fall-action").show();
+		},function(){
+			$(this).find(".fall-action").hide();
+		});	
+		
+		$("#water-fall").masonry({
+			itemSelector: '.ui-waterfall'
+		}); 
+	});
+</script>
+<include file="Home:pp_footer" />
+</body>
+</html>

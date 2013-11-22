@@ -1,0 +1,10 @@
+<volist name="vod_list" id="ppvod">
+    <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" alt="点击播放《{$ppvod.vod_name}》" /></a>
+        <div class="play-txt">
+            <h5><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></h5>
+            <p class="actor"> <em>主演：</em>{$ppvod.vod_actor|ff_search_url}</p>
+            <p class="type fn-left"><em>类型：</em><a href="{$list_url}">{$list_name|msubstr=0,2}</a> {$ppvod.vod_mcid|ff_mcat_url=$list_id} </p>
+            <p class="type"><em>更新时间∶</em>{$ppvod.vod_addtime|date='Y-m-d',###}</p>
+            <p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,170,'utf-8',true}</p>
+            <p class="more-desc"><a class="more" target="_blank" href="{$ppvod.vod_readurl}">详细</a></p></div></li>
+</volist>

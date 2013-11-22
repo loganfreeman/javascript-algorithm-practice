@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title} - {$sitename}</title>
+<meta name="keywords" content="<notempty name="list_keywords">{$list_keywords}<else/>最新{$list_name},{$keywords}</notempty>">
+<meta name="description" content="<notempty name="list_description">{$list_description}<else/>{$description}</notempty>">
+<include file="Home:system_js" />
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="{$root}">首页</a></li>
+      <li>搜索 <strong style="color:#e12160;">{$search_wd}</strong> 共找到视频 <strong style="color:red" id="counts">{$pagecount}</strong> 个</li>
+    </ul>
+    <!-- // bread-crumbs end -->
+    <div class="bread-share fn-right">
+      <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><span class="bds_more">分享到：</span><a class="bds_qzone"></a><a class="bds_tsina"></a><a class="bds_tqq"></a><a class="bds_renren"></a><a class="bds_douban"></a><a class="bds_taobao"></a><a class="bds_ty"></a><a class="bds_tieba"></a><a class="bds_kaixin001"></a><a class="bds_copy"></a></div>
+      <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=185877" ></script>
+      <script type="text/javascript" id="bdshell_js"></script>
+      <script type="text/javascript">				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com{$root}static/js/shell_v2.js?t=" + new Date().getHours();
+			</script>
+      <!-- Baidu Button END -->
+    </div>
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <!-- // bread-crumb-nav end -->
+  <div class="ui-box ui-tbmov fn-clear" id="list-focus">
+    <div class="tbmov-box" id="find-focus">
+      <div class="ui-bar fn-clear">
+        <div class="view-filter" id="catecont"><a class="current" href="javascript:;" data="cid-0">全部</a>
+        <volist name="list_menu" id="ppvod" offset="0" length='5'> 
+        <em>|</em><a href="javascript:;" data="cid-{$ppvod.list_id}">{$ppvod.list_name}</a>
+        </volist> </div>
+        <div class="ui-pages short-page fn-right" id="short-page">{$pagetop}</div>
+      </div>
+      <!-- // ui-bar end -->
+      <ul class="show-list" id="contents">
+      <php>$vod_list = ff_mysql_vod('wd:'.$search_wd.';actor:'.$search_actor.';year:'.$search_year.';language:'.$search_language.';area:'.$search_area.';letter:'.$search_letter.';limit:8;page:true;order:vod_addtime desc');$page = $vod_list[0]['page'];</php>
+<gt name="vod_list.0.count" value="0"><volist name="vod_list" id="ppvod">
+<li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img class="loading" width="110" height="150"  src="{$root}static/images/blank.png" data-original="{$ppvod.vod_picurl}" alt="点击播放《{$ppvod.vod_name}》" /></a>
+<div class="play-txt">
+<h5><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></h5>
+<p class="actor"> <em>主演：</em>{$ppvod.vod_actor|ff_search_url}</p>
+<p class="type fn-left"><em>类型：</em><a href="{$list_url}">{$list_name|msubstr=0,2}</a>{$ppvod.vod_mcid|ff_mcat_url_new=$ppvod['vod_cid']}</p>
+<p class="type"><em>更新时间∶</em>{$ppvod.vod_addtime|date='Y-m-d',###}</p>
+<p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,170,'utf-8',true}</p>
+<p class="more-desc"><a class="more" target="_blank" href="{$ppvod.vod_readurl}">详细</a></p></div></li>
+</volist>     
+      </ul>
+      <!-- // show-list end -->
+      <div class="ui-bar list-page fn-clear">
+        <div class="ui-pages ui-page-big" id="long-page">{$page}</div>
+      </div>
+        <else/>
+                  <ul><li class="kong">没有搜索到您想要的结果，请尝试简化您的搜索关键词;或者到留言区求片等待小编为您添加！</li></ul>
+      </gt> 
+      <!-- // list-page End -->
+    </div>
+    <!-- // tbmov-box end -->
+  </div>
+</div>
+<!-- // content end -->
+ <include file="Home:pp_footer" />
+<script type="text/javascript">
+    var parms = new Array();
+
+    function parseurl(rr){
+        var url='/index.php?s=vod-search-wd-{$search_wd|urlencode}{$search_director|urlencode}-actor-{$search_actor|urlencode}';
+        for(var c in rr){
+            if(rr[c]!='0'){
+                url=url+"-"+c+"-"+rr[c];
+            }
+        }
+        return url;
+    }
+
+    function pagegoo(url){
+        $("#contents").html('<li class="kong"><label>数据载入中.....</label>');
+        $.ajax({
+            url:url,
+            success:function (r){
+                if(r.data.ajaxtxt==''){
+                    $("#contents").html('<li class="kong">没有搜索到您想要的结果，请尝试简化您的搜索关键词;或者到留言区求片等待小编为您添加！</li>');
+                }else{
+                    $("#contents").html(r.data.ajaxtxt);
+                }
+                $("#long-page").html(r.data.long_page);
+                $("#short-page").html(r.data.short_page);
+                $("#counts").html(r.data.count);
+                $(".ui-pages a").click(function (e){
+                    e.preventDefault();
+
+                    var curdata=$(this).attr('data').split('-');
+
+                    parms[curdata[0]]=curdata[1];
+
+                    var url=parseurl(parms);
+                    pagegoo(url);
+                });
+            },dataType:'json',error:function(){
+                $("#contents").html('<br />服务器繁忙，请再试试...');
+            }
+        });
+    }
+
+    $(".ui-pages a").click(function (e){
+        e.preventDefault();
+        var curdata=$(this).attr('data').split('-');
+
+        parms[curdata[0]]=curdata[1];
+
+        var url=parseurl(parms);
+        pagegoo(url);
+        return false;
+    });
+
+    $("#catecont a").click(function (e){
+
+
+        $(this).addClass('current');
+        $(this).siblings().removeClass('current');
+
+        var curdata=$(this).attr('data').split('-');
+
+        parms[curdata[0]]=curdata[1];
+        parms['p'] = 1;
+
+        var url=parseurl(parms);
+        pagegoo(url);
+
+    });
+//    if(window.location.href.indexOf('-wd-')>0){
+//        pagegoo(window.location.href);
+//    }else{
+//        pagegoo(window.location.href.replace('.html','')+"-wd-"+"{$search_wd}"+".html");
+//    }
+</script>
+
+</body>
+</html>

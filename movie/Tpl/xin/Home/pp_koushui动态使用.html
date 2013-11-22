@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><title>喜欢的节目，口水榜 - {$sitename}</title>
+    <include file="Home:system_js" />
+    <script type="text/javascript">
+        $(function(){
+
+            $("#water-fall").masonry({
+                itemSelector: '.ui-waterfall'
+            });
+        })
+    </script>
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+<div class="bread-crumb-nav fn-clear"><ul class="bread-crumbs"><li class="home"><a href="/">首页</a></li><li><a href="{:UU('Home-vod/koushui')}">口水</a></li></ul><!-- // bread-crumbs end --></div>
+    <!--// 瀑布流 --S //-->
+    <div id="water-fall" class="fn-clear">
+       <volist name="vod_list" id="vo">
+           <div class="ui-waterfall" data="{$vo.vod_id}">
+               <div class="fall-img">
+                   <a target="_blank" width="211" height="290" href="{:UU('Home-vod/read',array('id'=>$vo['vod_id']))}"><img src="/Upload/{$vo.vod_pic}" alt="" /></a>
+                   <div class="fall-ing-txt">{$vo.vod_title}</div>
+                   <div class="fall-ing-bg">&nbsp;</div>
+               </div>
+               <div class="fall-desc">
+                   <p><a href="{:UU('Home-vod/read',array('id'=>$vo['vod_id']))}">{$vo.vod_name}</a></p>
+                   <p>{$vo.vod_addtime|date="Y-m-d H:i:s",###}</p>
+               </div>
+               <div class="fall-comment">
+                   <ul>
+                       <volist name="vo.comment" id="sub">
+                           <li>
+                               <a href="javascript:;" target="_blank"><img src="{$root}static/images/noavatar_small.gif" alt="{$sub.cm_nickname|default='游客'}"/></a>
+                               <p><a href="javascript:;" target="_blank">{$sub.cm_nickname|default='游客'}</a>: <em>{$sub.cm_content}</em></p>
+                           </li>
+                       </volist>
+
+
+                   </ul>
+                   <div class="viewmore"><a target="_blank" href="{:UU('Home-vod/read',array('id'=>$vo['vod_id']))}">查看全部{$vo.surplus_comment}条评论</a></div></div></div><!-- // ui-waterfall End -->
+
+
+       </volist>
+
+
+    </div>
+
+    <!--// 瀑布流 --E //-->
+
+
+</div>
+
+<script type="text/javascript" src="{$root}static/js/jquery.masonry.min.js"></script>
+<include file="Home:pp_footer" />
+</body>
+</html>

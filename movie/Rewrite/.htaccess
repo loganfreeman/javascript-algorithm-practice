@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^vod-(.*)$ index.php\?s=/Home-vod-$1
+RewriteRule ^vodlist-(.*)$ index.php\?s=/Home-vod-show-id-$1
+RewriteRule ^like(.*)$ index.php\?s=/Home-vod-koushui$1
+RewriteRule ^video/(.*)$ index.php\?s=/Home-vod-$1
+RewriteRule ^search-(.*)$ index.php\?s=/Home-vod-search-$1
+RewriteRule ^news-(.*)$ index.php\?s=/Home-news-$1
+RewriteRule ^special-(.*)$ index.php\?s=/Home-special-$1
+RewriteRule ^tag-(.*)$ index.php\?s=/Home-tag-$1
+RewriteRule ^gb-(.*)$ index.php\?s=/Home-gb-$1
+RewriteRule ^cm-(.*)$ index.php\?s=/Home-cm-$1
+RewriteRule ^map-(.*)$ index.php\?s=/Home-map-$1
+RewriteRule ^sitemap(.*).html$  /index.php\?s=/my-show-id-sitemap.html
+RewriteRule ^top(.*).html$ /index.php\?s=/my-show-id-top$1.html
+RewriteRule ^new(.*).html$ /index.php\?s=/my-show-id-new.html
+RewriteRule ^404(.*).html$ /index.php?\s=/my-show-id-404.html
+RewriteRule ^my-(.*)$ /index.php\?s=/Home-my-$1
