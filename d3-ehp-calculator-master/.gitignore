@@ -1,0 +1,5 @@
+# Project property files
+.settings/
+.project
+.buildpath
+versioned_index.html

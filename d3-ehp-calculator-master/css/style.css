@@ -1,0 +1,115 @@
+body {
+    overflow-y: scroll;
+}
+
+.templates {
+    display: none;
+}
+
+table thead > *:first-child > * {
+    background-color: #F9F9F9;
+}
+
+table thead > *:last-child > * {
+    background-color: #F9F9F9;
+    border-bottom: 1px solid black;
+}
+
+td .label, th .label {
+    float: right;
+    margin-right: 5px;
+}
+ 
+td input, td select {
+    margin-bottom: 0px;
+}
+ 
+#container {
+    max-width: 950px;   
+    margin: 20px auto;
+}
+
+.input-normal {
+    width: 150px;
+}
+.input-medium {
+    width: 110px;
+}
+.input-msmall {
+    width: 62px;
+}
+.input-xsmall {
+    width: 50px;
+}
+
+a:active { outline: none; -moz-outline-style: none; }
+a:focus  { outline: none; -moz-outline-style: none; }
+
+.character tr > *:nth-child(1) {
+    width: 35%;
+}
+.character tr > *:nth-child(2) {
+    width: 30%;
+}
+.character tr > *:nth-child(3) {
+    width: 35%;
+}
+
+.results tr > *:nth-child(1) {
+    width: 16%;
+}
+.results tr > *:nth-child(n+2) {
+    width: 21%;
+}
+
+.results tr > th small {
+    font-weight: normal;
+}
+
+
+.input-character tr > *:nth-child(1) {
+    width: 60%;
+}
+.input-character tr > *:nth-child(2) {
+    width: 40%;
+}
+
+.statweight tr > *:nth-child(1) {
+    width: 40%;
+}
+
+.statweight tr > *:nth-child(2),
+.statweight tr > *:nth-child(3),
+.statweight tr > *:nth-child(4) {
+    width: 20%;
+}
+
+#donatecontainer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#adcontainer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#adcontainer .alert {
+    text-align: left;
+    padding-right: 14px;
+}
+
+.alt_ehp em {
+    display: block;
+    float: left;
+}
+.alt_ehp em:nth-child(1) {
+    width: 45%;
+}
+.alt_ehp em:nth-child(2) {
+    width: 30%;
+}
+
+.new-item th > button {
+    margin-left: 5px;
+}
