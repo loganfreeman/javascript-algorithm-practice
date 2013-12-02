@@ -11,6 +11,7 @@ Which means the diagonals are over this grid:
  #  #  0  1  2  3
     #  4  5  6  7  #
        8  9 10 11  #  #
+       
 Now we're just looping over a skewed rectangle, that would look like this normalised:
 
  #  #  0  1  2  3
@@ -44,4 +45,18 @@ for (var i = 1 - m; i < n; i++) {
     }
     out.push(group);
 }
+
+var skewed = new Array();
+for (var i = 0; i < n + m - 1; i++) {
+    var group = new Array();
+    for (var j = 0; j < m; j++) {
+        if ((i - j) >= 0 && (i - j) < n) {
+            group.push(a[j][i - j]);
+        }
+    }
+    skewed.push(group);
+}
+
 console.log(out);
+
+console.log(skewed);
