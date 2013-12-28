@@ -29,6 +29,24 @@ exports.escape = function(html){
     .replace(/>/g, '&gt;');
 };
 
+exports.relative = function (parent) {
+	return function(p){
+	    if ('.' != p.charAt(0)) return require(p);
+	
+	    var path = parent.split('/')
+	      , segs = p.split('/');
+	    path.pop();
+	
+	    for (var i = 0; i < segs.length; i++) {
+	      var seg = segs[i];
+	      if ('..' == seg) path.pop();
+	      else if ('.' != seg) path.push(seg);
+	    }
+	
+	    return require(path.join('/'));
+	  };
+};
+
 /**
  * Array#forEach (<=IE8)
  *
