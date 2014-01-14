@@ -10,3 +10,5 @@ var ieVersion = document && (function() {
 }());
 
 var eventsThatMustBeRegisteredUsingAttachEvent = { 'propertychange': true }; // Workaround for an IE9 issue - https://github.com/SteveSanderson/knockout/issues/406
+
+
