@@ -21,7 +21,7 @@ rd.on('line', function(line) {
 
 var data = String(fs.readFileSync( path )).split('\n');
 data.forEach(function(line){
-		//console.log(line);
+		console.log(line);
 	var result = dataMapPat.exec(line);
 	
 	if(result){
