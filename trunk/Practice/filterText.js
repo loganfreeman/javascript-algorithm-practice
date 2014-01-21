@@ -30,6 +30,7 @@ data.forEach(function(line){
 		groups.push(current);
 		current['name'] = re[1];
 		current['fields'] = [];
+		current['parent'] = null;
 		current['children'] = [];
 		
 	}
@@ -68,10 +69,10 @@ function addGroup(group, parent){
 }
 
 
-console.log(Object.keys(data_map_ids).join(','));
+//console.log(Object.keys(data_map_ids).join(','));
 
 
-console.log(JSON.stringify(groups));
+//console.log(JSON.stringify(groups));
 
 var builder = new xml2js.Builder();
 var xml = builder.buildObject(groups[0]);
