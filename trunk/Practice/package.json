@@ -12,6 +12,7 @@
     "Eclipse",
     "Nodeclipse"
   ],
+  "dependencies": ["jsontoxml"],
   "author": "",
   "license": "BSD",
   "readmeFilename": "README.md"

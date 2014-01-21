@@ -1,3 +1,5 @@
+var jsonxml = require('jsontoxml');
+
 var path = './data/qit.txt';
 
 var fs = require('fs'), readline = require('readline');
@@ -21,31 +23,35 @@ rd.on('line', function(line) {
 
 var data = String(fs.readFileSync( path )).split('\n');
 
-var groups = Object.create(null);
+var groups = [];
 
 var current = null;
 
 var field = null;
+
+
 
 data.forEach(function(line){
 
 	var re = null;
 	if((re = /DataStore.Name=(.*)/.exec(line))){
 
-		groups[re[1]] = {};
-		groups[re[1]]['name'] = re[1];
-		groups[re[1]]['fields'] = [];
-		current = re[1];
+		current = {};
+		groups.push(current);
+		current['name'] = re[1];
+		current['fields'] = [];
+		current['children'] = [];
+		
 	}
 	if(re = /DataStore.Parent=(.*)/.exec(line)){
-		groups[current]['parent'] = re[1];
+		current['parent'] = re[1];
 	}
 	
 	if(re = /Field.Name=(.*)/.exec(line)){
 		field = {};
 		field['name'] = re[1];
 		
-		groups[current]['fields'].push(field);
+		current['fields'].push(field);
 	}
 	
 	if(re = /Field.DataMapId=(.*)/.exec(line)){
@@ -62,3 +68,6 @@ Object.keys(data_map_ids).forEach(function(id){
 
 console.log(Object.keys(data_map_ids).join(','));
 console.log(JSON.stringify(groups));
+
+var xml = '<Root>' + jsonxml.json_to_xml(groups) + '</Root>';
+console.log(xml);
