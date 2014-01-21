@@ -7,20 +7,8 @@ var path = './data/qit.txt';
 var fs = require('fs'), readline = require('readline');
 var dataMapPat=/Field.DataMapId=(\d+)/;
 
-var rd = readline.createInterface({
-	input : fs.createReadStream(path),
-	output : process.stdout,
-	terminal : false
-});
+
 var data_map_ids = Object.create(null);
-rd.on('line', function(line) {
-	//console.log(line);
-	var result = dataMapPat.exec(line);
-	
-	if(result){
-		data_map_ids[result[1]] = true;
-	}
-});
 
 
 var data = String(fs.readFileSync( path )).split('\n');
@@ -59,6 +47,8 @@ data.forEach(function(line){
 	
 	if(re = /Field.DataMapId=(.*)/.exec(line)){
 		field['dm'] = re[1];
+		
+		data_map_ids[re[1]] = true;
 	}
 	
 	
@@ -77,14 +67,13 @@ function addGroup(group, parent){
 
 }
 
-Object.keys(data_map_ids).forEach(function(id){
-	//console.log(id);
-});
+
+console.log(Object.keys(data_map_ids).join(','));
 
 
 console.log(JSON.stringify(groups));
 
 var builder = new xml2js.Builder();
-var xml = builder.buildObject(groups[0]);console.log(xml);
+var xml = builder.buildObject(groups[0]);
 
 console.log(xml);
