@@ -45,6 +45,7 @@ data.forEach(function(line){
 	}
 	if(re = /DataStore.Parent=(.*)/.exec(line)){
 		current['parent'] = re[1];
+		addGroup(current, re[1]);
 	}
 	
 	if(re = /Field.Name=(.*)/.exec(line)){
@@ -62,11 +63,23 @@ data.forEach(function(line){
 });
 
 
+function addGroup(group, parent){
+	groups.some(function(g){
+		if(g['name'] === parent){
+			g['children'].push(group['name']);
+			return true;
+		}
+		return false;
+	});
+	
+
+}
+
 Object.keys(data_map_ids).forEach(function(id){
 	//console.log(id);
 });
 
-console.log(Object.keys(data_map_ids).join(','));
+
 console.log(JSON.stringify(groups));
 
 var xml = '<Root>' + jsonxml.json_to_xml(groups) + '</Root>';

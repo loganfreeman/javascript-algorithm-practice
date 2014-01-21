@@ -68,7 +68,8 @@
 			}
 
 			return arr;
-		};
+		};		
+		
 	}(Dynamic.knapsack = Dynamic.knapsack || {}));
 
 }(window.Dynamic = window.Dynamic || {}));
