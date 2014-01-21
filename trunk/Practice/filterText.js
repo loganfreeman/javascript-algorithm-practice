@@ -25,12 +25,10 @@ var groups = Object.create(null);
 
 var current = null;
 
+var field = null;
+
 data.forEach(function(line){
-	var result = dataMapPat.exec(line);
-	
-	if(result){
-		data_map_ids[result[1]] = true;
-	}
+
 	var re = null;
 	if((re = /DataStore.Name=(.*)/.exec(line))){
 
@@ -42,6 +40,19 @@ data.forEach(function(line){
 	if(re = /DataStore.Parent=(.*)/.exec(line)){
 		groups[current]['parent'] = re[1];
 	}
+	
+	if(re = /Field.Name=(.*)/.exec(line)){
+		field = {};
+		field['name'] = re[1];
+		
+		groups[current]['fields'].push(field);
+	}
+	
+	if(re = /Field.DataMapId=(.*)/.exec(line)){
+		field['dm'] = re[1];
+	}
+	
+	
 });
 
 
