@@ -27,3 +27,4 @@ function escape(sentence) {
 };
 
 module.exports = escape;
+
