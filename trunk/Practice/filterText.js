@@ -1,5 +1,7 @@
 var jsonxml = require('jsontoxml');
 
+xml2js = require('xml2js');
+
 var path = './data/qit.txt';
 
 var fs = require('fs'), readline = require('readline');
@@ -66,7 +68,7 @@ data.forEach(function(line){
 function addGroup(group, parent){
 	groups.some(function(g){
 		if(g['name'] === parent){
-			g['children'].push(group['name']);
+			g['children'].push(group);
 			return true;
 		}
 		return false;
@@ -82,5 +84,7 @@ Object.keys(data_map_ids).forEach(function(id){
 
 console.log(JSON.stringify(groups));
 
-var xml = '<Root>' + jsonxml.json_to_xml(groups) + '</Root>';
+var builder = new xml2js.Builder();
+var xml = builder.buildObject(groups[0]);console.log(xml);
+
 console.log(xml);
