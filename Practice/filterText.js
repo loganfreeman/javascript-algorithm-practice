@@ -69,7 +69,7 @@ function addGroup(group, parent){
 }
 
 
-//console.log(Object.keys(data_map_ids).join(','));
+console.log(Object.keys(data_map_ids).join(','));
 
 
 //console.log(JSON.stringify(groups));
