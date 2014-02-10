@@ -4,10 +4,10 @@ var pattern = /^\d{1,3}-(.*)$/;
 function rename(directory, old){
 	var oldPath = directory + '\\' + old;
 	var match = old.match(pattern);
-	if(match.length){
+	if(match && match.length){
 		var newPath = directory + "\\" + match[1];
 		console.log(newPath);
-		fs.rename(oldPath, newPath, function(err){console.log(err)});
+		fs.rename(oldPath, newPath, function(err){if(err)console.log(err)});
 	}
 
 }
