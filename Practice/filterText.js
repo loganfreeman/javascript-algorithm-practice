@@ -2,7 +2,7 @@ var jsonxml = require('jsontoxml');
 
 xml2js = require('xml2js');
 
-var path = './data/qit.txt';
+var path = './data/controller med.txt';
 
 var fs = require('fs'), readline = require('readline');
 var dataMapPat=/Field.DataMapId=(\d+)/;
@@ -72,7 +72,7 @@ function addGroup(group, parent){
 console.log(Object.keys(data_map_ids).join(','));
 
 
-//console.log(JSON.stringify(groups));
+console.log(JSON.stringify(groups));
 
 var builder = new xml2js.Builder();
 var xml = builder.buildObject(groups[0]);
