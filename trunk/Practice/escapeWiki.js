@@ -5,6 +5,8 @@ var data = String(fs.readFileSync( path )).split('\n');
 var output = [];
 
 data.forEach(function(line){
-	output.push(line.replace('{', '\\{'));
+	var line = line.replace('{', '\\{', 'g');
+	line = line.replace('*', '\\*', 'g')
+	output.push(line);
 });
 console.log(output.join('\n'));
