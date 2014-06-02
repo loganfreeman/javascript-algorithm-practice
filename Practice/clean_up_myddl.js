@@ -40,7 +40,7 @@ for(var f in files){
 	//console.log(files[f].join("\n"));
 	//console.log("\n\n");
 	
-	var tofile = unique('data/sql/' + f);
+	var tofile = unique('data/sql/' + sanitize(f));
 	fs.writeFile(tofile, files[f].join("\n"), function(err) {
 	    if(err) {
 	        console.log(err);

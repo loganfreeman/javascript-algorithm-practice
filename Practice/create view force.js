@@ -21,9 +21,6 @@ try{
 	
 }
 
-fs.writeFile(toFakeFile, '', function(){console.log('done')})
-
-
 function fakeReplace(str, substr, newstr) {
     return str.split(substr).join(newstr);
 }
@@ -53,12 +50,7 @@ var createViewTpl =  "SET DEFINE OFF\n" +
 "  cnt       NUMBER;\n" +
 "  view_stm   VARCHAR2(200) := 'select count(*) from user_objects where object_name = :object_name';\n" +
 "BEGIN\n" +
-"  EXECUTE immediate view_stm INTO cnt USING view_name;\n" +
-"  IF cnt > 0 THEN\n" +
-"    DBMS_OUTPUT.PUT_LINE ('object name has been used');\n" +
-"  ELSE\n" +
 "    EXECUTE immediate '<VIEW_DDL>';\n" +
-"  END IF;\n" +
 "EXCEPTION\n" +
 "WHEN OTHERS THEN\n" +
 "  DBMS_OUTPUT.PUT_LINE('<OBJECT_NAME>' || ' creation encountered some issue!');\n" +
@@ -96,7 +88,7 @@ data.forEach(function(line) {
 	var pair = findObjectName(line);
 	//console.log(line);
 	if(pair != null){
-		var ddl = createViewTpl.replace(new RegExp('<VIEW>', 'g'), pair[0]);
+		var ddl = createViewTpl.replace(new RegExp('<VIEW_DDL>', 'g'), pair[0]);
 		ddl = ddl.replace(new RegExp('<OBJECT_NAME>', 'g'), pair[1])
 		//console.log(ddl);
 		
@@ -109,7 +101,7 @@ data.forEach(function(line) {
 		    }
 		}); 
 	}else{
-		//console.log(line)
+		console.log('view ddl is not valid');
 	}
 
 
