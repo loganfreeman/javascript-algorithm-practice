@@ -27,5 +27,5 @@ function getFiles(dir){
     }
 }
 
-getFiles("C:\\Users\\scheng\\Music\\Rowling");
+getFiles("C:\\Users\\scheng\\Music\\J. K. Rowling");
 
